@@ -150,8 +150,3 @@ Route::middleware(['auth'])->group(function () {
 Route::middleware(['auth'])->name('laporan-keuangan')->group(function () {
     Route::get('/laporan-keuangan', [LaporanKeuanganController::class, 'laporanKeuangan']);
 });
-
-
-
-// Rute autentikasi
-

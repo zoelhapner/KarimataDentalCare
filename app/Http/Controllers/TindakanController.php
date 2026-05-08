@@ -9,27 +9,96 @@ use App\Models\Kasus;
 use App\Models\Kasir;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+use Yajra\DataTables\Facades\DataTables;
 
 class TindakanController extends Controller
 {
     // Menampilkan daftar tindakan
-    public function index(Request $request)
-    {
-        // Ambil query pencarian pasien
-        $query = $request->get('pasien_query');
+    // public function index(Request $request)
+    // {
+    //     // Ambil query pencarian pasien
+    //     $query = $request->get('pasien_query');
 
-        // Query untuk mencari berdasarkan nama pasien
-        $tindakans = Tindakan::with(['dokter', 'pasien', 'kasus', 'kasir'])
-            ->when($query, function ($queryBuilder) use ($query) {
-                return $queryBuilder->whereHas('pasien', function ($pasienQuery) use ($query) {
-                    $pasienQuery->where('nama_pasien', 'like', '%' . $query . '%');
-                });
+    //     // Query untuk mencari berdasarkan nama pasien
+    //     $tindakans = Tindakan::with(['dokter', 'pasien', 'kasus', 'kasir'])
+    //         ->when($query, function ($queryBuilder) use ($query) {
+    //             return $queryBuilder->whereHas('pasien', function ($pasienQuery) use ($query) {
+    //                 $pasienQuery->where('nama_pasien', 'like', '%' . $query . '%');
+    //             });
+    //         })
+    //         ->get();
+
+    //     // Kirim data ke view
+    //     return view('tindakan.index', compact('tindakans'));
+    // }
+
+public function index(Request $request)
+{
+    if ($request->ajax()) {
+
+        $data = Tindakan::with([
+            'dokter',
+            'pasien',
+            'kasus',
+            'kasir'
+        ]);
+
+        return DataTables::of($data)
+            ->addIndexColumn()
+            ->addColumn('nama_pasien', function ($row) {
+                return $row->pasien->nama_pasien ?? '-';
             })
-            ->get();
 
-        // Kirim data ke view
-        return view('tindakan.index', compact('tindakans'));
+            ->addColumn('nama_dokter', function ($row) {
+                return $row->dokter->nama_dokter ?? '-';
+            })
+            ->addColumn('tanggal_visit', function ($row) {
+                return $row->tanggal_visit ?? '-';
+            })
+            ->addColumn('jam', function ($row) {
+                return $row->jam ?? '-';
+            })
+             ->addColumn('tindakan', function ($row) {
+                return $row->tindakan ?? '-';
+            })
+
+            ->addColumn('aksi', function ($row) {
+
+                return '
+                    <div class="flex items-center gap-2">
+
+                        <a href="'.route('tindakan.edit', $row->id).'"
+                            class="px-3 py-2 text-xs font-medium text-white bg-yellow-500 rounded-lg hover:bg-yellow-600">
+                            Edit
+                        </a>
+
+                        <a href="'.route('tindakan.show', $row->id).'"
+                            class="px-3 py-2 text-xs font-medium text-white bg-blue-500 rounded-lg hover:bg-blue-600">
+                            Lihat
+                        </a>
+
+                    </div>
+                ';
+            })
+
+            ->filter(function ($query) use ($request) {
+
+                if ($request->has('search') && $request->search['value']) {
+
+                    $search = $request->search['value'];
+
+                    $query->whereHas('pasien', function ($q) use ($search) {
+                        $q->where('nama_pasien', 'ilike', "%{$search}%");
+                    });
+                }
+            })
+
+            ->rawColumns(['aksi'])
+            ->make(true);
     }
+
+    return view('tindakan.index');
+}
 
     // Menampilkan form untuk menambah tindakan
     public function create()

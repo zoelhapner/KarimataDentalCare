@@ -6,13 +6,14 @@
     </x-slot>
 
     <div class="container mx-auto mt-4">
-        <section class="bg-gray-50 dark:bg-gray-900 py-3 sm:py-5">
+        <section class="bg-gray-50 py-5">
             <div class="px-4 mx-auto max-w-screen-2xl lg:px-12">
-                <div class="relative overflow-hidden bg-white shadow-md dark:bg-gray-800 sm:rounded-lg">
+                <div class="overflow-hidden bg-white border border-gray-200 shadow-sm rounded-2xl">
                     {{-- Tabel Transaksi --}}
                     <div class="overflow-x-auto">
-                        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        
+                        <table class="w-full text-sm text-left text-gray-700">
+                            <thead class="text-xs font-semibold tracking-wider text-gray-600 uppercase bg-gray-50 border-b border-gray-200">
                                 <tr>
                                     <th scope="col" class="px-4 py-3">Tanggal</th>
                                     <th scope="col" class="px-4 py-3">Dokter</th>
@@ -24,9 +25,9 @@
                                     <th scope="col" class="px-4 py-3">Aksi</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody class="divide-y divide-gray-100 bg-white">
                                 @foreach ($transaksi as $kasir)
-                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                <tr class="bg-white border-b">
                                     <td class="px-4 py-3">{{ $kasir->tindakan->tanggal_visit }}</td>
                                     <td class="px-4 py-3">{{ $kasir->tindakan->dokter->nama_dokter ?? 'N/A' }}</td> <!-- Menggunakan relasi dokter -->
                                     <td class="px-4 py-3">{{ $kasir->tindakan->pasien->nama_pasien ?? 'N/A' }}</td> <!-- Menggunakan relasi pasien -->

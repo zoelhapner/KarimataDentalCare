@@ -9,7 +9,7 @@ class Pasien extends Model
 {
     use HasFactory;
 
-    // Menggunakan kolom 'id_pasien' sebagai primary key
+    protected $table = 'pasiens';
     protected $primaryKey = 'id_pasien';
 
     // Menonaktifkan incrementing jika primary key bukan integer

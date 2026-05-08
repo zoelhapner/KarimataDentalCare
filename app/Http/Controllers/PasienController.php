@@ -4,18 +4,66 @@ namespace App\Http\Controllers;
 
 use App\Models\Pasien;
 use Illuminate\Http\Request;
+use Yajra\DataTables\Facades\DataTables;
 
 class PasienController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+    // public function index()
+    // {
+    //     $pasiens = Pasien::all(); // Mengambil semua data pasien
+    //     return view('pasiens.index', compact('pasiens'));
+    // }
     public function index()
-    {
-        $pasiens = Pasien::all(); // Mengambil semua data pasien
-        return view('pasiens.index', compact('pasiens'));
+{
+    if(request()->ajax()) {
+
+        $data = Pasien::query();
+
+        return DataTables::of($data)
+            ->addIndexColumn()
+            ->addColumn('action', function ($pasien) {
+
+                return '
+                    <div class="flex justify-center gap-2">
+
+                        <a href="'.route('pasiens.edit', $pasien->id_pasien).'"
+                            class="px-3 py-2 text-xs font-medium text-white bg-yellow-500 rounded-lg hover:bg-yellow-600">
+                            Edit
+                        </a>
+
+                    </div>
+                ';
+            })
+
+            ->rawColumns(['action'])
+            ->make(true);
     }
 
+    return view('pasiens.index');
+}
+
+// public function index()
+// {
+//     $data = Pasien::query();
+
+//     return DataTables::of($data)
+
+//         ->addColumn('aksi', function ($pasien) {
+
+//             return '
+//                 <a href="'.route('pasiens.edit', $pasien->id_pasien).'"
+//                     class="px-3 py-2 text-xs text-white bg-yellow-500 rounded-lg">
+//                     Edit
+//                 </a>
+//             ';
+//         })
+
+//         ->rawColumns(['aksi'])
+//         ->make(true);
+// }
     /**
      * Show the form for creating a new resource.
      */

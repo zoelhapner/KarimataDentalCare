@@ -8,26 +8,84 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 use App\Models\Kasir;
+use Yajra\DataTables\Facades\DataTables;
 
 use Illuminate\Auth\Events\Registered;
 
 class DokterController extends Controller
 {
-    /**
-     * Menampilkan daftar dokter.
-     */
-    public function index()
-    {
-        $dokters = Dokter::with('tindakans')->paginate(10);
 
-        // Tambahkan penghasilan untuk setiap dokter
-        foreach ($dokters as $dokter) {
-            $dokter->penghasilan = $dokter->tindakans->sum('biaya');
-        }
+    // public function index()
+    // {
+    //     $dokters = Dokter::with('tindakans')->paginate(10);
 
-        return view('dokters.index', compact('dokters'));
+    //     // Tambahkan penghasilan untuk setiap dokter
+    //     foreach ($dokters as $dokter) {
+    //         $dokter->penghasilan = $dokter->tindakans->sum('biaya');
+    //     }
+
+    //     return view('dokters.index', compact('dokters'));
+    // }
+
+public function index()
+{
+    if (request()->ajax()) {
+
+        $data = Dokter::with('tindakans.kasus');
+
+        return DataTables::of($data)
+
+            ->addIndexColumn()
+
+            ->addColumn('checkbox', function ($dokter) {
+
+                return '
+                    <div class="flex items-center">
+                        <input type="checkbox"
+                            value="'.$dokter->id_dokter.'"
+                            class="row-checkbox w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded">
+                    </div>
+                ';
+            })
+
+            ->addColumn('penghasilan', function ($dokter) {
+
+                $total = 0;
+
+                foreach ($dokter->tindakans as $tindakan) {
+                    $total += $tindakan->kasus->sum('biaya');
+                }
+
+                return 'Rp ' . number_format($total, 0, ',', '.');
+            })
+            ->editColumn('nama_dokter', function ($dokter) {
+                $url = route('dokters.show', $dokter->id_dokter);
+                $name = Str::title($dokter->nama_dokter ?? '-');
+                return '<a href="'.$url.'">'.e($name).'</a>';
+            })
+
+            // ->addColumn('aksi', function ($dokter) {
+
+            //     return '
+            //         <div class="flex gap-2">
+
+            //             <a href="'.route('dokters.edit', $dokter->id_dokter).'"
+            //                 class="px-3 py-2 text-xs text-white bg-yellow-500 rounded-lg">
+            //                 Edit
+            //             </a>
+
+            //         </div>
+            //     ';
+            // })
+
+            ->rawColumns(['checkbox', 'nama_dokter'])
+            ->make(true);
     }
+
+    return view('dokters.index');
+}
 
 
     /**
