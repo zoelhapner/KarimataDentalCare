@@ -16,8 +16,9 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 
 // Rute untuk halaman utama
-Route::get('/', [AuthenticatedSessionController::class, 'create'])
-        ->name('login');
+Route::redirect('/', '/login');
+// Route::get('/', [AuthenticatedSessionController::class, 'create'])
+//         ->name('login');
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -118,22 +119,22 @@ Route::middleware(['auth'])->group(function () {
     
 
 // Tambahkan route show untuk tindakan
-Route::get('/tindakan/{tindakan}', [TindakanController::class, 'show'])->name('tindakan.show');
+// Route::get('/tindakan/{tindakan}', [TindakanController::class, 'show'])->name('tindakan.show');
 
 // Tambahkan route autocomplete-pasien
 Route::get('autocomplete-pasien', [TindakanController::class, 'autocomplete'])->name('autocomplete-pasien');
 
 // Tambahkan route di web.php untuk menangani pencarian pasien
-Route::get('/tindakan', [TindakanController::class, 'index'])->name('tindakan.index');
+// Route::get('/tindakan', [TindakanController::class, 'index'])->name('tindakan.index');
 
     // Routes untuk Kasus
-    Route::prefix('kasus')->group(function () {
-        Route::get('/{tindakan}', [KasusController::class, 'index'])->name('kasus.index'); // Lihat kasus berdasarkan tindakan
-        Route::post('/{tindakan}', [KasusController::class, 'store'])->name('kasus.store'); // Tambah kasus ke tindakan tertentu
-        Route::get('/edit/{kasus}', [KasusController::class, 'edit'])->name('kasus.edit'); // Form edit kasus
-        Route::put('/{kasus}', [KasusController::class, 'update'])->name('kasus.update'); // Update kasus
-        Route::delete('/{kasus}', [KasusController::class, 'destroy'])->name('kasus.destroy'); // Hapus kasus
-    });
+    // Route::prefix('kasus')->group(function () {
+    //     Route::get('/{tindakan}', [KasusController::class, 'index'])->name('kasus.index'); // Lihat kasus berdasarkan tindakan
+    //     Route::post('/{tindakan}', [KasusController::class, 'store'])->name('kasus.store'); // Tambah kasus ke tindakan tertentu
+    //     Route::get('/edit/{kasus}', [KasusController::class, 'edit'])->name('kasus.edit'); // Form edit kasus
+    //     Route::put('/{kasus}', [KasusController::class, 'update'])->name('kasus.update'); // Update kasus
+    //     Route::delete('/{kasus}', [KasusController::class, 'destroy'])->name('kasus.destroy'); // Hapus kasus
+    // });
 });
 
 // Kasir routes
