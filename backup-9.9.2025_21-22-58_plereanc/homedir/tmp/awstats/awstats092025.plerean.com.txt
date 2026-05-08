@@ -1,0 +1,360 @@
+AWSTATS DATA FILE 7.9 (build 20230108)
+# If you remove this file, all statistics for date 202509 will be lost/reset.
+# Last config file used to build this data file was /home/plereanc/tmp/awstats/awstats.plerean.com.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 28
+POS_GENERAL 2042                
+POS_TIME 2711                
+POS_VISITOR 7956                
+POS_DAY 9260                
+POS_DOMAIN 3392                
+POS_LOGIN 3727                
+POS_ROBOT 3882                
+POS_WORMS 4308                
+POS_EMAILSENDER 4439                
+POS_EMAILRECEIVER 4582                
+POS_SESSION 9506                
+POS_FILESIZE 9882                
+POS_SIDER 9674                
+POS_FILETYPES 4717                
+POS_DOWNLOADS 4916                
+POS_OS 4994                
+POS_BROWSER 5183                
+POS_SCREENSIZE 5638                
+POS_UNKNOWNREFERER 5712                
+POS_UNKNOWNREFERERBROWSER 6070                
+POS_ORIGIN 6372                
+POS_SEREFERRALS 6508                
+POS_PAGEREFS 6686                
+POS_SEARCHWORDS 6898                
+POS_KEYWORDS 7050                
+POS_MISC 2375                
+POS_ERRORS 7109                
+POS_CLUSTER 3583                
+POS_SIDER_404 7211                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20250909161558 304 82577 14246505576074
+FirstTime 0
+LastTime 20250909161554
+LastUpdate 20250909190454 304 0 304 0 0
+TotalVisits 28                  
+TotalUnique 28                  
+MonthHostsKnown 0                   
+MonthHostsUnknown 28                  
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+DirectorSupport 0 0 0
+FlashSupport 0 0 0
+RealPlayerSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+JavascriptDisabled 0 0 0
+TotalMisc 0 0 0
+PDFSupport 0 0 0
+AddToFavourites 0 0 0
+QuickTimeSupport 0 0 0
+JavaEnabled 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 0 0 0 4 26 594434
+1 14 14 173530 2 4 4536
+2 10 10 127092 20 22 24948
+3 2 2 33194 4 12 75460
+4 28 28 347060 2 10 42266
+5 2 2 33194 0 2 2268
+6 2 2 33194 10 20 191278
+7 6 6 99582 2 26 563426
+8 4 4 66388 2 6 33194
+9 8 8 132776 18 30 24948
+10 0 0 0 0 0 0
+11 12 102 9192414 18 86 1584820
+12 8 76 5702230 0 12 2268
+13 2 38 4411172 4 4 66388
+14 0 0 0 2 4 33194
+15 0 0 0 2 28 565776
+16 8 80 8888732 0 8 0
+17 0 0 0 4 8 73110
+18 0 2 450104 0 2 2268
+19 0 0 0 2 6 35462
+20 2 2 33194 2 6 99498
+21 12 64 2205072 6 28 553724
+22 2 2 33194 0 2 2268
+23 0 0 0 2 62 506130
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 25 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 8
+us 64 64 872480
+ip 18 136 12442826
+zz 14 14 173530
+id 10 140 9451778
+ca 6 6 99582
+in 4 76 8822344
+se 4 4 66388
+ru 2 2 33194
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 25 first Hits must be first (order not required for others)
+BEGIN_ROBOT 8
+Googlebot/ 116 2775346 20250909113142 0
+bingbot/ 64 1762012 20250909004730 0
+no_user_agent 8 132776 20250907130630 0
+bot[\s_+:,\.\;\/\\-] 4 66388 20250903111547 0
+DuckDuckBot 4 66388 20250907174910 0
+checker 2 33194 20250901002721 0
+java 2 33194 20250908110224 0
+crawl 2 33194 20250908110224 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 7
+jpg 112 10320034 0 0
+png 18 2746332 0 0
+js 60 775320 0 0
+html 122 1753464 0 0
+css 48 2365740 0 0
+jpeg 80 13596262 0 0
+pdf 2 404970 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 1
+/img/apbd-2023.pdf 2 0 404970
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS ID - Hits - Pages 9
+ios_iphone 98 8
+linux 30 30
+android10 112 8
+Unknown 16 16
+android12 2 0
+macosx15 94 6
+win10 22 22
+android13 40 4
+win7 28 28
+END_OS
+
+# Browser ID - Hits - Pages
+BEGIN_BROWSER 20
+safari 98 8
+chrome124.0.0.0 14 14
+firefox136.0 2 2
+chrome139.0.0.0 96 24
+chrome91.0.4472.114 2 2
+safari18.6 54 2
+chrome134.0.0.0 2 2
+safari5.0.4 14 14
+firefox139.0 2 2
+chrome43.0.2357.124 14 14
+chrome119.0.0.0 2 2
+chrome125.0.6422.72 38 2
+chrome105.0.0.0 4 4
+chrome139.0.7258.158 2 0
+chrome112.0.5615.136 2 2
+Unknown 8 8
+chrome19.0.1084.9 2 2
+mozilla 8 8
+chrome123.0.6312.118 72 4
+chrome26.0.1410.63 6 6
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 4
+WhatsApp/2.23.20.0 20250909124243
+quic-go-HTTP/3 20250907214221
+Hello_from_Palo_Alto_Networks,_find_out_more_about_our_scans_in_https://docs-cortex.paloaltonetworks.com/r/1/Cortex-Xpanse/Scanning-activity 20250909050756
+Mozilla/5.0_(compatible;_ips-agent) 20250904023927
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 3
+quic-go-HTTP/3 20250907214221
+WhatsApp/2.23.20.0 20250909124243
+Hello_from_Palo_Alto_Networks,_find_out_more_about_our_scans_in_https://docs-cortex.paloaltonetworks.com/r/1/Cortex-Xpanse/Scanning-activity 20250909050756
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 90 90
+From1 0 0
+From2 6 10
+From3 4 4
+From4 22 338
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 2
+www_google_com 6 8
+google_com 0 2
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 25 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 2
+https://www.quora.com 2 2
+https://rho.id.rapidplex.com:2083 2 2
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 0
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 25 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 0
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 2
+403 2 2268
+404 156 176904
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referrer
+BEGIN_SIDER_404 23
+/sarang.php 2 -
+/ava.php 2 -
+/.well-known/traffic-advice 2 -
+/llms.txt 4 -
+/style.php 2 -
+/public/wsr2.php 2 -
+/r4f_1.php 2 -
+/good.php 2 -
+/nxac.php 2 -
+/wp-admin/new2.php 2 -
+/aa17.php 2 -
+/robots.txt 80 -
+/gfile.php 2 -
+/wp-update.php 2 -
+/about.php 2 -
+/ads.txt 24 -
+/ai.txt 4 -
+/wp-content/plugins/hellopress/wp_filemanager.php 6 -
+/uploaded_script.php 4 www.google.com
+/testas.php 2 -
+/ova.php 2 -
+/admin.php 2 -
+/chosen.php 2 -
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 25 first Hits must be first (order not required for others)
+BEGIN_VISITOR 28
+23.146.184.190 14 14 173530 20250905044555
+16.78.31.58 14 14 173530 20250904015426
+138.68.180.18 14 14 173530 20250908040206
+2404:c0:307c:43a3:ec59:b68e:e472:3058 8 88 7444320 20250909112145
+72.13.46.3 8 8 93898 20250904023927
+36.74.210.128 6 74 5669036 20250909124243
+34.123.28.109 6 6 66388 20250908215429
+138.197.164.144 4 4 66388 20250902090007
+164.92.150.130 4 4 66388 20250906085437
+159.89.171.151 4 4 66388 20250908095053
+159.223.99.197 4 4 66388 20250905164519
+143.110.255.86 4 4 66388 20250904071033
+2001:bc8:710:a280:dc00:ff:fe87:a243 2 2 33194 20250905123444
+110.138.81.84 2 54 2072296 20250903214657
+182.6.78.207 2 12 1710446 20250909112126
+198.235.24.57 2 2 33194 20250909050756
+2404:c0:3071:ec78:dd5:2231:10d0:e09e 2 40 4861276 20250908163645
+2a02:c206:3015:2326::1 2 2 33194 20250903035359
+109.172.93.98 2 2 33194 20250907210800
+2001:4ca0:108:42::7 2 2 33194 20250907214221
+103.144.18.52 2 38 4411172 20250909161554 20250909161554 /
+2001:4860:7:806::db 2 2 37648 20250909114514
+199.244.88.226 2 2 33194 20250906024758
+5.133.192.99 2 2 33194 20250908060103
+103.184.54.49 2 38 4411172 20250907133908
+34.221.243.159 2 2 33194 20250904075723
+93.158.90.74 2 2 33194 20250903224628
+216.128.143.60 2 2 33194 20250903201147
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 8
+20250902 4 4 66388 1
+20250903 8 60 2171878 4
+20250904 28 28 367010 4
+20250905 20 20 273112 3
+20250906 6 6 99582 2
+20250907 6 42 4477560 3
+20250908 28 66 5200776 5
+20250909 22 216 19305816 6
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 3
+30s-2mn 2
+5mn-15mn 1
+0s-30s 24
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 25 first Pages must be first (order not required for others)
+BEGIN_SIDER 6
+/ 72 1161790 25 19
+/about.html 16 301184 2 3
+/blog.html 10 62570 0 1
+/service.html 8 93640 0 0
+/contact.html 8 42168 0 3
+/project.html 8 92112 1 1
+END_SIDER
+
+# Payload Range - Payload Frequency
+BEGIN_FILESIZE 4
+1K-2K 212
+5K+ 558
+2K-5K 82
+0-44 4
+END_FILESIZE

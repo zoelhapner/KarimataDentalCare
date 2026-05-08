@@ -1,0 +1,6 @@
+[/home/plereanc/public_html]
+htaccess_list = 
+
+[/home/plereanc/nikiniku.com]
+htaccess_list = /home/plereanc/nikiniku.com/public/.htaccess,/home/plereanc/nikiniku.com/.htaccess
+

@@ -1,0 +1,139 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Tindakan;
+use App\Models\Kasus;
+use Illuminate\Http\Request;
+
+
+
+
+class TindakanController extends Controller
+{
+    // Menampilkan daftar tindakan
+    public function index()
+    {
+        $tindakans = Tindakan::with('kasus')->get(); // Menyertakan relasi kasus
+        return view('tindakan.index', compact('tindakans'));
+    }
+
+    // Menampilkan form untuk menambah tindakan
+    public function create()
+    {
+        return view('tindakan.create');
+    }
+
+    // Menyimpan data tindakan dan kasus
+    public function store(Request $request)
+    {
+        // Validasi input
+        $validated = $request->validate([
+            'nama_dokter' => 'required|string|max:255',
+            'nama_pasien' => 'required|string|max:255',
+            'tanggal_visit' => 'required|date',
+            'jam' => 'required',
+            'tindakan' => 'nullable|string',
+            'pemakaian_obat' => 'nullable|string',
+            'tindak_lanjut' => 'nullable|string',
+            'kasus' => 'required|array',
+            'kasus.*' => 'required|string',
+            'biaya' => 'required|array',
+            'biaya.*' => 'required|numeric|min:0',
+        ]);
+
+        // Menyimpan Tindakan
+        $tindakan = Tindakan::create([
+            'nama_dokter' => $validated['nama_dokter'],
+            'nama_pasien' => $validated['nama_pasien'],
+            'tanggal_visit' => $validated['tanggal_visit'],
+            'jam' => $validated['jam'],
+            'tindakan' => $validated['tindakan'],
+            'pemakaian_obat' => $validated['pemakaian_obat'],
+            'tindak_lanjut' => $validated['tindak_lanjut'],
+        ]);
+
+        // Menyimpan Kasus
+        foreach ($validated['kasus'] as $index => $kasus) {
+            Kasus::create([
+                'tindakan_id' => $tindakan->id,
+                'kasus' => $kasus,
+                'biaya' => $validated['biaya'][$index],
+            ]);
+        }
+
+        // Redirect setelah data berhasil disimpan
+        return redirect()->route('tindakan.index')->with('success', 'Tindakan dan kasus berhasil ditambahkan!');
+    }
+
+    // Menampilkan form untuk mengedit tindakan
+    public function edit($id)
+    {
+        $tindakan = Tindakan::with('kasus')->findOrFail($id);
+        return view('tindakan.edit', compact('tindakan'));
+    }
+
+    // Mengupdate data tindakan dan kasus
+    public function update(Request $request, $id)
+    {
+        // Validasi input
+        $validated = $request->validate([
+            'nama_dokter' => 'required|string|max:255',
+            'nama_pasien' => 'required|string|max:255',
+            'tanggal_visit' => 'required|date',
+            'jam' => 'required',
+            'tindakan' => 'nullable|string',
+            'pemakaian_obat' => 'nullable|string',
+            'tindak_lanjut' => 'nullable|string',
+            'kasus' => 'required|array',
+            'kasus.*' => 'required|string',
+            'biaya' => 'required|array',
+            'biaya.*' => 'required|numeric|min:0',
+        ]);
+
+        // Menyimpan perubahan Tindakan
+        $tindakan = Tindakan::findOrFail($id);
+        $tindakan->update([
+            'nama_dokter' => $validated['nama_dokter'],
+            'nama_pasien' => $validated['nama_pasien'],
+            'tanggal_visit' => $validated['tanggal_visit'],
+            'jam' => $validated['jam'],
+            'tindakan' => $validated['tindakan'],
+            'pemakaian_obat' => $validated['pemakaian_obat'],
+            'tindak_lanjut' => $validated['tindak_lanjut'],
+        ]);
+
+        // Mengupdate atau menambahkan kasus yang ada
+        $tindakan->kasus()->delete(); // Menghapus kasus lama yang ada
+        foreach ($validated['kasus'] as $index => $kasus) {
+            Kasus::create([
+                'tindakan_id' => $tindakan->id,
+                'kasus' => $kasus,
+                'biaya' => $validated['biaya'][$index],
+            ]);
+        }
+
+        // Redirect setelah data berhasil diperbarui
+        return redirect()->route('tindakan.index')->with('success', 'Tindakan dan kasus berhasil diperbarui!');
+    }
+
+    // Menghapus tindakan dan kasus terkait
+    public function destroy($id)
+    {
+        $tindakan = Tindakan::findOrFail($id);
+        $tindakan->kasus()->delete(); // Menghapus semua kasus terkait
+        $tindakan->delete(); // Menghapus tindakan
+
+        return redirect()->route('tindakan.index')->with('success', 'Tindakan dan kasus berhasil dihapus!');
+    }
+
+    //show detail tindakan
+    public function show($id)
+    {
+        // Ambil tindakan beserta kasus-kasusnya
+        $tindakan = Tindakan::with('kasus')->findOrFail($id);
+
+        // Kembalikan ke view show dengan membawa data tindakan dan kasus
+        return view('tindakan.show', compact('tindakan'));
+    }
+}

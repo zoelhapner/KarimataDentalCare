@@ -1,0 +1,8 @@
+--- 
+addon_domains: 
+  nikiniku.com: nikiniku.com.plerean.com
+main_domain: plerean.com
+parked_domains: []
+
+sub_domains: 
+  - nikiniku.com.plerean.com

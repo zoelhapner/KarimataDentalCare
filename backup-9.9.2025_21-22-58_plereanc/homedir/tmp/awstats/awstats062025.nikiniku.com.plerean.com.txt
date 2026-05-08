@@ -1,0 +1,942 @@
+AWSTATS DATA FILE 7.9 (build 20230108)
+# If you remove this file, all statistics for date 202506 will be lost/reset.
+# Last config file used to build this data file was /home/plereanc/tmp/awstats/awstats.nikiniku.com.plerean.com.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 28
+POS_GENERAL 2055                
+POS_TIME 2735                
+POS_VISITOR 26660               
+POS_DAY 33777               
+POS_DOMAIN 3587                
+POS_LOGIN 4135                
+POS_ROBOT 4290                
+POS_WORMS 4814                
+POS_EMAILSENDER 4945                
+POS_EMAILRECEIVER 5088                
+POS_SESSION 34578               
+POS_FILESIZE 38317               
+POS_SIDER 34786               
+POS_FILETYPES 5223                
+POS_DOWNLOADS 5405                
+POS_OS 5453                
+POS_BROWSER 5772                
+POS_SCREENSIZE 7433                
+POS_UNKNOWNREFERER 7507                
+POS_UNKNOWNREFERERBROWSER 7964                
+POS_ORIGIN 8193                
+POS_SEREFERRALS 8332                
+POS_PAGEREFS 8495                
+POS_SEARCHWORDS 8643                
+POS_KEYWORDS 8795                
+POS_MISC 2397                
+POS_ERRORS 8854                
+POS_CLUSTER 3991                
+POS_SIDER_404 9026                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20250701000202 15 2562 17361623654096
+FirstTime 20250601033633
+LastTime 20250630224841
+LastUpdate 20250701191626 15 0 14 0 0
+TotalVisits 233                 
+TotalUnique 173                 
+MonthHostsKnown 0                   
+MonthHostsUnknown 176                 
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+TotalMisc 0 0 0
+JavascriptDisabled 0 0 0
+QuickTimeSupport 0 0 0
+PDFSupport 0 0 0
+FlashSupport 0 0 0
+JavaEnabled 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+RealPlayerSupport 0 0 0
+DirectorSupport 0 0 0
+AddToFavourites 0 374 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 16 16 57882 172 246 1261170
+1 16 18 216570 104 182 1965340
+2 26 26 58872 50 102 447212
+3 8 8 29340 54 118 482026
+4 16 18 216680 54 96 291564
+5 52 66 3850380 72 154 1064536
+6 2 2 7258 58 108 568924
+7 60 66 3070968 116 168 354582
+8 152 156 4169936 82 138 480738
+9 126 126 4122738 80 134 681132
+10 48 62 3656626 44 90 242348
+11 66 66 1839600 36 88 337022
+12 102 114 7530666 66 126 679606
+13 94 124 11130972 44 86 568912
+14 56 56 1592386 8 60 181386
+15 130 162 11600550 96 172 3614762
+16 50 50 1505672 22 64 270276
+17 78 84 3002260 30 72 534768
+18 130 156 11040824 52 116 620586
+19 62 74 4735040 24 72 210606
+20 98 106 5355138 42 60 246080
+21 34 34 875622 56 128 644570
+22 6 6 21620 28 74 215704
+23 36 44 2958656 48 138 605770
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 25 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 23
+id 844 894 47182886
+us 232 284 13897612
+ip 200 218 7023512
+in 34 62 7300544
+se 22 22 79278
+ru 20 20 72832
+ca 18 18 65588
+gb 14 18 371372
+kw 14 14 50960
+ua 10 16 1629200
+eg 8 8 27006
+jp 8 26 4807634
+au 8 8 28836
+fr 6 6 14530
+ro 4 4 14880
+it 4 4 14404
+ir 4 4 14418
+de 4 4 14474
+il 2 2 7216
+tr 2 2 7272
+kz 2 2 7384
+zz 2 2 7202
+cn 2 2 7216
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 25 first Hits must be first (order not required for others)
+BEGIN_ROBOT 10
+Googlebot/ 160 3909800 20250630210020 52
+facebookexternalhit/ 134 3120 20250630195426 134
+unknown 66 1536 20250630044136 66
+bingbot/ 40 1629552 20250630094339 24
+bot[\s_+:,\.\;\/\\-] 34 3229650 20250622233504 10
+no_user_agent 26 94396 20250630130847 0
+java 20 73112 20250630174717 0
+survey 8 29382 20250608000623 0
+checker 6 21998 20250624000240 0
+Go\-http\-client/ 6 21648 20250628195911 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 6
+js 64 4920630 0 0
+png 56 33086404 0 0
+Unknown 910 38275878 0 0
+css 56 4362012 0 0
+php 2 7340 0 0
+html 552 1993992 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 0
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS ID - Hits - Pages 18
+android10 232 220
+win7 30 30
+winnt 2 2
+androidnougat 8 4
+ios_iphone 160 112
+win8 2 2
+Unknown 86 80
+win11 6 2
+win8.1 4 4
+winxp 2 2
+linuxubuntu 4 2
+androidmarshmallow 2 2
+linux 148 142
+macosx15 34 26
+android 2 2
+android12 18 6
+android13 2 2
+win10 898 824
+END_OS
+
+# Browser ID - Hits - Pages
+BEGIN_BROWSER 81
+safari17.2.1 2 2
+chrome136.0.0.0 42 40
+chrome136.0.7103.113 2 2
+safari15.4 24 6
+chrome131.0.0.0 18 10
+chrome134.0.0.0 2 2
+firefox63.0 2 2
+chrome117.0.5938.132 16 4
+opera80.4.4244.7786 2 2
+firefox114.0 10 8
+firefox67.0 2 2
+chrome86.0.4240.111 2 2
+netscape5.0 2 2
+firefox115.0 2 0
+firefox48.0 2 2
+firefox139.0 2 2
+chrome112.0.5615.136 2 2
+chrome105.0.0.0 14 14
+safari 4 4
+firefox59.0 2 2
+iphone 4 4
+chrome37.0.2049.0 2 2
+chrome83.0.4103.97 12 12
+chrome74.0.3729.169 8 8
+chrome70.0.3538.102 4 4
+chrome130.0.0.0 6 6
+chrome20.0.1132.57 2 2
+chrome101.0.4951.54 4 4
+firefox115 2 2
+chrome75.0.3770.100 4 4
+firefox137.0 24 24
+chrome68.0.3440.106 4 4
+chrome104.0.0.0 8 8
+msie11.0 4 4
+chrome119.0.0.0 2 2
+chrome112.0.0.0 2 2
+safari17.8 14 6
+chrome135.0.0.0 30 30
+chrome108.0.5359.124 2 2
+edge18 2 2
+chrome83.0.4103.61 2 2
+chrome80.0.3987.162 2 2
+chrome122.0.0.0 2 2
+chrome72.0.3626.121 2 2
+opera119.0.0.0 8 2
+chrome117.0.0.0 2 2
+chrome80.0.3987.149 4 4
+chrome79.0.3945.117 2 2
+safari5.0.4 18 18
+chrome120.0.0.0 2 2
+chrome137.0.0.0 924 860
+chrome134.0.6998.166 6 2
+chrome125.0.0.0 4 4
+chrome138.0.0.0 50 50
+chrome91.0.4472.114 6 6
+chrome115.0.0.0 2 2
+firefox51.0 4 4
+chrome127.0.0 2 2
+firefox61.0 2 2
+safari18.4 76 60
+opera99.0.0.0 2 2
+Unknown 58 58
+chrome121.0.0.0 4 4
+chrome91.0.4472.124 8 8
+chrome58.0.3029.110 2 2
+mozilla 26 20
+chrome79.0.3945.79 8 2
+firefox124.0.0 2 2
+chrome114.0.0.0 22 10
+chrome81.0.4044.113 2 2
+edge90 2 2
+firefox65.0 4 4
+chrome116.0.0.0 2 2
+chrome102.0.0.0 2 2
+firefox126.0 2 2
+firefox136.0 20 20
+firefox50.0 4 4
+safari18.5 38 32
+chrome108.0.0.0 8 8
+opera89.0.4447.51 2 2
+chrome59.0.3071.125 8 4
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 7
+Mozilla/5.0_(compatible;_Let's_Encrypt_validation_server;__https://www.letsencrypt.org) 20250621052832
+Python/3.8_aiohttp/3.9.5 20250622090455
+Mozilla/5.0_researchscan.comsys.rwth-aachen.de 20250605194505
+Mozilla/5.0_(compatible;_Dataprovider.com) 20250605155359
+WPCheckBot 20250614212228
+Cpanel-HTTP-Client/1.0 20250621052228
+Python/3.10_aiohttp/3.11.14 20250603195451
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 4
+Python/3.8_aiohttp/3.9.5 20250622090455
+WPCheckBot 20250614212228
+Cpanel-HTTP-Client/1.0 20250621052228
+Python/3.10_aiohttp/3.11.14 20250603195451
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 598 624
+From1 2 2
+From2 2 2
+From3 0 0
+From4 862 1012
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 1
+www_google_com 2 2
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 25 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 0
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 0
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 25 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 0
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 7
+301 242 78052
+302 346 124076
+408 2 95916
+400 2 7216
+419 12 79308
+403 30 198090
+404 1284 6972768
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referrer
+BEGIN_SIDER_404 261
+/hmw/ztb_bao/uploaded/i4/2206564831631/O1CN01mKaxL11Nv2a3XsXFf_!!0-item_pic.jpg_220x220.jpg 2 -
+/.well-known/acme-challenge/9EWLwR_6L3nx4KrDxiiWMFAhGWIiHX2ImTPUvQDQsnY 2 -
+/.well-known/acme-challenge/kUxp4doTW-mdfyheJzcflo7Nusa5tKMnDZOdAAZ2QAU 2 -
+/.well-known/acme-challenge/ZnhiJ3usQdWDEy9uKfNP5nHIvRJzxaqkBHAbwFZhdms 2 -
+/.well-known/acme-challenge/Yd775VG1N3vKoY96Bx3kc-GCEUWJilBlV2jIxxz0o1c 2 -
+/wp-content/plugins/evil-file-manager/fm.php 2 -
+/hmw/ztb_bao/uploaded/i1/730693260/O1CN01RtxC6m1Zx7eEUsVXY_!!730693260.jpg_220x220.jpg 2 -
+/robots.txt 4 -
+/wp-content/plugins/file-manager/elfinder.php 2 -
+/.well-known/acme-challenge/wDHjlwHKHxdBXQTQ40QsovFPGx5zJ-XdKP9B4TE32WE 2 -
+/.well-known/acme-challenge/QyxXK8H2I3JBFgNoZ1wH__t7okrhC-GjKMomjGux2Tk 2 -
+/.well-known/acme-challenge/GjqJN1_LMpQQe4m2v1x0dPrFCXw27anEZriei31AdMA 2 -
+/wp-content/uploads/Dozy-Rocking-Chair.jpg 4 -
+/hmw/ztb_bao/uploaded/i4/2810710192/O1CN017UG8qE1DHyXdNxNUx_!!0-item_pic.jpg_220x220.jpg 2 -
+/.well-known/acme-challenge/aM4C9DckIF1Ed3ZlWvVlfoybX5lCr2XlcnJjpAAlIpE 2 -
+/uploaded_script.php 4 www.google.com
+/app/system/include/static2/vendor/x-editable/images/loading.gif 8 http://nikiniku.com/app/system/include/static2/vendor/x-editable/images/loading.gif
+/hmw/ztb_bao/uploaded/i3/371788017/O1CN01295pj4yuZLKrLgF_!!371788017.jpg_220x220.jpg 2 -
+/sitemap.xml.gz 4 -
+/hmw/ztb_bao/uploaded/i1/926619446/O1CN01MrysWD2JeJtjNFBQj_!!926619446-0-picasso.jpg_220x220.jpg 2 -
+/js/fm.php 2 -
+/img/carmoney.jpg 2 https://www.google.com/
+/hmw/ztb_bao/uploaded/i1/2704777840/O1CN01UP76k927mllNGq2GZ_!!2704777840.jpg_220x220.jpg 2 -
+/wp-admin/css/ 6 binance.com
+/.well-known/acme-challenge/25Wm8z4ogysm9JgPMem6ZrO4_kB7syeKwjwHiqIHEd0 2 -
+/.well-known/acme-challenge/Xs4dYTPOKp16rlL0ZnynLd1afUW_PTG0r1zxES99ifo 2 -
+/public/living-room/elea-contemporary-wooden-wall-unit-design-by-hulsta 4 -
+/wp-content/plugins/wp-file-manager/ajax_upload.php 2 -
+/public/bar-furniture/leaf-modern-bar-stool-design-by-velichko-velikov 2 -
+/.well-known/acme-challenge/R1uyByvwsuCYbVt3vpt62sSa7zjNdrmb1ygC3vRAs8o 2 -
+/.well-known/acme-challenge/5zqL1-c-pmNmjqovIrlQ6Z3u_qcxu9IMl51oGtqPZ8Y 2 -
+/wp-content/uploads/2012/06/Entertainment-Wall-Units-from-Lazzoni.jpg 18 -
+/nteditor/net/controller.ashx 2 -
+/wp-content/upgrade-temp-backup/wp-login.php 2 -
+/.well-known/acme-challenge/iwRtuDjJbUjnU5P8zcp09x8R_JsqjuUZ1VVoXystvBc 2 -
+/.well-known/acme-challenge/5E9mfmRnpokSklVGGhzklbdKlpGHt-mlhI2dzs4wwcc 2 -
+/hmw/ztb_bao/uploaded/i2/TB13MYCLXXXXXXSXXXXXXXXXXXX_!!0-item_pic.jpg_220x220.jpg 2 -
+/.well-known/acme-challenge/oNdLD7u3LGzMvk_7628ISUBFaDRM9Jpa3rMSckhQ7R8 2 -
+/.well-known/acme-challenge/oW6_GB3L8WJ1dqZawKPmqKSuXIGa-vg08OC5zw_Uwy4 2 -
+/main 8 -
+/hmw/ztb_bao/uploaded/i3/2736759021/O1CN01sYnJk42GVfNvqe8lS_!!2736759021.jpg_220x220.jpg 2 -
+/.well-known/acme-challenge/adDLMMENjZ8Fr-63q3S6cwJiBjr1klIwXHMGRsXTAdI 2 -
+/wp-content/uploads/2012/04/Bari-Wall-Unit-System-from-Icomobili.jpg 18 -
+/wp-content/themes/astra/inc/ki1k.php 2 -
+/.well-known/acme-challenge/vy2S1MMmGMehyQdp69Inhff6baGv1Qt3Yd0hJ1LZZWg 2 -
+/wp-content/uploads/Linea-Join-Computer-Desk.jpg 24 -
+/wp-content/plugins/responsive-filemanager/filemanager.php 2 -
+/apple-touch-icon-120x120-precomposed.png 8 -
+/public/outdoor-furniture/modern-outdoor-furniture-multi-c-bench-from-green-furniture/attachment/multi-c-outdoor-bench-5 2 -
+/.well-known/acme-challenge/FlilT7LQI8EZdr0NVlzHz9H-tS67jlXqs4o0BgR09oA 2 -
+/.well-known/acme-challenge/r23HuwrfrnoRQV0Kq2HGjtjOZCyXCUH2k7luyooOurk 2 -
+/wp-content/uploads/coffee-table.jpg 2 -
+/.well-known/acme-challenge/M2hsTRg8F_qe0RC3Jw_wfa2EGaNUPqF-K22Bjk51RCM 2 -
+/sitemap.xml 6 -
+/.well-known/acme-challenge/hIEP6EMSH1g5vV6_wtH2HURfJoBuZ7XtTU2P79mdlLs 2 -
+/.well-known/acme-challenge/vVOXp-JZvdbrHifcNDoK_7xQ2585OWTDLQnmctgk88Q 2 -
+/.well-known/acme-challenge/tpUj2P1KUf-VZkkwAmIzSn9qTDZQIegJhFEXA9fDvC8 2 -
+/wp-content/uploads/SETUP-Sofa-SOFTLINE.jpg 24 -
+/.well-known/acme-challenge/4QYuByOYDL6Jm3-fWjDMpWHGSX6QIx6rui7CLvgZEkg 2 -
+/.well-known/acme-challenge/p3XFNhtKNIlTN2jDho8Ld4N0yXpajq_NC1rWzm4DQ2Y 2 -
+/.well-known/acme-challenge/GyHZmDMkpTlPQr4fod_SZD6UVx79FlhP0oVHhkmMqJ8 2 -
+/public_html.zip 2 -
+/public/seating/pipedream-modern-public-seating-system-from-lyx 2 -
+/.well-known/acme-challenge/aqbl2yJ5isnodiPZZ5z9Ri1X0PhNpHRI1uspIVJZ4-Y 2 -
+/.well-known/acme-challenge/Dj45fh8BOHMeSwNr9HIHYXdUn_TLtDwTSBVDDkZ0MAo 2 -
+/.well-known/acme-challenge/jHnonQYuk5DCZX7xhQSakf3162XgZHHB7EqXOgsZnAU 2 -
+/wp-content/plugins/wp-file-manager/lib/php/connector.php 2 -
+/hmw/ztb_bao/uploaded/i1/2265017979/TB2.Y6Dey0TMKJjSZFNXXa_1FXa_!!2265017979.jpg_220x220.jpg 2 -
+/wp-includes/js/jquery/jquery.js 44 -
+/.well-known/acme-challenge/FQa1KuIqHVIbGGXqG51ZWYStc-vhvJGc0ksaOLDyXYo 2 -
+/hmw/ztb_bao/uploaded/i2/1931973489/O1CN01UrWVJt1be0XYNdNGx_!!1931973489.jpg_220x220.jpg 2 -
+/.well-known/acme-challenge/s97tBlCDZ61dogQNCOd0_lwXfQWGYHI2YjyI2KiV9fM 2 -
+/new 8 -
+/wp-content/plugins/file-manager/filemanager.php 2 -
+/hmw/ztb_bao/uploaded/i1/4204363195/O1CN01TfZ8WG1ZTM5rXetYe_!!4204363195-0-picasso.jpg_220x220.jpg 2 -
+/wp 8 -
+/.well-known/acme-challenge/7AKeG3EnGt8BjpO7mIdeWgJO8XYLoVSUB9tSSrZGO3A 2 -
+/wp-content/plugins/hellopress/wp_filemanager.php 4 -
+/index/ajax/lang 2 -
+/.well-known/acme-challenge/HYlqdQRCYtCYMkkchNaCbmFX98SRwS77oT3HKMQO99Q 2 -
+/.well-known/acme-challenge/KqDaZOoc2yef69_cqxJNyfrXKbeZvhCr1zNQebvnikU 2 -
+/.well-known/acme-challenge/BzWfuTGwLfuB5vRSDVO-Pgf2QMzyvyAVDg_BfwfdrPg 2 -
+/hmw/ztb_bao/uploaded/i3/TB1RJUPGpXXXXXXapXXXXXXXXXX_!!0-item_pic.jpg_220x220.jpg 2 -
+/wp-content/themes/cay-van-phong/filemanager.php 2 -
+/apple-touch-icon-120x120.png 8 -
+/hmw/ztb_bao/uploaded/i1/2366199111/O1CN01LCuoM52HAtBBEl1zQ_!!2366199111.jpg_220x220.jpg 2 -
+/.well-known/acme-challenge/6IVZOTSaEv4iBmhrOKuSKdLkuZ3JQkvzjU7C3K1Mzb8 2 -
+/.well-known/acme-challenge/o7pwr-uXmevxXCyvnADy6cpBG_Tcd2aUIpoUCfJAQkQ 2 -
+/wp-content/plugins/wp-file-manager/upload.php 2 -
+/.well-known/acme-challenge/pKt3HDyCRT-lA3wwIQ7xSQWCzbwZXyttKgfb8qbHG64 2 -
+/wp-content/plugins/wp-file-upload/file-uploader.php 2 -
+/wp-includes/Text/network.php 2 -
+/.well-known/security.txt 2 -
+/.well-known/acme-challenge/8dJF6xU0BKCHu0gjq2ps4n46WVPzkbszrMD6SUEgip4 2 -
+/xmsimg/zhaozu2.gif 4 -
+/.well-known/acme-challenge/r6m9GU8CeqQoTGx6pe-nKXsLeA8RQY5c6RFevevDkAc 2 -
+/.well-known/acme-challenge/mO14TSt9JGqd5aFj0yyXKB3cUH3AkDnFgbs3_sU2SbQ 2 -
+/wp-content/uploads/2012/07/Wooden-Rectilinear-Coffee-Table-by-Enrico-Konig.jpg 4 -
+/.well-known/acme-challenge/O_12PfyyulHz9dwZWdDnNggYUwDgGUBwKnhixxHSbOM 2 -
+/public/contact 6 -
+/.well-known/acme-challenge/rKFVfmxPWfE5Lt7P5EPvs-3cRNnWiBEhKBxQV-PEORA 2 -
+/hmw/ztb_bao/uploaded/i2/1109787674/O1CN01l3awBE26Yk56xHg9W_!!0-item_pic.jpg_220x220.jpg 2 -
+/.well-known/acme-challenge/yzSKucbAa9xCtDm0FF4fgsNPSnphIxBa5fFLevW4yw8 2 -
+/public/coffee-table/modern-and-unique-glass-coffee-table-with-tree-branch-as-leg-by-sebastian-errazuriz 4 -
+/bc 8 -
+/hmw/ztb_bao/uploaded/i3/75371877/O1CN01ZgZx4K1PjhvMPdTSu_!!75371877.jpg_220x220.jpg 2 -
+/wp-content/plugins/responsive-filemanager/connectors/php/filemanager.php 2 -
+/media/system/js/core.js 44 -
+/wp-content/plugins/seoplugins/index.php 2 -
+/wp-content/plugins/elFinder/php/connector.php 2 -
+/wp-content/uploads/JSP-Industries-Modena-Entertainment-Center.jpg 8 -
+/.well-known/acme-challenge/cDA5TE-1qzqP59A-dOrQ-rbFuEl3UPJCd3FGGR6WDhI 2 -
+/wp-content/uploads/2012/04/Benjamin-Cherner-Kids-Table-and-Chairs.jpg 12 -
+/wp-content/uploads/Pullman-pendant.jpg 26 -
+/.well-known/acme-challenge/nmfljK4xfxWS1GXnySiTYmVzTiqXTPFH-l5NR1a07ng 2 -
+/.well-known/acme-challenge/6Qofxl3Hm6zDjkA8fG2R8kY3LpG1b8iXw0DXdUDLGZg 2 -
+/wp-content/plugins/wp-file-manager/shell.php 2 -
+/fm.php 2 -
+/.well-known/acme-challenge/2Bk7Lhkv5q4WKTpuG5bozADB5DA-XRqp0MdLmJBx9WM 2 -
+/wp-content/uploads/Yin-Yang-Couple-Tub-3.jpg 2 -
+/xmlrpc.php 6 -
+/.well-known/acme-challenge/vhCUGH4E3gm79p2oCmvmi69y-1-wcYGETVnJM0x4hM4 2 -
+/.well-known/acme-challenge/m5KHlGTi27kj45ID9YDUqieV983Y1O4IASX3YM8EV-s 2 -
+/.well-known/acme-challenge/N7sgrjiPAuB-vi6fZUmLCdKOe4zHPl_azE8FdDyi-L8 2 -
+/public/ui/met/images/dt-9.gif 8 http://nikiniku.com/public/ui/met/images/dt-9.gif
+/sitemaps.xml 4 -
+/hmw/ztb_bao/uploaded/i2/2201433064392/O1CN01ezb8WC1iJa6DTQ5Oy_!!0-item_pic.jpg_220x220.jpg 2 -
+/hmw/ztb_bao/uploaded/i1/2244590022/O1CN01F5ijSu1C27Famo9lR_!!0-item_pic.jpg_220x220.jpg 2 -
+/.well-known/acme-challenge/wKWU4mZolJVxroTeg1ZW6MuvLDcgJU259zoWAXZM-rk 2 -
+/api/actuator/env 2 -
+/.well-known/acme-challenge/kNiIMsVZstAOImiCawYRVlECzbCabT8ZPFRtwwIZgII 2 -
+/wp-content/uploads/Tetris-Modern-Bio-Fireplace.jpg 6 -
+/.well-known/acme-challenge/u9_ldsF8PC81ZM4sR6DsxlCJT7wGTZUsAP3C6AZF6ME 2 -
+/.well-known/acme-challenge/wtCvpEKJZWcYFUvVLMLG_qme_fzUsr-dW83rftBKq9A 2 -
+/.well-known/acme-challenge/WQBmg_GJP-_it9STQJNTGlE-WAu6wlRh-6TpBFHdke8 2 -
+/wp-content/uploads/Synthesy-Sliding-Glass-Doors-7.jpg 38 -
+/.well-known/acme-challenge/SbDYD6LCYKiOfU37gEQ73aCFRFMtjcEKe0HOCmcTI4I 2 -
+/.well-known/acme-challenge/Cw6eaMLCpa4K9YopW2LLbJR-0ZpydPzb4Xz_82yxbro 2 -
+/hmw/ztb_bao/uploaded/i1/268483703/O1CN01SgfMzl1dE1IivJmWV_!!0-item_pic.jpg_220x220.jpg 2 -
+/.well-known/acme-challenge/qGnxwpY8B3E-EJxoKmBTZCnpEQJ5mdoxqHo7LEnghBk 2 -
+/hmw/ztb_bao/uploaded/i1/648696937/O1CN01zgr4Dl217C9iUUFSo_!!0-item_pic.jpg_220x220.jpg 2 -
+/.well-known/acme-challenge/-x7f62K1cNikTFLi6veHGhEynuSAVoVOoMF-rCBkpPg 2 -
+/apple-touch-icon.png 8 -
+/.well-known/acme-challenge/7ZQK5FH3N-Whaw0ilKzTFJK2ZIqYWYmiqsJMPTXkwHo 2 -
+/.well-known/acme-challenge/p_2bqddhfghS_6q0VPrWBY8iKL2gxXHsiCttA8NJz1k 2 -
+/hmw/ztb_bao/uploaded/i1/2020505983/O1CN01ArT0Mo1u4GAq06VRS_!!0-item_pic.jpg_220x220.jpg 2 -
+/wp-content/plugins/advanced-file-manager/filemanager.php 2 -
+/feed 2 -
+/ty.php 2 -
+/.well-known/acme-challenge/JvloPl56Br03kJ_ZNbTPjr74Fc10SbYkUNoKGS5XfTY 2 -
+/hmw/ztb_bao/uploaded/i3/238092107/O1CN01ZWrlBP1RR3AapM2jw_!!0-item_pic.jpg_220x220.jpg 2 -
+/.well-known/acme-challenge/sAXnfINGrzY1d6FYRJ73Obs2ZUn87TFqDLiq7mj-E38 2 -
+/wp-content/uploads/Yin-Yang-Couple-Tub.jpg 2 -
+/.well-known/acme-challenge/WWrKg6m5wkb2DuxlMPOYWmE2HHN9AyqF5xXNMH4mvvY 2 -
+/wp-content/plugins/wp-fileupload/file-upload.php 2 -
+/bk 8 -
+/hmw/ztb_bao/uploaded/i1/869151048/O1CN011Jc1WpG4FOySs1r_!!869151048.jpg_220x220.jpg 2 -
+/wp-content/uploads/2012/07/Modern-Wall-Units-from-Alf.jpg 18 -
+/security.txt 2 -
+/.well-known/acme-challenge/nMQcZqnjTWmzyeoFLCM_Sk4B-6sbv4k6UZjm0dw6h2Y 2 -
+/backup 8 -
+/.well-known/acme-challenge/7I7uInneZZ5UUN-IFbSZrj0tTaEXWfcKX1FPUXeKkd0 2 -
+/wp-content/uploads/2012/06/Wall-Entertainment-Units-Design-from-Lazzoni.jpg 12 -
+/hmw/ztb_bao/uploaded/i4/75371877/O1CN013mQl2A1Pjhty5Q2Yi_!!75371877.jpg_220x220.jpg 2 -
+/blurbs.php 2 -
+/.well-known/acme-challenge/kYUx90w-cBCe0rk7WTXAllLwXHMYCEBSjLccMfFo5DQ 2 -
+/.well-known/acme-challenge/dkpBxv9NG9JRJMmdnoeEv7fB4YmXlN45Z1G7bZXRm2I 2 -
+/ads.txt 36 -
+/llms.txt 2 -
+/wp-content/uploads/2012/07/Wall-Unit-Design-Ideas-from-Momentoitalia.jpg 2 -
+/.well-known/acme-challenge/EOOm4wNz4SQM8GsL0TmK00hJRwSYzz7ACVw7ceMkEXE 2 -
+/public/about 4 -
+/hmw/ztb_bao/uploaded/i1/800118141/O1CN01kFBsDv2A0d1LQOHXv_!!800118141.jpg_220x220.jpg 2 -
+/.well-known/acme-challenge/NNebmktXwhYeWbxoxteoa3p-0O3kXXtrH4dgOfoS0nU 2 -
+/hzdzy/images/dot.gif 2 -
+/hmw/ztb_bao/uploaded/i3/738176387/O1CN01tbyi141x3IKTR9UgQ_!!0-item_pic.jpg_220x220.jpg 2 -
+/hmw/ztb_bao/uploaded/i2/1037153112/O1CN01IMV7Fr1YrL5ZuOesl_!!0-item_pic.jpg_220x220.jpg 2 -
+/wordpress 8 -
+/sitemap.txt 4 -
+/.well-known/acme-challenge/bV0DuMqLjEpPPW7ou9EvE0ihdtWj_r7icPZxIL9X3KU 2 -
+/wp-content/uploads/2012/02/Italian-Kitchen-Domina.jpg 2 -
+/hmw/ztb_bao/uploaded/i1/2114571309/O1CN01M9HbE71LXZ1NGZ4N3_!!2114571309.jpg_220x220.jpg 2 -
+/hmw/ztb_bao/uploaded/i1/2122620439/O1CN01QENfIw1F76NtnsKVp_!!0-item_pic.jpg_220x220.jpg 2 -
+/WordPress/wp-admin/includes/zmFM.php 2 -
+/wp-content/uploads/2011/10/Contemporary-Bed-Design-from-Haiku.jpg 18 -
+/.well-known/acme-challenge/Y4RKwaXAIwYwpyd2uXSEulks9LHgcQDXEHipuS5EFwo 2 -
+/.well-known/acme-challenge/iQ_gIYleNfvjZi4yJ1vhqlAzEmsEi9xJbfERIDxOIiY 2 -
+/.well-known/acme-challenge/2Qdw264fIfzxZlMhuwyCkg7vCDiqYdAZSUjzJ_yQXsU 2 -
+/wp-content/uploads/2012/06/Modern-Wall-and-Entertainment-Units-from-Lazzoni.jpg 10 -
+/wp-content/plugins/wp-file-manager/file-manager.php 2 -
+/default.php 2 -
+/public/feed 4 -
+/public/office/the-open-plan-office-workstation-design-from-ergoform 2 -
+/.well-known/acme-challenge/haZlxMdB9uYqZRR39jmctz2GVwYc-wmPE_X1AX_lu4c 2 -
+/wp-content/plugins/ckfinder/ckfinder.php 2 -
+/wp-content/uploads/2012/07/Italian-Dining-Table-President-by-Vintage.jpg 2 -
+/.well-known/acme-challenge/oe3E2FauvyAmfEULaP-CSZEO-lrqGJ6HPyODVjd07sk 2 -
+/https%3A/fonts.bunny.net 4 -
+/.well-known/acme-challenge/eKwVw89FA3FYA7GafHPlCdBaHEYuQrldF99gcVmDCLE 2 -
+/.well-known/acme-challenge/HuPwLjhiVhmXUv7yZZGrx4fYpmg6ILk1EhN2n_SyX3U 2 -
+/.well-known/acme-challenge/3FVR-phBAWkS51PpFjKfamRpGP_s8Bgb09EOTsUt3lc 2 -
+/.well-known/acme-challenge/ntBB9-ricNiwAxTfAOMfFy2A_Md-PcGHMT7VfmeFTXs 2 -
+/wp-content/uploads/2011/10/Platform-Bed-Design-from-Haiku.jpg 20 -
+/.well-known/acme-challenge/N7jLGKuabf1l1BqkgiYJES5EaIMuknEogpodBFQ3oSg 2 -
+/public/fireplace/modern-outdoor-fireplace-design-by-anne-colombo/attachment/design-outdoor-fireplace-by-anne-colombo 4 -
+/hmw/ztb_bao/uploaded/i4/3018572263/O1CN01emGKFg1SaUxOQIbQo_!!0-item_pic.jpg_220x220.jpg 2 -
+/wp-content/uploads/2011/10/Japanese-Style-Beds-from-Haiku.jpg 20 -
+/.well-known/acme-challenge/U9wxelBckEWZu-0NMoJXsYH6zS_FjU_qraK546hgcVQ 2 -
+/hmw/ztb_bao/uploaded/i1/3900098120/O1CN01kNNN9029r0cMe8rih_!!0-item_pic.jpg_220x220.jpg 2 -
+/.well-known/acme-challenge/Y7LbrgVeoMdxpe6Np1FQblE0-TndyVAaTbOSml4QVjM 2 -
+/.well-known/acme-challenge/cHln9CtuHi-WF0ptorZmsAF26ILFACmR5FWiilyOmYg 2 -
+/.well-known/acme-challenge/IxESzV0GFQbxx2wGY5YExfpJTgnrUdJyfYnufjBuiv8 2 -
+/.well-known/acme-challenge/z5TKVH3WDAQLeNYN9qdNCYlw5lC2G5Gt5ESrd-7AmQU 2 -
+/public/living-room/the-mus-unique-modular-sofa-by-francesc-rife-for-koo-international/attachment/modular-mus-sofa-by-francesc-rife-1 4 -
+/humans.txt 2 -
+/.well-known/acme-challenge/oOcCIEDMyaufFUdh-5uu56PY0NlFooiqEBf-FnkTBnU 2 -
+/hmw/ztb_bao/uploaded/i1/2873514881/O1CN01CJ5Rqf1lvXmXZewuR_!!0-item_pic.jpg_220x220.jpg 2 -
+/.well-known/acme-challenge/KAAb-NVT_hqkAHT18Qy7fegxMvIynPHFZjZPYmaG0fY 2 -
+/.well-known/acme-challenge/3QFTqhYn5ENu8k0g8cZzo8gpbZxO3qTg7bSTnoqWSsY 2 -
+/.well-known/acme-challenge/-BODQHc3QWmNxUHcbyt6TGQe3YCdcwouNSGwA0PTCTs 2 -
+/.well-known/acme-challenge/gUaupm3rRCN_nNc7X1n82-K8qOSTqB7FAfpdOjnY-Jo 2 -
+/hmw/ztb_bao/uploaded/i2/3537820557/O1CN01Vg1GVU1Fz9B169RZH_!!0-item_pic.jpg_220x220.jpg 2 -
+/.well-known/acme-challenge/-LDLtpqctnlcJtlYXRt0ixEO2ajH9YhWAdqsjmyuCkA 2 -
+/.well-known/acme-challenge/n8Pp6fq3YlVyBtac8LL-G1DclR2dO_asLUaBSLA0iZI 2 -
+/plus/img/df_dedetitle.gif 6 http://nikiniku.com/plus/img/df_dedetitle.gif
+/.well-known/acme-challenge/QueekIYYfwaSJYZ7tksq3oKm8v0X7HqC2928iFAzqKY 2 -
+/.well-known/acme-challenge/w4Gg1KmOLQcWL_qtA0PLPBNOldTT4cnqJRTVQNGsnf0 2 -
+/web.zip 2 -
+/.well-known/acme-challenge/84U4Rd1L-r7UjxLQqiwByqOTUSYJAYSDtvihtETLUuI 2 -
+/.well-known/acme-challenge/fCVrhnKo3V3-GJd4Upy6gcAlI6gB-P7w8dYkQtOHGYI 2 -
+/wp-content/uploads/2012/07/Amazing-Shell-House-by-Artechnic-Architects-7.jpg 10 -
+/.well-known/acme-challenge/YGsRKtBnG9NLFyqVXbaFXnHd_cQfxq3TFjBfRanW1F4 2 -
+/.well-known/acme-challenge/aojUNhF6cbgSWAU1wwY2Z4kXhIN3wj4X9_Ktt1_X4d4 2 -
+/home 8 -
+/.well-known/acme-challenge/eg_FtbFIdxEcR-9dG1lM9ailzz4NVuKJz870bOnowu0 2 -
+/.well-known/acme-challenge/i2sJe8_Z1_bVkRPn5FD-gxhxN5vOmW1IjaSoclBh1CU 2 -
+/.well-known/acme-challenge/niAQW53djhedjtlAbsQ8OCq3VZuSLfi6x6SnlbDAlr8 2 -
+/.well-known/acme-challenge/gEM8j_zl8CtXoFroEmdCx8HUH3qiLqsErKWa7E7ZJKc 2 -
+/public/office/vela-modern-executive-office-desk-from-corazzingroup/attachment/vela-office-table-design 178 -
+/wp-content/uploads/Synthesy-Sliding-Glass-Doors-5.jpg 36 -
+/.well-known/acme-challenge/Y8nCSWLG421FkHcuibguCLq6LGTbWG1ZBIhq1TrYNPA 2 -
+/.well-known/acme-challenge/lJBH3RPwIy6Gf_vfziBCPiTpdeTSUfmLYSB_RcAsuJQ 2 -
+/public/office/modern-office-workstations-design-from-zg-group 28 -
+/.well-known/acme-challenge/uu_lPZNno4TcK-tcPhxe1s41W8QJzM_5WfITEXdF2_A 2 -
+/member/templets/images/icon1.gif 6 http://nikiniku.com/member/templets/images/icon1.gif
+/.well-known/acme-challenge/FRqUkqCfEFnFzwJpHONm0P98R4LXpvNzAgrGHLHe2h0 2 -
+/hmw/ztb_bao/uploaded/i1/2170937497/O1CN01AyV65Z25FfufZVN32_!!0-item_pic.jpg_220x220.jpg 2 -
+/public/fireplace/modern-outdoor-fireplace-design-by-anne-colombo 6 -
+/public/coffee-table/wooden-rectilinear-coffee-table-by-enrico-konig 6 -
+/hmw/ztb_bao/uploaded/i4/1134000827/O1CN01J3KELm1HyoCY2GBUF_!!0-item_pic.jpg_220x220.jpg 2 -
+/hmw/ztb_bao/uploaded/i2/1600764188/O1CN01CpBKnT1go9Iig7CAw_!!1600764188.jpg_220x220.jpg 2 -
+/public/seating/city-squared-rodeo-simple-public-seating-bench 2 -
+/.well-known/acme-challenge/5fBQ1dYby2_f5Gf6z7J_Mp8DuqmPqXhe7r969TWadek 2 -
+/.well-known/acme-challenge/4ElgzRTp2Jkq3vnUQonBNCHNUH1rShpx6wG8E91Pxd8 2 -
+/plus/img/topsearch_submit.gif 6 http://nikiniku.com/plus/img/topsearch_submit.gif
+/old 8 -
+/.well-known/acme-challenge/zcnAYWQ2Aa1LFRhOfLhYtwSuK8N4XkiAraD4u8jILSA 2 -
+/.well-known/acme-challenge/0QJQ24Kx0nnhK-sXuvmwLH0qVvNwBc8PDNPy-TvNrdQ 2 -
+/.well-known/acme-challenge/I76F0amV3TEgotK2fjoEpdtr7oyiJyAbXiXdwaXWH6k 2 -
+/fileupload/server/php/index.php 2 -
+/apple-touch-icon-precomposed.png 8 -
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 25 first Hits must be first (order not required for others)
+BEGIN_VISITOR 176
+112.78.133.194 408 428 22750692 20250625195344
+112.78.133.197 380 394 19811130 20250630112947
+2001:df7:5300:9::3f 50 50 3200 20250621052228
+2404:c0:3650::a606:ddf9 42 46 1397356 20250610162452
+2404:c0:30a0::88e:4a46 38 40 2113230 20250610181515
+2404:c0:3090::824:a96f 26 32 1083924 20250602201704
+202.59.204.93 24 26 692584 20250629172618
+36.78.126.46 18 24 1794058 20250611090510
+2404:c0:3090::959:a6f9 14 20 1974360 20250625183933
+112.78.133.195 12 18 1965664 20250614080853
+103.144.18.246 12 12 315606 20250623095248
+156.228.181.180 8 8 27006 20250616235948
+149.56.160.237 8 8 27236 20250605155329
+103.175.224.75 8 12 562640 20250610080935
+47.82.62.80 6 6 21774 20250618044423
+193.108.117.161 6 12 1614488 20250630180407
+46.105.223.182 6 6 14530 20250605155359
+68.183.88.142 4 4 14418 20250627092325
+159.203.21.58 4 4 14530 20250621011700
+131.153.143.50 4 4 14404 20250621100147
+205.169.39.65 4 10 1607580 20250628194739
+134.209.86.232 4 4 14418 20250623084636
+138.68.136.121 4 4 14418 20250609082650
+159.89.117.165 4 4 14530 20250606195920
+137.184.79.111 4 4 14866 20250623140557
+54.202.1.4 2 2 7216 20250615184400
+46.8.225.111 2 2 7370 20250627030026
+3.135.19.18 2 2 7216 20250610235228
+95.175.66.152 2 2 7216 20250624084256
+149.56.150.141 2 8 1600098 20250605155355
+93.158.91.245 2 2 7202 20250619163123
+185.176.50.124 2 2 7202 20250621054823
+159.100.17.78 2 6 327488 20250607105020
+91.192.243.21 2 2 7216 20250616120947
+154.28.229.1 2 2 7216 20250621164435
+44.247.242.33 2 2 7216 20250618173350
+195.189.250.131 2 2 7440 20250629113527
+93.158.91.11 2 2 7216 20250626111722
+205.169.39.6 2 8 1600210 20250621053032
+2.57.249.128 2 2 7216 20250627084811
+43.159.146.2 2 8 1600098 20250629235245
+240e:980:9820:1c9:1c9d:fc39:f9be:c79f 2 2 7258 20250622090455
+4.215.194.73 2 2 7258 20250607003813
+195.250.24.216 4 4 14404 20250603195451
+167.99.33.190 4 4 14418 20250601071036
+188.143.244.141 2 2 7202 20250611225349
+143.198.66.90 4 4 14418 20250627194301
+34.121.76.183 2 2 7202 20250611000113
+162.250.218.134 2 2 7202 20250615160331
+144.126.239.129 4 4 14418 20250611085126
+95.175.87.149 2 2 7384 20250628112955
+138.197.132.70 4 4 14558 20250626212350
+2404:c0:30a0::8aa:83b5 2 2 167044 20250612201110
+45.55.74.150 4 4 14418 20250605085324
+23.82.35.125 2 2 7216 20250603175127
+167.172.141.159 4 4 14866 20250625142339
+2a0b:4142:d4b::2 2 2 7384 20250620024418
+141.138.211.251 2 2 7202 20250624175048
+5.133.192.200 2 2 7202 20250611045319
+2001:4ba0:cafe:c13::1 2 2 7202 20250604190803
+2001:41d0:701:1100::7f94 2 2 7216 20250618175244
+159.203.39.23 4 4 14866 20250610123220
+159.65.233.88 4 4 14418 20250613234805
+3.145.211.98 2 2 7272 20250609211433
+2600:3000:2710:200::82 2 2 174 20250621052832
+5.9.18.210 2 2 7202 20250616101427
+44.200.52.3 2 2 7202 20250627133013
+35.86.229.83 2 8 1600056 20250617132013
+154.17.105.1 2 2 7216 20250625001907
+66.102.6.41 0 2 158730 
+54.90.95.164 4 4 14432 20250618191237
+35.224.162.50 2 2 7202 20250621001756
+3.123.42.119 4 4 14404 20250610140257
+52.26.33.174 2 2 7202 20250615184359
+2600:1f18:66cd:1a50:20a2:ea39:9410:7c0e 2 2 7216 20250630224841
+5.78.71.222 2 2 7216 20250625210111
+108.137.153.33 2 2 7384 20250619153930
+64.226.89.123 4 4 14754 20250624115759
+95.175.74.222 2 2 7272 20250623084213
+2001:4ba0:cafe:b2c::1 2 2 7202 20250625023013
+143.110.221.110 4 4 14418 20250607075035
+172.241.152.155 2 4 165946 20250629040214
+182.5.198.79 2 4 168758 20250617103444
+23.108.18.130 2 4 165946 20250616101148
+2600:3000:2710:200::86 2 2 174 20250621052832
+170.39.218.62 2 2 7202 20250604071137
+103.66.179.49 2 2 7272 20250625084406
+103.66.178.162 2 2 7272 20250628085801
+173.44.138.144 2 2 7202 20250623001321
+199.244.88.226 2 2 7202 20250614213136
+68.183.125.114 4 4 14418 20250629094235
+195.66.216.150 2 2 7440 20250628113308
+43.153.123.206 2 8 1600098 20250609101408
+38.170.230.26 4 4 14418 20250608104452
+154.7.251.33 2 2 7216 20250628085521
+143.110.241.177 4 4 14754 20250610102638
+142.93.103.72 4 4 14418 20250615083833
+54.164.22.245 2 2 7216 20250619160550
+137.226.113.44 2 2 7272 20250605194505
+35.86.3.153 2 8 1600056 20250625072302
+108.137.91.42 2 2 7440 20250617134328
+195.2.196.233 2 2 7440 20250630112910
+135.148.195.1 0 2 1272554 
+34.238.220.80 2 2 7216 20250615110948
+45.32.42.184 4 4 14404 20250606013542
+108.137.76.3 2 2 7384 20250611004755
+54.202.146.227 2 2 7202 20250604172414
+93.158.91.10 2 2 7216 20250617030606
+205.169.39.5 2 8 1600210 20250628175706
+103.228.132.197 2 2 7216 20250623083841
+192.3.50.0 2 2 7202 20250606225209
+103.189.201.179 4 16 3200112 20250610152645
+108.136.150.59 2 2 7216 20250609073906
+5.253.240.172 2 2 7384 20250630112701
+154.28.229.121 2 2 7216 20250622024123
+143.110.254.12 4 4 14866 20250621133320
+108.137.80.47 2 2 7272 20250604024018
+103.189.201.225 2 8 1600056 20250602195910
+23.226.16.248 2 4 165946 20250623013942
+139.59.94.236 4 4 14418 20250625082043
+95.175.80.74 2 2 7216 20250625084423
+95.175.75.138 2 2 7216 20250626084421
+44.251.219.175 2 2 7202 20250630180421
+135.148.195.14 2 2 7202 20250614230424
+35.222.1.131 2 2 7202 20250623020108
+199.244.88.218 2 2 7202 20250613153604
+195.66.218.25 2 2 7272 20250624084153
+142.252.141.123 2 2 7216 20250616231143
+185.195.232.149 2 2 7440 20250621052942
+43.130.59.8 2 8 1600098 20250619053733
+95.175.87.186 2 2 7384 20250629113257
+5.133.192.166 2 2 7216 20250601040258
+2404:c0:3090::965:6721 4 4 218722 20250626084906
+193.32.127.205 2 2 7216 20250621053007
+3.95.186.158 4 4 14404 20250627134322
+31.56.36.189 2 2 7202 20250614212228
+2804:4b0:128b:9c00:90fe:8da0:6f4e:542e 2 2 7216 20250609091249
+167.99.54.236 4 4 14418 20250603095330
+195.211.77.142 4 4 14600 20250621052940
+5.133.192.127 2 2 7216 20250609015100
+2a02:247a:26d:1000::1 2 2 7202 20250614135126
+139.59.27.152 4 4 14418 20250621073547
+142.93.226.208 4 4 14866 20250625134006
+164.92.178.70 4 4 14754 20250601033635
+85.235.66.213 2 2 7272 20250625014115
+143.110.254.180 4 4 14866 20250624232002
+34.122.15.85 2 2 7202 20250620000250
+2a01:239:389:df00::1 2 2 7258 20250629062813
+66.102.6.42 2 2 7216 20250610180703
+164.92.238.77 4 4 14418 20250613081131
+93.158.90.65 2 2 7202 20250605152207
+108.137.146.196 2 2 7216 20250617191851
+151.115.56.89 2 2 7216 20250621085032
+2600:3000:2710:200::84 2 2 174 20250621052832
+16.79.58.217 2 2 7272 20250611184456
+93.158.90.52 4 4 14404 20250615110230
+93.158.91.253 2 2 7202 20250630044137
+103.144.18.52 4 10 1607586 20250610152418
+100.29.185.179 4 4 14544 20250618191238
+108.137.9.115 2 2 7440 20250603232320
+103.230.15.113 2 2 7340 20250621041322
+195.211.77.140 4 4 14600 20250621052921
+18.237.146.240 2 2 7202 20250621175528
+66.249.75.73 2 2 7216 20250619005630
+5.167.90.24 2 2 7202 20250623024731
+83.229.59.116 2 2 7384 20250629113259
+173.234.244.113 2 4 166002 20250627151717
+135.148.195.16 2 2 7202 20250611180211
+162.249.164.245 2 2 7272 20250626084619
+146.190.163.136 4 4 14754 20250623020117
+192.178.8.2 2 4 168772 20250610180704
+95.175.77.210 2 2 7272 20250627084834
+108.137.100.188 2 2 7440 20250608092627
+93.158.90.30 2 2 7202 20250617092316
+104.248.75.7 2 2 7216 20250610155118
+135.148.195.3 0 2 1272554 
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 30
+20250601 10 10 36388 3
+20250602 48 62 4818386 4
+20250603 18 18 306916 6
+20250604 16 16 299532 6
+20250605 36 42 2047676 9
+20250606 10 10 36136 3
+20250607 24 34 2136020 4
+20250608 6 6 21858 2
+20250609 24 30 1921306 8
+20250610 168 200 11232312 15
+20250611 82 90 4654870 13
+20250612 52 52 2450208 3
+20250613 32 38 2405020 7
+20250614 72 80 4667456 8
+20250615 14 14 50456 6
+20250616 62 64 2070272 8
+20250617 52 62 4349266 8
+20250618 26 26 383114 6
+20250619 16 22 1835314 6
+20250620 40 40 222704 6
+20250621 76 82 2145428 22
+20250622 4 4 14474 2
+20250623 120 122 4268364 13
+20250624 54 56 1637420 8
+20250625 170 194 13002676 18
+20250626 88 94 5736492 8
+20250627 22 24 238302 8
+20250628 20 32 3467992 7
+20250629 22 30 1904660 8
+20250630 80 86 4285238 8
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 7
+15mn-30mn 5
+2mn-5mn 5
+5mn-15mn 9
+1h+ 3
+0s-30s 193
+30s-2mn 7
+30mn-1h 11
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 25 first Pages must be first (order not required for others)
+BEGIN_SIDER 83
+/ 552 1993992 191 157
+/kasir 232 21793258 6 35
+/pasiens 128 7264872 7 18
+/autocomplete-pasien 94 6592 0 0
+/tindakan 72 4882990 1 3
+/dashboard 68 1100232 0 1
+/login 52 188628 16 1
+/pasiens/create 36 524178 0 2
+/tindakan/create 30 532154 1 0
+/laporan-keuangan 20 462670 0 3
+/profile 8 149820 0 0
+/pasiens/30/edit 6 83832 0 0
+/tindakan/38 6 76680 0 0
+/tindakan/28 4 46534 0 0
+/tindakan/37 4 42368 0 0
+/pasiens/33/edit 4 58536 0 0
+/kasir/32/edit 4 53956 0 0
+/kasir/36/print 4 20556 0 0
+/kasir/32/print 4 20780 0 1
+/pasiens/28/edit 4 58562 0 0
+/forgot-password 4 10848 0 1
+/tindakan/23 4 52992 0 0
+/dokters 4 97576 0 0
+/tindakan/22 2 25334 0 0
+/kasir/40/edit 2 26978 0 0
+/.well-known/acme-challenge/32D1DDMP5NRFZB1VUBT3EPYGFKPVOFML 2 128 0 0
+/.well-known/acme-challenge/EC8RH6NPSSK66UE2_P-M5Z2SLHSQUM6V 2 128 0 0
+/tindakan/26 2 25438 0 0
+/.well-known/acme-challenge/X-HW0WOdCay0pBZ0Sxf4ce1wswqgDbVc-TtC_v6-Ux4 2 174 1 1
+/.well-known/acme-challenge/AG8FRTWML7JMGX1U0PRXKGZ_EGPQTSWH 2 128 1 0
+/kasir/29 2 22056 0 0
+/tindakan/21 2 25342 0 0
+/kasir/33/print 2 10432 0 0
+/pasiens/31/edit 2 29208 0 0
+/kasir/41/edit 2 26974 0 0
+/.well-known/acme-challenge/VJV7NN11OQ5N45_51CQ01C6QYVGLYBE5 2 128 0 1
+/.well-known/acme-challenge/6Y6E1CE8RY4_VKYLMYM-72NPG3TRAUW7 2 128 0 0
+/kasir/39/edit 2 26978 1 0
+/.well-known/acme-challenge/TS176B2YJTKEVL2MQ4WZT6Q8YQOJ-KQW 2 128 1 0
+/.well-known/acme-challenge/3TPDLRNUXCMY78QSB6WXXFQUGQFGM_FU 2 128 0 1
+/kasir/37/print 2 10250 0 0
+/pasiens/32/edit 2 27940 0 0
+/kasir/41/print 2 10332 0 0
+/.well-known/acme-challenge/F6CGUORGKWM7-SLCM2NEJS4GSK92UYVU 2 128 0 1
+/kasir/33/edit 2 26978 0 0
+/.well-known/acme-challenge/9_F8CK_-Y9SU6I4ICTT5GS2OL86E3U5_ 2 128 0 0
+/.well-known/acme-challenge/FPNDJ290YG5ENCRJ5K2RTFT8X_ASBQ0Q 2 128 0 0
+/kasir/37/edit 2 26978 0 0
+/.well-known/acme-challenge/MTE6QIVJSQFXLG-JIKSYR4EM4X0U36GM 2 128 0 0
+/.well-known/acme-challenge/H3FJR1_U5QW8IVEXL57POXBV5--VPRX8 2 128 0 0
+/kasir/38/edit 2 26978 0 0
+/tindakan/41 2 21228 0 0
+/.well-known/acme-challenge/4ROX-LD14DKV01BNNGDZQ7ZVGP6WHNQ_ 2 128 1 0
+/.well-known/acme-challenge/_K955EAF1WROLU99645VIIF5CZ5FB3W3 2 128 0 0
+/.well-known/acme-challenge/pZdieYFqiCl7esKgI_3KXzNFX9L18iFtIrKd6nI4s1c 2 174 1 1
+/pasiens/25/edit 2 29214 1 0
+/kasir/29/edit 2 26978 0 0
+/kasir/28/print 2 10286 0 1
+/.well-known/acme-challenge/Y-BC98KYAY6CHXTSAMK_MCA00RO84C90 2 128 0 0
+/kasir/30/edit 2 26978 0 0
+/.well-known/acme-challenge/ILNONTVXUEV-RB2_5DU0OJC9I2MJM950 2 128 0 0
+/.well-known/acme-challenge/2WG6SRK02LCKC-HRW2PXMUS0ZOVMB2B- 2 128 0 1
+/.well-known/acme-challenge/7HLA_CSJ07IDW36BUS4Y6IKK6GDNHK0V 2 128 0 0
+/tindakan/18 2 25488 0 1
+/.well-known/acme-challenge/G2ZCOZWANHHJRN_V_09RSCD-GKO7V2ZG 2 128 1 0
+/kasir/40 2 22074 0 0
+/.well-known/acme-challenge/YAPB43-PT8HPQ-YSMCRLK6SZXS9_5E_O 2 128 0 0
+/.well-known/acme-challenge/-DSOF0I6RKM3ZY7WHKLIDOSSX56TKDHU 2 128 0 0
+/kasir/28/edit 2 26974 0 0
+/kasir/35/edit 2 26978 0 0
+/.well-known/acme-challenge/GKLWK77SG_JGY_XEETBV-ZA8QEQWP4WN 2 128 0 0
+/tindakan/17 2 22358 0 0
+/kasir/37 2 22050 0 0
+/kasir/36/edit 2 26978 0 0
+/kasir/31/edit 2 26978 0 0
+/.well-known/acme-challenge/GN0V06I_VQX85JJ9A7QGJVO9LKBP5SR7 2 128 0 0
+/.well-known/acme-challenge/JL77X5T7_MGNKST9CVEI0_BKXWRSN-6J 2 128 0 1
+/obats 2 26192 0 0
+/.well-known/acme-challenge/8FI2c2DH41PECqdZmx5wkGlqRwNE2HbRgMjqUXTVk88 2 174 1 1
+/tindakan/27 2 25378 0 0
+/pasiens/29/edit 2 29214 0 0
+/index.php 2 7340 1 1
+/.well-known/acme-challenge/5ZX6IDOKT8H7CPSGUNQYFAN6DK03B3F0 2 128 1 0
+END_SIDER
+
+# Payload Range - Payload Frequency
+BEGIN_FILESIZE 6
+5K+ 2036
+0-44 950
+44-100 84
+2K-5K 760
+500-1K 4
+100-500 598
+END_FILESIZE

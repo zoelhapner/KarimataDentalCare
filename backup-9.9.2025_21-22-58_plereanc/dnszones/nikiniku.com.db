@@ -1,0 +1,23 @@
+; cPanel first:124.0.28 (update_time):1755761813 Cpanel::ZoneFile::VERSION:1.3 hostname:zone.id.domainesia.net latest:130.0.3
+; Zone file for nikiniku.com
+$TTL 600
+nikiniku.com.	1200	IN	SOA	ns1.domainesia.net.	admin.domainesia.com.	(
+						2025082103 ;Serial Number
+						3600 ;refresh
+						1800 ;retry
+						1209600 ;expire
+						86400	)
+nikiniku.com.	1200	IN	NS	ns1.domainesia.net.
+nikiniku.com.	1200	IN	NS	ns2.domainesia.net.
+nikiniku.com.	600	IN	A	36.50.77.63
+nikiniku.com.	600	IN	AAAA	2001:df7:5300:9::3f
+ipv6	600	IN	AAAA	2001:df7:5300:9::3f
+nikiniku.com.	600	IN	MX	0	nikiniku.com.
+mail	600	IN	CNAME	nikiniku.com.
+www	600	IN	CNAME	nikiniku.com.
+ftp	600	IN	CNAME	nikiniku.com.
+default._domainkey	600	IN	TXT	"v=DKIM1\; k=rsa\; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxNbeLTontWWcpdFXWswruLeInfPozvA7zDizl1f/d+7m/DoDfrRg1EsJo6N/bF+Tzx9F3CSayX7lI45+00s3bwRMjWRUzFuG17t4We+3EiNFkD4qCIgCBo3NX967PuJBEKISHLELNPVSLeQbel8v3YOtPkzCbqJ0maQL8btmEIdbfDZu7lfjlL43Nn6JP6MfA" "Bxa+QBlgJ5jpufv4odjd9yujaFmwVX9MQjvWUEP84Xozx/l0Z1iJvhc5v9aP1gb4C/7Kx2Uo2+lN9kB4/w2cZ0TTo84Zhi1HfOin8O+mooJsa+iCXYPYsvK1fMxlpvIq94ofsvKpahA8/XhJgySnQIDAQAB\;"
+nikiniku.com.	600	IN	TXT	"v=spf1 ip4:202.155.132.22 +a +mx +ip4:36.50.77.63 include:relay.mailchannels.net ~all"
+_dmarc	600	IN	TXT	"v=DMARC1\; p=none\;"
+_cpanel-dcv-test-record	600	IN	TXT	"_cpanel-dcv-test-record=nWEhOKdqBPJF6lXEGFah9buw3ScNKkfE_fuf9CWnwO1MH6dOBmnR1Z9MsjW6iEjV"
+_acme-challenge	600	IN	TXT	"xZJEssCVxfuVHLsBLmTXd0lefnYdUhUoKRAAPOMCt24"

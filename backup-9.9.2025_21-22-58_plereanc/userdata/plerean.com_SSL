@@ -1,0 +1,20 @@
+--- 
+documentroot: /home/plereanc/public_html
+group: plereanc
+hascgi: 1
+homedir: /home/plereanc
+ip: 36.50.77.63
+ipv6: 
+  2001:0df7:5300:0009:0000:0000:0000:003f: 
+    dedicated: 1
+owner: root
+phpopenbasedirprotect: 1
+port: 4433
+secruleengineoff: ~
+serveradmin: webmaster@plerean.com
+serveralias: www.plerean.com ipv6.plerean.com mail.plerean.com
+servername: plerean.com
+ssl: 1
+usecanonicalname: 'Off'
+user: plereanc
+userdirprotect: ''

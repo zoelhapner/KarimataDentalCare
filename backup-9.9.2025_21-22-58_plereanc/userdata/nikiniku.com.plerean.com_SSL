@@ -1,0 +1,20 @@
+--- 
+documentroot: /home/plereanc/nikiniku.com
+group: plereanc
+hascgi: 1
+homedir: /home/plereanc
+ip: 36.50.77.63
+ipv6: 
+  2001:0df7:5300:0009:0000:0000:0000:003f: 
+    dedicated: 1
+owner: root
+phpopenbasedirprotect: ~
+port: 4433
+secruleengineoff: ~
+serveradmin: webmaster@nikiniku.com.plerean.com
+serveralias: mail.nikiniku.com nikiniku.com www.nikiniku.com www.nikiniku.com.plerean.com
+servername: nikiniku.com.plerean.com
+ssl: 1
+usecanonicalname: 'Off'
+user: plereanc
+userdirprotect: ''

@@ -1,0 +1,1074 @@
+AWSTATS DATA FILE 7.9 (build 20230108)
+# If you remove this file, all statistics for date 202503 will be lost/reset.
+# Last config file used to build this data file was /home/plereanc/tmp/awstats/awstats.nikiniku.com.plerean.com.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 28
+POS_GENERAL 2055                
+POS_TIME 2732                
+POS_VISITOR 38967               
+POS_DAY 47726               
+POS_DOMAIN 3610                
+POS_LOGIN 4188                
+POS_ROBOT 4343                
+POS_WORMS 5028                
+POS_EMAILSENDER 5159                
+POS_EMAILRECEIVER 5302                
+POS_SESSION 48553               
+POS_FILESIZE 49703               
+POS_SIDER 48762               
+POS_FILETYPES 5437                
+POS_DOWNLOADS 5605                
+POS_OS 5653                
+POS_BROWSER 5972                
+POS_SCREENSIZE 7534                
+POS_UNKNOWNREFERER 7608                
+POS_UNKNOWNREFERERBROWSER 8265                
+POS_ORIGIN 8554                
+POS_SEREFERRALS 8696                
+POS_PAGEREFS 8859                
+POS_SEARCHWORDS 9007                
+POS_KEYWORDS 9159                
+POS_MISC 2394                
+POS_ERRORS 9218                
+POS_CLUSTER 4044                
+POS_SIDER_404 9393                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20250401002416 7 1428 17849744738631
+FirstTime 20250301050337
+LastTime 20250331084815
+LastUpdate 20250401191102 7 0 6 0 0
+TotalVisits 287                 
+TotalUnique 215                 
+MonthHostsKnown 0                   
+MonthHostsUnknown 219                 
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+AddToFavourites 0 422 0
+PDFSupport 0 0 0
+JavaEnabled 0 0 0
+DirectorSupport 0 0 0
+RealPlayerSupport 0 0 0
+QuickTimeSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+TotalMisc 0 0 0
+FlashSupport 0 0 0
+JavascriptDisabled 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 62 68 1817386 84 148 678196
+1 22 22 79502 72 112 672520
+2 12 18 1636080 90 146 1021754
+3 26 26 234992 88 134 364424
+4 12 12 43408 68 128 716752
+5 24 30 1679516 64 104 275434
+6 22 22 319294 112 162 370522
+7 94 100 2304332 60 128 391614
+8 134 136 1240902 138 202 631078
+9 92 114 5967612 176 228 1366746
+10 134 154 7872284 234 322 1749846
+11 66 74 2550480 102 140 380276
+12 106 116 3231654 42 74 229904
+13 54 64 3592238 32 116 547174
+14 118 136 4415616 114 156 408888
+15 52 54 1822890 34 72 540434
+16 262 286 9002932 86 126 419090
+17 88 110 5963628 48 70 245620
+18 250 262 5549072 172 188 893540
+19 34 42 3111794 96 170 640452
+20 46 52 2152154 92 108 1064010
+21 100 126 7605824 140 202 1312310
+22 16 16 70436 56 100 614622
+23 12 12 43338 54 92 2065252
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 25 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 25
+id 990 1074 32871230
+in 354 398 13915516
+us 252 310 17790182
+ip 62 80 5164520
+ca 34 34 122812
+jp 26 26 94074
+se 20 20 72076
+ru 12 12 43240
+nl 12 12 43324
+gb 10 14 357476
+kw 10 10 36360
+ua 10 10 36402
+sc 6 6 21606
+no 6 6 21648
+ir 6 12 1614502
+kr 4 4 14880
+bg 4 4 14460
+cl 4 4 14432
+ro 4 4 14768
+kz 2 2 7272
+iq 2 2 7272
+pl 2 2 7384
+be 2 2 7216
+cn 2 2 7440
+de 2 2 7272
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 25 first Hits must be first (order not required for others)
+BEGIN_ROBOT 14
+Googlebot/ 128 2103314 20250331050810 54
+unknown 54 1296 20250329221554 54
+bingbot/ 32 662820 20250326031021 18
+java 24 87936 20250318012458 0
+bot[\s_+:,\.\;\/\\-] 22 51068 20250327195509 8
+no_user_agent 16 58120 20250330140913 0
+facebookexternalhit/ 16 57728 20250331151827 0
+survey 8 29382 20250306180451 0
+Screaming[\x20]Frog[\x20]SEO[\x20]Spider/ 4 14404 20250323125947 0
+link 4 7306 20250311085007 2
+curl 4 14418 20250305044438 0
+crawl 2 7202 20250303071206 0
+Googlebot\-Image/ 2 1272554 20250302235912 0
+Go\-http\-client/ 2 7216 20250322023715 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 5
+js 68 5238090 0 0
+html 704 2548144 0 0
+png 68 41994282 0 0
+css 78 6141068 0 0
+Unknown 1134 16385780 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 0
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS ID - Hits - Pages 18
+macosx15 186 166
+win7 14 14
+Unknown 150 144
+win8.1 6 6
+android10 326 290
+unix 2 2
+winxp 4 4
+linux 180 166
+linuxubuntu 16 16
+win8 2 2
+macosx14 2 2
+ios_ipad 4 4
+win10 828 756
+ios_iphone 276 236
+android 2 2
+android12 32 14
+android11 6 6
+androidnougat 16 8
+END_OS
+
+# Browser ID - Hits - Pages
+BEGIN_BROWSER 75
+safari18.3.1 20 16
+chrome68.0.3440.106 2 2
+safari17.6 4 4
+chrome134.0.0.0 876 818
+chrome79.0.3945.117 2 2
+safari16.6 130 112
+msie11.0 6 6
+chrome59.0.3071.125 16 8
+chrome95.0.4638.69 2 2
+firefox66.0 2 2
+chrome57.0.2987.133 2 2
+chrome75.0.3770.100 2 2
+chrome72.0.3626.121 2 2
+chrome126.0.0.0 18 12
+chrome115.0.0.0 4 2
+chrome100.0.4896.127 4 4
+edge12 4 4
+chrome132.0.0.0 10 4
+chrome47.0.2526.111 4 4
+chrome131.0.0.0 2 2
+firefox114.0 6 4
+chrome114.0.0.0 34 16
+chrome78.0.3904.108 4 4
+firefox67.0 8 8
+safari13.0.3 34 34
+chrome99.0.4859.172 4 4
+safari18.1.1 2 2
+chrome80.0.3987.162 2 2
+chrome91.0.4472.124 2 2
+firefox123 2 2
+safari18.3 56 40
+Unknown 28 28
+chrome91.0.4472.114 8 8
+firefox50.0 2 2
+chrome125.0.0.0 20 12
+safari16.4 144 136
+chrome37.0.2062.94 6 6
+chrome120.0.0.0 2 2
+chrome103.0.5060.114 6 6
+safari14.0 2 2
+chrome124.0.0.0 4 4
+firefox61.0 2 2
+chrome128.0.0.0 10 4
+mozilla 122 116
+chrome117.0.5938.132 8 2
+chrome113.0.0.0 2 0
+chrome122.0.0.0 2 2
+firefox126.0 8 8
+chrome121.0.0.0 2 2
+chrome29.0.1547.2 2 2
+chrome81.0.4044.113 2 2
+firefox51.0 10 10
+firefox103.0 2 2
+chrome133.0.0.0 212 192
+safari17.8 38 30
+firefox65.0 2 2
+chrome74.0.3729.169 42 42
+chrome58.0.3029.110 2 2
+firefox115 2 2
+chrome104.0.0.0 2 2
+chrome83.0.4103.97 8 8
+firefox122.0 2 2
+chrome105.0.0.0 16 16
+netscape5.0 4 4
+chrome70.0.3538.102 2 2
+chrome27.0.1453.116 2 2
+chrome94.0.4606.85 2 2
+chrome80.0.3987.163 10 4
+chrome100.0.4896.75 12 12
+firefox102.0 2 2
+firefox120.0 8 8
+firefox59.0 4 4
+chrome127.0.0 4 4
+safari 8 8
+chrome102.0.0.0 8 2
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 11
+Mozilla/5.0_(compatible;_Example3/1.0;__https://www.example3.com/domain/nikiniku.com) 20250301121410
+Python/3.13_aiohttp/3.11.13 20250316010642
+Mozilla/5.0_(compatible;_InternetMeasurement/1.0;__https://internet-measurement.com/) 20250331031913
+quic-go-HTTP/3 20250323082951
+Mozilla/5.0_(compatible) 20250331084815
+Embarcadero_URI_Client/1.0 20250303053904
+Mozilla/5.0_(compatible;_Dataprovider.com) 20250310002626
+fasthttp 20250327004802
+Mozilla/5.0_researchscan.comsys.rwth-aachen.de 20250327201701
+cpp-httplib/0.15.3 20250327185635
+WhatsApp/2.23.20.0 20250314211903
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 6
+Python/3.13_aiohttp/3.11.13 20250316010642
+cpp-httplib/0.15.3 20250327185635
+WhatsApp/2.23.20.0 20250314211903
+quic-go-HTTP/3 20250323082951
+Embarcadero_URI_Client/1.0 20250303053904
+fasthttp 20250327004802
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 650 678
+From1 14 14
+From2 4 4
+From3 0 0
+From4 1170 1356
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 1
+www_google_com 4 4
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 25 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 0
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 0
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 25 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 0
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 7
+404 1928 11251512
+419 4 26436
+400 2 472940
+301 264 84590
+500 2 752294
+302 412 148032
+403 76 489890
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referrer
+BEGIN_SIDER_404 394
+/wp-content/uploads/2012/07/Modern-Wall-Units-from-Alf.jpg 16 -
+/www-com/nikiniku-offremms-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-offremms-ll8.html
+/ucms/img/loading.gif 2 http://nikiniku.com/ucms/img/loading.gif
+/.well-known/acme-challenge/HIQDZbcIq3inBxQ7mAQ_VnWpbup2aGYf91eAmBvKbig 2 -
+/www-cn/nikiniku-bjzlkc-ll8.html 2 http://www.nikiniku.com/www-cn/nikiniku-bjzlkc-ll8.html
+/404-10339.html 2 http://www.nikiniku.com/404-10339.html
+/.well-known/acme-challenge/jMQvTNw7MTS8BjXKqDboO-uWBUmgfZVFQDHR8D_H8wQ 2 -
+/www-com/nikiniku-silaige-3-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-silaige-3-ll8.html
+/www-net/nikiniku-tezla-ll8.html 2 http://www.nikiniku.com/www-net/nikiniku-tezla-ll8.html
+/.well-known/acme-challenge/qULt8cQPi3GSKAayffTbR5CfqYqAADd2RFSUM9oyUDI 2 -
+/www-com/nikiniku-mrdamnlol-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-mrdamnlol-ll8.html
+/www-com-cn/nikiniku-nplgw-ll8.html 2 http://www.nikiniku.com/www-com-cn/nikiniku-nplgw-ll8.html
+/www-com/nikiniku-zjtianshui-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-zjtianshui-ll8.html
+/wp-content/uploads/2012/06/Modern-Wall-and-Entertainment-Units-from-Lazzoni.jpg 10 -
+/wp-content/uploads/2011/10/Japanese-Style-Beds-from-Haiku.jpg 28 -
+/www-com/nikiniku-ebruafrica-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-ebruafrica-ll8.html
+/apple-touch-icon.png 42 -
+/www-com/nikiniku-gguosports-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-gguosports-ll8.html
+/.well-known/acme-challenge/aSgBWoihHQhZyGnQTqvlRDeLi4ZhuGXs5K6uGxvPBjM 2 -
+/web/wp-includes/wlwmanifest.xml 2 -
+/.well-known/acme-challenge/sF_0E6FnGMnndqTFz3xuJKzpmQSyT43zOMrRH87o0v8 2 -
+/www-cn/nikiniku-oncan-3-ll8.html 2 http://www.nikiniku.com/www-cn/nikiniku-oncan-3-ll8.html
+/2019/wp-includes/wlwmanifest.xml 2 -
+/www-net/nikiniku-tqbi-ll8.html 2 http://www.nikiniku.com/www-net/nikiniku-tqbi-ll8.html
+/.well-known/acme-challenge/i20zSZyZt-HyqRUwdoUUtChcwxPoSg1zmAXEhFuTAHM 2 -
+/apple-touch-icon-120x120-precomposed.png 14 -
+/.well-known/acme-challenge/r4wESemgvISLzISBsoNF8N4QtTjF4ln5emYKxuzqP-Y 2 -
+/sitemap_index.xml 6 -
+/www-cn/nikiniku-hzzqg-ll8.html 2 http://www.nikiniku.com/www-cn/nikiniku-hzzqg-ll8.html
+/wp-content/uploads/coffee-table.jpg 4 -
+/.well-known/acme-challenge/poImmlZNmfwxV-Q4uj9H9HMzZLdBO0ISGnInI_S7RPA 2 -
+/.well-known/acme-challenge/-ja5Ok5BWwMebAijX3TXalAcw5C6-vEXYbEwGk5hGkg 2 -
+/blog/wp-includes/wlwmanifest.xml 2 -
+/www-com/nikiniku-rrkxw-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-rrkxw-ll8.html
+/static/admin/webupload/server/preview.php 2 -
+/www-com/nikiniku-ehuoilseal-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-ehuoilseal-ll8.html
+/api/ueditor/net/controller.ashx 2 -
+/public/seating/highway-modular-public-seating-system-by-bartoli-design-for-segis 2 -
+/www-com/nikiniku-lesparticulieres-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-lesparticulieres-ll8.html
+/main 42 -
+/.well-known/acme-challenge/lHL1sVUpEmRHPSmVBWAbwJ_Bun-mE0iunoJZuo55nFM 2 -
+/.well-known/acme-challenge/tPwkkoMDgWUU3grVDBP3fWZQsXyg4mkgJamnCyaYBFw 2 -
+/wp 42 -
+/.well-known/acme-challenge/FZS5mI43HVEy4gdUEkfhLAc1kaSrFShZpa6Vpd2BpoI 2 -
+/www-com/nikiniku-gvnbymoita-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-gvnbymoita-ll8.html
+/www-com/nikiniku-geminitrix-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-geminitrix-ll8.html
+/.well-known/security.txt 2 -
+/www-com/nikiniku-jkclw-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-jkclw-ll8.html
+/wp-content/uploads/unique-coffee-table.jpg 2 -
+/www-com-cn/nikiniku-vytjl-ll8.html 2 http://www.nikiniku.com/www-com-cn/nikiniku-vytjl-ll8.html
+/wp-content/uploads/2012/07/Amazing-Shell-House-by-Artechnic-Architects-7.jpg 22 -
+/system/logs/opayo.log 2 -
+/.well-known/acme-challenge/6a7ciV_Jpu5eDCg696oWGUuZ0b-ZsnEP4v6Cuep34E4 2 -
+/www-com/nikiniku-nikiniku-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-nikiniku-ll8.html
+/www-com/nikiniku-taiziqm-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-taiziqm-ll8.html
+/Public/home/js/check.js 6 -
+/www-cn/nikiniku-hywyrs-ll8.html 2 http://www.nikiniku.com/www-cn/nikiniku-hywyrs-ll8.html
+/.well-known/acme-challenge/m3otfTPJ5Bc_-qJ8U31cEguQzZr1eewu_89zu657NQg 2 -
+/.well-known/acme-challenge/lIvd_G56NYBjLctA_H1bb-yDz9jcA0nj5ya81Nm8PJM 2 -
+/318-yi-17479-nn8.html 2 http://www.nikiniku.com/318-yi-17479-nn8.html
+/.well-known/acme-challenge/zUa1pg8pbdbx2kUPPyX5mwTcLd5RJi8UOk4Cap7W3XE 2 -
+/www-com/nikiniku-debumo-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-debumo-ll8.html
+/.well-known/acme-challenge/SgiIrbxI4gZ379wsuLpzYZpWRfSpVRm2v4Xjv2PfaMU 2 -
+/www-com/nikiniku-bsdprint-2-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-bsdprint-2-ll8.html
+/www-com-cn/nikiniku-zpldg-ll8.html 2 http://www.nikiniku.com/www-com-cn/nikiniku-zpldg-ll8.html
+/www-com/nikiniku-bsdprint-3-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-bsdprint-3-ll8.html
+/.well-known/acme-challenge/CJb0gVsd2Szbg5k7-7FyvPu_700xCXZjq06JI-02dU4 2 -
+/.well-known/acme-challenge/JN5HAU9H6ONQTZnNkRFgKMaOpiNkY662A7tNZ_q52nc 2 -
+/www-com/nikiniku-tixiangspa-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-tixiangspa-ll8.html
+/.well-known/acme-challenge/uy3ADGIhn8e7l9iYUQMGBiC5uKuxlADEyb6T8a6C6kI 2 -
+/ktmvgme.html 2 http://nikiniku.com/ktmvgme.html
+/.well-known/acme-challenge/pcoq6zBYPddO9j6gv-6Yk1XbtGEY7rxW3o_5YYyEtQo 2 -
+/ueditor/controller.ashx 2 -
+/wordpress 42 -
+/21-nikiniku-56831-nn8.html 2 http://www.nikiniku.com/21-nikiniku-56831-nn8.html
+/404-7239.html 2 http://www.nikiniku.com/404-7239.html
+/www-com/nikiniku-ikj777-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-ikj777-ll8.html
+/.well-known/acme-challenge/jkzoXeqc-aIH3lqz3bGFHPVoNq17On9OCdZ4ZOdEzbk 2 -
+/www-net/nikiniku-lcld-ll8.html 2 http://www.nikiniku.com/www-net/nikiniku-lcld-ll8.html
+/.well-known/acme-challenge/9GdtK7qPB3PK3q7rAnBnld5TEZf3DA9zzfvWaNqSz1k 2 -
+/.well-known/acme-challenge/3LjwfYpMMW_U76TnnTfbkRh0HIfzGJ1m3_ggn9sPlL4 2 -
+/404-38337.html 2 http://www.nikiniku.com/404-38337.html
+/www-com/nikiniku-zuimeinv-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-zuimeinv-ll8.html
+/js/ueditor/net/controller.ashx 2 -
+/www-com-cn/nikiniku-ahgwa-ll8.html 2 http://www.nikiniku.com/www-com-cn/nikiniku-ahgwa-ll8.html
+/www-com-cn/nikiniku-zhipw-2-ll8.html 2 http://www.nikiniku.com/www-com-cn/nikiniku-zhipw-2-ll8.html
+/.well-known/acme-challenge/HQrZEpMh-iDzSA9O7mtbK7ZhYTqmzTCAvBn5T0r1_0w 2 -
+/404-15933.html 2 http://www.nikiniku.com/404-15933.html
+/www-com-cn/nikiniku-nhjog-1-ll8.html 2 http://www.nikiniku.com/www-com-cn/nikiniku-nhjog-1-ll8.html
+/static/images/nopic.png 4 -
+/public/feed 4 -
+/www-com/nikiniku-xdeblas-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-xdeblas-ll8.html
+/ueditor1/net/controller.ashx 2 -
+/www-com/nikiniku-qubhyy-2-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-qubhyy-2-ll8.html
+/.well-known/acme-challenge/xzzHJimRvLZdqgBadV4ibJH_NI39E2IzpqGT4XwpeBU 2 -
+/public/lemon 26 -
+/www-com/nikiniku-nyssy-3-ll8.html 2 -
+/www-com/nikiniku-silaige-1-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-silaige-1-ll8.html
+/www-com/nikiniku-jsncw-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-jsncw-ll8.html
+/404-28919.html 2 http://www.nikiniku.com/404-28919.html
+/www-net/nikiniku-queti-3-ll8.html 2 http://www.nikiniku.com/www-net/nikiniku-queti-3-ll8.html
+/.well-known/acme-challenge/Uu4nlZeQPOqueK753ixCRhCIy4gYzKQW7rRzy0TPKcg 2 -
+/404-3169.html 2 http://www.nikiniku.com/404-3169.html
+/wordpress/wp-includes/wlwmanifest.xml 2 -
+/.well-known/acme-challenge/qD34ukrvRYORH7rovbm_dUgF-sKdTKWyIbL40759vzc 2 -
+/www-net/nikiniku-fhss-ll8.html 2 http://www.nikiniku.com/www-net/nikiniku-fhss-ll8.html
+/.well-known/acme-challenge/wDU-k1qWaRTa-5xXaqbhRFjBGZS9vFqauFbDlBy6tzA 2 -
+/.well-known/acme-challenge/lTLW8mDaY2jTdQK10MECiYWXr6UGNjgEZrO2Q-zX12A 2 -
+/.well-known/acme-challenge/pXLw7q5YQCj-Ysmjmu767Uujgmw3jydXi5mzEjGRCZ0 2 -
+/static/common/webupload/server/preview.php 2 -
+/www-net/nikiniku-bangnian-2-ll8.html 2 http://www.nikiniku.com/www-net/nikiniku-bangnian-2-ll8.html
+/404-5197.html 2 http://www.nikiniku.com/404-5197.html
+/wp-content/uploads/2011/10/Platform-Bed-Design-from-Haiku.jpg 28 -
+/www-com/nikiniku-bzyzb-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-bzyzb-ll8.html
+/www-net/nikiniku-cirong-ll8.html 2 http://www.nikiniku.com/www-net/nikiniku-cirong-ll8.html
+/.well-known/acme-challenge/XxmcrkUXFsW63s4hAOHanDZ51szFhxvrXpca31DbEoY 2 -
+/old 42 -
+/404-28920.html 2 http://www.nikiniku.com/404-28920.html
+/public/coffee-table/modern-and-unique-glass-coffee-table-with-tree-branch-as-leg-by-sebastian-errazuriz 2 -
+/security.txt 2 -
+/.well-known/acme-challenge/wiJh1EgFsjovXKDxbXkgoUiikbsIQTI8OenP9UOYDws 2 -
+/www-net/nikiniku-rykd-ll8.html 2 http://www.nikiniku.com/www-net/nikiniku-rykd-ll8.html
+/admin/login.aspx 2 -
+/www-net/nikiniku-danban-ll8.html 2 http://www.nikiniku.com/www-net/nikiniku-danban-ll8.html
+/404-31216.html 2 http://www.nikiniku.com/404-31216.html
+/resources/htmleditor/net/controller.ashx 2 -
+/.well-known/acme-challenge/IWx8YVwnY2_vXq3c143RidI30ZlT-ZTL0g9O0yjhbCU 2 -
+/public/living-room/elea-contemporary-wooden-wall-unit-design-by-hulsta 2 -
+/www-com-cn/nikiniku-vytjl-3-ll8.html 2 http://www.nikiniku.com/www-com-cn/nikiniku-vytjl-3-ll8.html
+/404-3166.html 2 http://www.nikiniku.com/404-3166.html
+/wordpress/wp-admin/setup-config.php 2 -
+/www-net/nikiniku-lahei-ll8.html 2 http://www.nikiniku.com/www-net/nikiniku-lahei-ll8.html
+/new 42 -
+/www-com/nikiniku-silaige-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-silaige-ll8.html
+/www-com-cn/nikiniku-auuuw-ll8.html 2 http://www.nikiniku.com/www-com-cn/nikiniku-auuuw-ll8.html
+/404-7297.html 2 http://www.nikiniku.com/404-7297.html
+/.well-known/acme-challenge/jn0BnmTtnphXsFu2GNlKMS6vRRc6FsjMLF82WYKf8mg 2 -
+/.well-known/acme-challenge/H9358qh85kMLKN8tAKObL6_EF0r8IiaZUTOQTTudPE8 2 -
+/www-cn/nikiniku-hzzny-ll8.html 2 http://www.nikiniku.com/www-cn/nikiniku-hzzny-ll8.html
+/404-39841.html 2 http://www.nikiniku.com/404-39841.html
+/www-com/nikiniku-silaige-4-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-silaige-4-ll8.html
+/404-17233.html 2 http://www.nikiniku.com/404-17233.html
+/www-com/nikiniku-tjwkj-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-tjwkj-ll8.html
+/.well-known/acme-challenge/3JXjqjrJyjISb62HgNWI3vuTtWCi5of2q5CySSnaD3Q 2 -
+/.well-known/acme-challenge/oRNH8283CBPja_INcs8c9pQso3Al3-qBXd9CW18MrSA 2 -
+/www-cn/nikiniku-oncan-1-ll8.html 2 http://www.nikiniku.com/www-cn/nikiniku-oncan-1-ll8.html
+/www-net/nikiniku-rqbi-ll8.html 2 http://www.nikiniku.com/www-net/nikiniku-rqbi-ll8.html
+/.well-known/acme-challenge/RBGLncCvCUEWFfDuqOdntOdX_yzGnlWI45s-XU2j21Q 2 -
+/www-com/nikiniku-gob888-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-gob888-ll8.html
+/.well-known/acme-challenge/Ha_MHx8i83Jkgkxd6-RBegjfkaI-jWzhhRap-RiNzOU 2 -
+/www-com/nikiniku-xuout-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-xuout-ll8.html
+/.well-known/acme-challenge/t8n3COvdFeEWiNiddXmUIIaXuZ9SATGp6_qHKL7EdLE 2 -
+/.well-known/acme-challenge/4_37HCjJhvwQmYkk39yO9ixgl4mxu68LaeGQpHR1SFE 2 -
+/.well-known/acme-challenge/HRrfBrboyhFqmNOiEd0gNwTQLnveFoG76SLMA6b14LA 2 -
+/www-net/nikiniku-ytyh-ll8.html 2 http://www.nikiniku.com/www-net/nikiniku-ytyh-ll8.html
+/280-yi-17475-nn8.html 2 http://www.nikiniku.com/280-yi-17475-nn8.html
+/www-cn/nikiniku-hzzqs-ll8.html 2 http://www.nikiniku.com/www-cn/nikiniku-hzzqs-ll8.html
+/www-cn/nikiniku-kvhd-ll8.html 2 http://www.nikiniku.com/www-cn/nikiniku-kvhd-ll8.html
+/www-net/nikiniku-mosnet-ll8.html 2 http://www.nikiniku.com/www-net/nikiniku-mosnet-ll8.html
+/.well-known/acme-challenge/esRupMU2AM4D62oGzhGiT1tEJ93q6MzijP9SpFOsW_4 2 -
+/www-cn/nikiniku-hdiu-ll8.html 2 http://www.nikiniku.com/www-cn/nikiniku-hdiu-ll8.html
+/404-40294.html 2 http://www.nikiniku.com/404-40294.html
+/www-com/nikiniku-myagentnic-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-myagentnic-ll8.html
+/.well-known/acme-challenge/c39WXLj22GHHgFit_o6nC7_CvmzV8gvq8VwF3ru2yxk 2 -
+/2021/wp-includes/wlwmanifest.xml 2 -
+/www-com/nikiniku-ovallone-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-ovallone-ll8.html
+/.well-known/acme-challenge/fbNfGXrxR99Ky921cWSMc5AcM1coGGjzTrQt2vabiws 2 -
+/.well-known/acme-challenge/CR8G1IWvKoua5KbUJ7VcRe69h3JF_jeak8vsBr6xNNU 2 -
+/www-com/nikiniku-zjkshengan-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-zjkshengan-ll8.html
+/www-net/nikiniku-rouxin-ll8.html 2 http://www.nikiniku.com/www-net/nikiniku-rouxin-ll8.html
+/.well-known/acme-challenge/Kynxw4N_5Uje9GoIWFdJyJInxb4mBiW_6jyaXP5-Was 2 -
+/wp/wp-includes/wlwmanifest.xml 2 -
+/404-44984.html 2 http://www.nikiniku.com/404-44984.html
+/www-com/nikiniku-egpayments-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-egpayments-ll8.html
+/www-com/nikiniku-mailfodder-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-mailfodder-ll8.html
+/www-net/nikiniku-itdim-ll8.html 2 http://www.nikiniku.com/www-net/nikiniku-itdim-ll8.html
+/wp-content/uploads/Pullman-pendant.jpg 52 -
+/www-com-cn/nikiniku-ahgwa-3-ll8.html 2 http://www.nikiniku.com/www-com-cn/nikiniku-ahgwa-3-ll8.html
+/wp-content/uploads/Synthesy-Sliding-Glass-Doors-5.jpg 44 -
+/.well-known/acme-challenge/3fApm6L1-NpxUVfdH0HAMmVnfPg3lJOl94RM9X9wRlo 2 -
+/ni10hm1.html 2 http://nikiniku.com/ni10hm1.html
+/wp-content/uploads/2012/06/Entertainment-Wall-Units-from-Lazzoni.jpg 16 -
+/.well-known/acme-challenge/gwcpiLxrnsIv3VD9yds5grj9KYEc4i7rlYzwbnTP_O0 2 -
+/www-com-cn/nikiniku-dfwq-ll8.html 2 http://www.nikiniku.com/www-com-cn/nikiniku-dfwq-ll8.html
+/www-com/nikiniku-rof8-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-rof8-ll8.html
+/public/office/vela-modern-executive-office-desk-from-corazzingroup/attachment/vela-office-table-design 206 -
+/.well-known/acme-challenge/ydoAPI1kVNNDYGaAVq8lwOHyDiGZMVEBohKgC_XI4rM 2 -
+/.well-known/acme-challenge/A0iWJVXZMhfCS9lYykENwfcIMLOb3QFH1OEWySijT4g 2 -
+/www-com/nikiniku-hnyhp-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-hnyhp-ll8.html
+/62-0935pc-34832-nn8.html 2 http://www.nikiniku.com/62-0935pc-34832-nn8.html
+/.well-known/acme-challenge/_v4ut-BmlY9oOYgXBAm2UCVaZx-pzShzOTyslIoYJJo 2 -
+/.well-known/acme-challenge/ip1pEmTdx7pUl_bro4_u3RLSCIQzvda-OJAbhZ6MaBk 2 -
+/.well-known/acme-challenge/zS1nrqeGFlfvjzAZXm0gaTcKqC0juYgC1_5X1XDeFQw 2 -
+/www-com/nikiniku-t3andt4-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-t3andt4-ll8.html
+/404-5255.html 2 http://www.nikiniku.com/404-5255.html
+/404-17485.html 2 http://www.nikiniku.com/404-17485.html
+/404-29177.html 2 http://www.nikiniku.com/404-29177.html
+/satei/tetuzuki.html 2 http://www.nikiniku.com/satei/tetuzuki.html
+/www-com/nikiniku-mmddw-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-mmddw-ll8.html
+/404-44981.html 2 http://www.nikiniku.com/404-44981.html
+/wp-content/uploads/Linea-Join-Computer-Desk.jpg 24 -
+/www-com/nikiniku-klarxy-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-klarxy-ll8.html
+/.well-known/acme-challenge/_gQ2Auxji63mOgafF9wgJyUKQvYk3rc2FJ7dVEOQ_LY 2 -
+/404-10557.html 2 http://www.nikiniku.com/404-10557.html
+/.well-known/acme-challenge/DG7ykxVeo-SG3HizfbZddsIFUQy6eOwNF7CxR0-sLYU 2 -
+/wp-login.php 12 -
+/home 42 -
+/.well-known/acme-challenge/AmPPahLMej8qowiXgTBA6hedxYn4tp2dd8h4DuKCqss 2 -
+/.well-known/acme-challenge/pDg1Fa68-TYor3C5EwEM1NL_bL79jj_5e0Qm_8aTVCo 2 -
+/.well-known/acme-challenge/to1DCdBiriYImYprqqESoVwaF0a4eyFExae5zf9xAUQ 2 -
+/www-com/nikiniku-qubhyy-1-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-qubhyy-1-ll8.html
+/.well-known/acme-challenge/A4EDvHkAvLDp9fm1_g-bPMTecfxKo21x7DjWyULB53g 2 -
+/www-net/nikiniku-skyps-ll8.html 2 http://www.nikiniku.com/www-net/nikiniku-skyps-ll8.html
+/www-com/nikiniku-kagebi-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-kagebi-ll8.html
+/Content/plug/ueditor/net/controller.ashx 2 -
+/.well-known/acme-challenge/3JyvbVBzTDu9i9YLs14qImgyVJ41PDwHfBFfdG34_2A 2 -
+/www-com/nikiniku-ruanliaoba-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-ruanliaoba-ll8.html
+/www-com/nikiniku-yagaohuwai-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-yagaohuwai-ll8.html
+/www-com/nikiniku-ymmkj-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-ymmkj-ll8.html
+/.well-known/acme-challenge/IJYBrSW8ePNtcvjMgOOBa6bMrvg3TE4iaGVhM02bc80 2 -
+/www-com/nikiniku-vcare99-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-vcare99-ll8.html
+/.well-known/acme-challenge/DbXh4adB6ZKAJhF0WYUnrLQ9OuwsSC-swsjf1x9xWY8 2 -
+/www-com/nikiniku-5389sg-2-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-5389sg-2-ll8.html
+/www-net/nikiniku-rzsq-ll8.html 2 http://www.nikiniku.com/www-net/nikiniku-rzsq-ll8.html
+/atom.xml 6 -
+/.well-known/acme-challenge/JF-OHwMsJJL2Man-dunhVIuEqeTciMZlXwr8htDvAkk 2 -
+/www-com-cn/nikiniku-jiekan-ll8.html 2 http://www.nikiniku.com/www-com-cn/nikiniku-jiekan-ll8.html
+/www-net/nikiniku-yyxn-ll8.html 2 http://www.nikiniku.com/www-net/nikiniku-yyxn-ll8.html
+/351-yl2323-78720-nn8.html 2 http://www.nikiniku.com/351-yl2323-78720-nn8.html
+/.well-known/acme-challenge/ocUVuyIhZYvLWBgm_0oYQDbQVNeQ5fB5iJMYfELS0pI 2 -
+/www-net/nikiniku-gqbi-ll8.html 2 http://www.nikiniku.com/www-net/nikiniku-gqbi-ll8.html
+/.well-known/acme-challenge/Q8P_DFStm1g5yLHOv_K7bM8byMUzP4eAg3zP7gpwbRE 2 -
+/apple-touch-icon-120x120.png 14 -
+/xmlrpc.php 4 -
+/www-com/nikiniku-tyqqzrls-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-tyqqzrls-ll8.html
+/wp-content/uploads/Synthesy-Sliding-Glass-Doors-7.jpg 44 -
+/.well-known/acme-challenge/svg8EVGQU6jQ3w35irczQiEe5sNBWT4md7OmAW1tcOs 2 -
+/www-com/nikiniku-xwzhzx-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-xwzhzx-ll8.html
+/static/admin/javascript/hetong.js 6 -
+/www-com/nikiniku-mihaitoma-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-mihaitoma-ll8.html
+/statics/ueditor/php/controller.php 2 -
+/404-17146.html 2 http://www.nikiniku.com/404-17146.html
+/131-5389sg-34837-nn8.html 2 http://www.nikiniku.com/131-5389sg-34837-nn8.html
+/.well-known/acme-challenge/NAU37IvqksX6q9nV2DJGqJvbfHA-tcj8I5atlCWmSoU 2 -
+/.well-known/acme-challenge/w-hO89LHRAksadmU26uG2_GQHvToneJklc_96bvmpbY 2 -
+/www-com-cn/nikiniku-vgkcp-2-ll8.html 2 http://www.nikiniku.com/www-com-cn/nikiniku-vgkcp-2-ll8.html
+/wp-content/uploads/2012/06/Wall-Entertainment-Units-Design-from-Lazzoni.jpg 12 -
+/www-com/nikiniku-hnhmfc-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-hnhmfc-ll8.html
+/.well-known/acme-challenge/Q5wNNkJZ0tHy07dgLuRDIXBb17hCKis0C2o8ZIYqWgs 2 -
+/www-com/nikiniku-akardus-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-akardus-ll8.html
+/public/fireplace/modern-outdoor-fireplace-design-by-anne-colombo 6 -
+/ashx/controller.ashx 2 -
+/www-cn/nikiniku-lygfgj-ll8.html 2 http://www.nikiniku.com/www-cn/nikiniku-lygfgj-ll8.html
+/357-yl2323-78780-nn8.html 2 http://www.nikiniku.com/357-yl2323-78780-nn8.html
+/humans.txt 2 -
+/www-com/nikiniku-x3k3-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-x3k3-ll8.html
+/.well-known/acme-challenge/qEBVA08OXauu_-LIpSYTYhQLf7OcAFj2kYHSLSOe7TI 2 -
+/public/lighting/modern-floor-lamp-helios-by-milos-todorovic 2 -
+/www-com/nikiniku-h1f1-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-h1f1-ll8.html
+/.well-known/acme-challenge/zDNlUzInjVVuMWOnyq1Wxy1RzemNcE4qAgEIxoQOQvg 2 -
+/www-com-cn/nikiniku-rnjx-ll8.html 2 http://www.nikiniku.com/www-com-cn/nikiniku-rnjx-ll8.html
+/404-33106.html 2 http://www.nikiniku.com/404-33106.html
+/backup 42 -
+/sitemap.txt 6 -
+/404-2902.html 2 http://www.nikiniku.com/404-2902.html
+/www-cn/nikiniku-hkfam-1-ll8.html 2 http://www.nikiniku.com/www-cn/nikiniku-hkfam-1-ll8.html
+/.well-known/acme-challenge/vBPhlvBojCF5OfuZ0dfWxdZDQ7UmwyFisYSwCFgQvVo 2 -
+/www-com/nikiniku-nyssy-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-nyssy-ll8.html
+/wp-content/uploads/2012/02/Italian-Kitchen-Domina.jpg 2 -
+/www-com-cn/nikiniku-orhbr-ll8.html 2 http://www.nikiniku.com/www-com-cn/nikiniku-orhbr-ll8.html
+/.well-known/acme-challenge/JF_gUbuCeRrTAU5OWS_xAszJG3QhZxH6kHFg2lmpFPU 2 -
+/.well-known/acme-challenge/AaHcpADqGbR9O9vZQzlXCJoABMp-j-nWtw62UyzoRt0 2 -
+/404-11822.html 4 http://www.nikiniku.com/404-11822.html
+/wp-content/uploads/SETUP-Sofa-SOFTLINE.jpg 26 -
+/.well-known/acme-challenge/y1jadEIooAf5G_dxaWzb75ly6otdr_VWY3D0MIs3m38 2 -
+/www-cn/nikiniku-jkxqb-ll8.html 2 http://www.nikiniku.com/www-cn/nikiniku-jkxqb-ll8.html
+/wp-content/uploads/Dozy-Rocking-Chair.jpg 2 -
+/sitemap.xml 10 -
+/www-com-cn/nikiniku-zpldg-2-ll8.html 2 http://www.nikiniku.com/www-com-cn/nikiniku-zpldg-2-ll8.html
+/.well-known/acme-challenge/MvjG-gC_RHzBvI8aglODTNs3csBUNL_6-_vsnyN_iFg 2 -
+/404-38336.html 2 http://www.nikiniku.com/404-38336.html
+/.well-known/acme-challenge/P5PrzsudeCGlLKkApPFkpDUWUyXSE-lvtgCJ1atAZC4 2 -
+/www-com/nikiniku-akardus-1-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-akardus-1-ll8.html
+/.well-known/acme-challenge/hyl-WNSDIk5MwYy7wdHqcwEqUp5LYVZKMvExRaYeILk 2 -
+/car2.html 2 http://www.nikiniku.com/car2.html
+/www-com/nikiniku-czkwkj-2-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-czkwkj-2-ll8.html
+/2020/wp-includes/wlwmanifest.xml 2 -
+/.well-known/acme-challenge/1nf8tbnRoC19NpLvVNvGaSnfG9WUBwUhezwqqeFPL8Q 2 -
+/www-com/nikiniku-muxiaojie-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-muxiaojie-ll8.html
+/.well-known/acme-challenge/_ct0tPiPXCGAdFThRCA1NOnCaJ6vJsfgnkwH-VUFabc 2 -
+/rss.xml 2 -
+/www-com/nikiniku-rmeweb-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-rmeweb-ll8.html
+/www-com/nikiniku-daisyly-4-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-daisyly-4-ll8.html
+/www-com/nikiniku-tokendispo-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-tokendispo-ll8.html
+/.well-known/acme-challenge/lZjBgfeklRHiIYRfCl__YuFshaqxEb61ImRT9589POo 2 -
+/controller.ashx 2 -
+/www-com/nikiniku-aituango-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-aituango-ll8.html
+/.well-known/acme-challenge/PJhgQSHFbbvVPRX9b8UT4vAR6xzjsvrVWg-7pJnP98U 2 -
+/www-net/nikiniku-pingliao-ll8.html 2 http://www.nikiniku.com/www-net/nikiniku-pingliao-ll8.html
+/.well-known/acme-challenge/i3OlLsVwRZ23N1P6OyLnjTRM7nPFPiIf0U4TkEpaXmo 2 -
+/www-com/nikiniku-wentashoes-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-wentashoes-ll8.html
+/www-net/nikiniku-hengang-ll8.html 2 http://www.nikiniku.com/www-net/nikiniku-hengang-ll8.html
+/www-com/nikiniku-dzngw-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-dzngw-ll8.html
+/ni10hm2.html 2 http://nikiniku.com/ni10hm2.html
+/www-com-cn/nikiniku-qxqtd-2-ll8.html 2 http://www.nikiniku.com/www-com-cn/nikiniku-qxqtd-2-ll8.html
+/.well-known/acme-challenge/IdV1j4YkAAF41KK57Jk2W29y1QHls4u99R2pr8cVcmg 2 -
+/wp-content/uploads/2011/10/Contemporary-Bed-Design-from-Haiku.jpg 28 -
+/www-com-cn/nikiniku-atfc-ll8.html 2 http://www.nikiniku.com/www-com-cn/nikiniku-atfc-ll8.html
+/www-net/nikiniku-peichi-ll8.html 2 http://www.nikiniku.com/www-net/nikiniku-peichi-ll8.html
+/404-44070.html 2 http://www.nikiniku.com/404-44070.html
+/.well-known/acme-challenge/SOyXootv0K2uy53QF6JCA0c1kvfJrrrGR8nYg-y2sgA 2 -
+/www-cn/nikiniku-xqkxl-ll8.html 2 http://www.nikiniku.com/www-cn/nikiniku-xqkxl-ll8.html
+/.well-known/acme-challenge/8VyDhpZak5R_A0X4zr4HAhehCjjWm6zG_qqoKg0K1fQ 2 -
+/www-com/nikiniku-yzhuacheng-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-yzhuacheng-ll8.html
+/www-net/nikiniku-lahei-3-ll8.html 2 http://www.nikiniku.com/www-net/nikiniku-lahei-3-ll8.html
+/www-com/nikiniku-gdbzc-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-gdbzc-ll8.html
+/apple-touch-icon-precomposed.png 42 -
+/www-com/nikiniku-fangmaomin-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-fangmaomin-ll8.html
+/www-net/nikiniku-niluo-ll8.html 2 http://www.nikiniku.com/www-net/nikiniku-niluo-ll8.html
+/rwcq.html 2 http://nikiniku.com/rwcq.html
+/nh1mxydynd.html 2 http://nikiniku.com/nh1mxydynd.html
+/archivarix.cms.php 2 -
+/sjrn.html 2 http://nikiniku.com/sjrn.html
+/www-com/nikiniku-arenamusik-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-arenamusik-ll8.html
+/www-com/nikiniku-hatterasjewels-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-hatterasjewels-ll8.html
+/.well-known/acme-challenge/Jt7thft9UMnBI5GQh0SCqjzOWLFsecIHQJsc0xRAT3c 2 -
+/www-com/nikiniku-jevetonjeu-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-jevetonjeu-ll8.html
+/www-com/nikiniku-conversewu-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-conversewu-ll8.html
+/www-com/nikiniku-garmentu-1-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-garmentu-1-ll8.html
+/404-45967.html 2 http://www.nikiniku.com/404-45967.html
+/.well-known/acme-challenge/-lcleDkZOOczS4UJ0uU80DE1L5MdJtxJCWVv-RviocQ 2 -
+/.well-known/acme-challenge/rVJ_5qglmZfxRFAKlkqW_4cNUkicT1aMqVbSsmHdw3A 2 -
+/www-com/nikiniku-waxita-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-waxita-ll8.html
+/www-com-cn/nikiniku-grxwq-4-ll8.html 2 http://www.nikiniku.com/www-com-cn/nikiniku-grxwq-4-ll8.html
+/sitemaps.xml 6 -
+/.well-known/acme-challenge/lmqDROgKEIkQGJFbG-5kx4gez6e3-76fUPus9pkVsnQ 2 -
+/.well-known/acme-challenge/2_r-E7SJC9uAhnWAvqj7G3XmtfBcBnTLmAxh9VZSg_I 2 -
+/.well-known/acme-challenge/XkoW1WTrkG1QSfEH5wBc6Ls0a01K6ibVX6Nc2SgxlFM 2 -
+/www-net/nikiniku-rouxin-4-ll8.html 2 http://www.nikiniku.com/www-net/nikiniku-rouxin-4-ll8.html
+/www-com/nikiniku-biwanli-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-biwanli-ll8.html
+/.well-known/acme-challenge/Ck3SSoLpFqgAhz1CtkopDy5hxjeTnVRa_12ouTidfV4 2 -
+/.well-known/acme-challenge/_Bm_lxaopz684Z4exhApuQHRmkHFzB4IdKmT-TUg-JQ 2 -
+/wp-content/uploads/2012/04/Bari-Wall-Unit-System-from-Icomobili.jpg 22 -
+/.well-known/acme-challenge/bCeSJ_L7Iql2DRZYvuPGTOG7-9u5EUFh62lIvuCqyL0 2 -
+/www-com/nikiniku-shoeship-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-shoeship-ll8.html
+/www-net/nikiniku-saishun-ll8.html 2 http://www.nikiniku.com/www-net/nikiniku-saishun-ll8.html
+/.well-known/acme-challenge/VhunlFlDLg1KaEyRfG6h2g1ISHZTDc2b2iEwLO0hQiY 2 -
+/www-net/nikiniku-rddkj-ll8.html 2 http://www.nikiniku.com/www-net/nikiniku-rddkj-ll8.html
+/.well-known/acme-challenge/A3R8C2_pB2K5JJ5yNKhIBjci5na5I9aCoHWpm7OQ4kc 2 -
+/.well-known/acme-challenge/YJSfXtEvMEF2bRrEDKPmNZXOxPhtDlRFz2YnWjQxZsw 2 -
+/.well-known/acme-challenge/LjuUzSEYSXFv3Ut0vpcXoj2tlitO92nVh45v_uujhHo 2 -
+/wp-content/uploads/JSP-Industries-Modena-Entertainment-Center.jpg 22 -
+/www-net/nikiniku-teyukore-ll8.html 2 http://www.nikiniku.com/www-net/nikiniku-teyukore-ll8.html
+/www-com/nikiniku-zerosehero-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-zerosehero-ll8.html
+/.well-known/acme-challenge/SKLTgkWNbDPLwv0y0FWJTVhnBSQDOR1x5Tj40-5nutI 2 -
+/www-com/nikiniku-andreatafi-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-andreatafi-ll8.html
+/.well-known/acme-challenge/RGg3kSi8eZ8R3XveizrjzseETXeFLmg4_NB0SCzqrjo 2 -
+/www-com/nikiniku-factostyle-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-factostyle-ll8.html
+/.well-known/acme-challenge/c5ldxRBQ-Lz51bM4GpK5nPlxKAG9ueglVDOpLU7Qfcc 2 -
+/www-net/nikiniku-jujue-4-ll8.html 2 http://www.nikiniku.com/www-net/nikiniku-jujue-4-ll8.html
+/www-cn/nikiniku-jqrm-ll8.html 2 http://www.nikiniku.com/www-cn/nikiniku-jqrm-ll8.html
+/.well-known/acme-challenge/RuPjBde6WK6kmRQ0cm5moqJFyzwLiOPZMkNCVwXACt0 2 -
+/.well-known/acme-challenge/4XRFuKikA8PEMeb6uqzTtJBnAckUXEnRW3RcYAT4QWg 2 -
+/.well-known/acme-challenge/zzpS82qObZvPb1FLhJxX3x3N3hTJNPKr8OO5ZYTcwtQ 2 -
+/.well-known/acme-challenge/Y2803YEkFyXDWog5jxa8DwkGrTH7wO2tQMIPG48ikH4 2 -
+/www-com-cn/nikiniku-jiui-ll8.html 2 http://www.nikiniku.com/www-com-cn/nikiniku-jiui-ll8.html
+/.well-known/acme-challenge/W4WuMYVR5k7xVp_EAxrU2c83btVKKpGpznFBnivYYto 2 -
+/www-com-cn/nikiniku-qszx-ll8.html 2 http://www.nikiniku.com/www-com-cn/nikiniku-qszx-ll8.html
+/bc 42 -
+/www-com/nikiniku-teamtmf-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-teamtmf-ll8.html
+/www-com-cn/nikiniku-hcpzy-ll8.html 2 http://www.nikiniku.com/www-com-cn/nikiniku-hcpzy-ll8.html
+/bk 42 -
+/www-com/nikiniku-bdrfw-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-bdrfw-ll8.html
+/www-net/nikiniku-dfzn-ll8.html 2 http://www.nikiniku.com/www-net/nikiniku-dfzn-ll8.html
+/www-com-cn/nikiniku-vgkcp-3-ll8.html 2 http://www.nikiniku.com/www-com-cn/nikiniku-vgkcp-3-ll8.html
+/admin/fckeditor/editor/filemanager/upload/aspx/upload.aspx 2 -
+/www-net/nikiniku-3gus-ll8.html 2 http://www.nikiniku.com/www-net/nikiniku-3gus-ll8.html
+/.well-known/acme-challenge/wkNUH6CsUyxL3Q1L-FQJ2W76RXibsrqqGBwV3e9wnfU 2 -
+/sitemap.xml.gz 8 -
+/.well-known/acme-challenge/mmLOAHxX5XfwpVp7HDNPTjqOjojFpugJ6uFjvEmx1yE 2 -
+/ads.txt 24 -
+/www-com-cn/nikiniku-1ship-ll8.html 2 http://www.nikiniku.com/www-com-cn/nikiniku-1ship-ll8.html
+/www-com/nikiniku-gelfigroup-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-gelfigroup-ll8.html
+/262-czkwkj-34830-nn8.html 2 http://www.nikiniku.com/262-czkwkj-34830-nn8.html
+/wp-admin/setup-config.php 2 -
+/www-com/nikiniku-huxiaohu-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-huxiaohu-ll8.html
+/.well-known/acme-challenge/IlTYSJ-we-cN7cRv7LU92lEFLUqobOxHjt77I4OTczY 2 -
+/www-net/nikiniku-enxia-3-ll8.html 2 http://www.nikiniku.com/www-net/nikiniku-enxia-3-ll8.html
+/www-com/nikiniku-mdjcfj-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-mdjcfj-ll8.html
+/wp-includes/ID3/license.txt 2 -
+/www-net/nikiniku-tjml-ll8.html 2 http://www.nikiniku.com/www-net/nikiniku-tjml-ll8.html
+/www-net/nikiniku-wanlo-ll8.html 2 http://www.nikiniku.com/www-net/nikiniku-wanlo-ll8.html
+/www-com/nikiniku-atriuxe-ll8.html 2 http://www.nikiniku.com/www-com/nikiniku-atriuxe-ll8.html
+/404-29539.html 2 http://www.nikiniku.com/404-29539.html
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 25 first Hits must be first (order not required for others)
+BEGIN_VISITOR 219
+112.78.133.192 272 280 4656328 20250315085032
+112.78.133.195 228 252 7455478 20250328211144
+180.247.159.144 200 220 9259434 20250317183306
+103.144.18.52 172 198 8646632 20250325142341
+103.175.224.75 150 162 3431990 20250329070606
+112.78.133.196 102 108 2722374 20250321160646
+103.47.133.148 32 38 1849374 20250314171314
+36.68.219.149 22 28 1822198 20250311112105
+182.5.199.87 20 22 417430 20250303111258
+182.1.70.67 16 16 297618 20250329065357
+2404:c0:3090::3f4:3aea 14 20 1762238 20250311095834
+182.1.121.107 14 14 191332 20250315031420
+2404:c0:3090::47d:b654 12 18 1679120 20250322144342
+103.184.181.70 12 18 1752068 20250314170313
+112.78.133.198 12 12 152596 20250315090402
+182.1.82.255 10 10 204110 20250314164747
+36.73.221.172 10 10 83642 20250311112111
+182.1.107.127 8 8 94230 20250315070351
+144.217.135.202 8 8 27236 20250310002603
+110.138.152.177 8 8 88136 20250322083354
+2001:4ca0:108:42::7 8 8 28976 20250323082951
+103.144.18.242 8 8 41278 20250328222752
+182.1.101.239 8 8 118090 20250315162615
+40.117.101.110 6 6 21606 20250320222251
+182.1.66.85 6 12 1673774 20250328182908
+51.159.159.197 2 2 7216 20250325193202
+66.102.6.42 4 6 175988 20250328174650
+167.86.68.31 2 2 7202 20250316010642
+43.166.136.202 2 2 7202 20250312015326
+142.93.154.242 4 4 14418 20250323091949
+198.12.64.41 4 10 1607272 20250318025512
+2a02:c206:3015:63::1 2 2 7202 20250326093107
+182.5.199.246 2 2 7202 20250307140043
+128.199.6.245 4 4 14418 20250313074308
+47.254.74.59 2 2 7216 20250324132335
+199.244.88.220 2 2 7202 20250321110545
+157.230.81.124 4 4 14530 20250328160659
+43.166.136.24 2 2 7202 20250315155133
+93.158.91.247 2 2 7202 20250327192358
+103.85.231.200 2 2 7272 20250317001722
+95.175.90.87 2 2 7440 20250313001527
+157.230.61.214 4 4 14866 20250318084759
+2001:4ba0:cafe:b2c::1 2 2 7202 20250303072316
+64.227.145.20 4 4 14754 20250318215002
+192.53.165.202 2 2 7202 20250301121410
+2a02:c206:3015:2326::1 2 2 7202 20250318131740
+23.27.145.177 2 2 7384 20250304144252
+192.175.111.236 2 2 7258 20250305032239
+47.82.9.62 2 2 7202 20250309135321
+209.38.200.182 4 4 14418 20250301070935
+146.59.52.85 6 6 21648 20250327185635
+2a06:4883:5000::5b 2 2 7370 20250331031913
+137.226.113.44 2 2 7272 20250327201701
+47.243.172.114 2 2 7272 20250307211332
+172.172.62.11 2 2 7202 20250318191307
+195.34.81.220 2 2 7384 20250316002631
+195.189.250.131 2 2 7384 20250315001910
+44.200.255.203 4 4 14544 20250301171928
+2a06:4883:3000::2b 2 2 7426 20250330185027
+135.148.195.3 0 2 1272554 
+135.148.195.9 2 4 1279756 20250306194601
+23.27.145.251 2 2 7384 20250320150850
+182.1.116.253 6 6 64044 20250316113403
+43.166.244.192 2 2 7258 20250311053336
+64.15.129.115 2 2 7258 20250305032237
+134.199.77.203 2 2 7216 20250311170029
+199.244.88.227 2 2 7202 20250314103734
+34.132.154.88 2 2 7202 20250329105041
+51.75.162.18 2 6 328626 20250301170418
+170.106.35.187 2 2 7258 20250317234008
+93.158.91.12 2 2 7216 20250324084105
+103.90.36.214 2 2 7216 20250314001508
+213.188.87.111 2 2 7272 20250313001625
+149.57.180.113 2 2 7440 20250320143619
+2a06:4883:d000::f3 2 2 7202 20250327132722
+185.242.217.41 2 2 7216 20250317001730
+2404:c0:3090::47a:be5c 2 2 7216 20250322111230
+172.121.199.60 2 2 7202 20250320025108
+136.143.177.62 2 2 7258 20250303102531
+147.93.129.190 2 2 7216 20250327004802
+34.222.203.46 2 8 1600056 20250305162148
+188.143.244.135 2 2 7202 20250304063141
+43.166.128.187 2 2 7258 20250313085706
+146.190.237.77 4 4 14418 20250307190816
+2a04:4e41:f:1af7::b90c:6f7 2 8 1600042 20250314211844
+34.219.91.95 2 2 7216 20250320172953
+2a02:247a:26d:1000::1 2 2 7202 20250310092249
+23.96.89.249 2 2 7202 20250317184118
+209.74.83.82 2 2 7202 20250302182340
+2604:a00:50:1b:216:3eff:fe2b:1a1f 4 4 14460 20250311144314
+185.46.118.235 2 2 7272 20250315002236
+4.216.153.238 2 2 7202 20250306211909
+134.199.217.206 4 4 14418 20250325074753
+18.246.249.116 4 4 14432 20250307155832
+64.23.212.137 4 4 14418 20250317081035
+2001:19f0:1000:20d3:5400:5ff:fe52:1b29 2 2 7202 20250303204247
+2001:67c:6ec:2913:145:220:91:19 2 2 7202 20250313051524
+138.197.183.107 4 4 14418 20250311074955
+52.179.163.89 2 2 7202 20250328185315
+23.27.145.254 2 2 7440 20250304141254
+35.88.113.85 2 2 7216 20250324171148
+43.166.237.57 2 2 7258 20250309133801
+95.175.74.222 2 2 7272 20250316002053
+44.244.170.142 2 8 1600056 20250307142516
+159.203.21.129 4 4 14418 20250327075553
+114.125.109.207 4 4 44068 20250315082308
+74.176.205.232 2 2 7202 20250325015641
+159.65.232.100 4 4 14418 20250331084815
+170.106.161.78 2 2 7258 20250310070806
+43.130.91.95 2 2 7258 20250312100644
+204.12.230.18 2 2 7202 20250326192547
+43.159.149.56 2 2 7258 20250315230304
+146.70.117.198 2 2 7216 20250320075336
+142.93.235.143 4 4 14418 20250321124735
+170.106.35.153 2 2 7202 20250310201638
+93.158.90.36 2 2 7202 20250306202430
+64.233.173.169 2 2 7216 20250322091301
+182.5.199.233 2 2 7216 20250314211903
+64.23.219.235 2 2 7258 20250314163915
+206.41.176.142 2 2 7272 20250314001522
+199.244.88.225 2 2 7202 20250320054138
+95.175.66.195 2 2 7216 20250315002042
+43.166.251.233 4 4 14460 20250312160157
+159.65.24.22 4 4 12602 20250316164501
+161.35.24.60 4 4 14418 20250303083938
+198.211.114.91 4 4 14866 20250304160306
+136.0.110.245 2 2 7202 20250302120020
+93.158.90.69 2 2 7202 20250309134837
+89.169.102.46 2 2 7216 20250308072027
+31.56.56.22 4 4 14404 20250309055917
+34.200.230.130 2 2 7202 20250323054515
+5.133.192.108 2 2 7216 20250309230217
+159.203.89.49 2 2 7202 20250316050429
+104.248.75.7 2 2 7202 20250303111249
+192.241.137.43 2 2 7216 20250314164747
+161.35.180.112 4 4 14418 20250319071841
+66.102.6.40 0 2 158730 
+46.101.90.242 4 4 14418 20250321073107
+64.233.173.168 2 6 327502 20250322091302
+188.143.244.133 6 6 21606 20250319010529
+43.166.238.12 2 2 7258 20250310153251
+95.175.90.220 2 2 7216 20250316002937
+91.237.124.155 4 4 14432 20250307042732
+34.217.72.113 2 2 7202 20250308172154
+135.148.195.13 2 2 7202 20250312155815
+182.1.100.212 4 10 1628708 20250311104745
+45.197.14.35 2 2 7202 20250302051647
+35.94.238.56 2 2 7216 20250301062424
+128.24.23.167 2 2 7202 20250320214036
+162.249.166.39 2 2 7216 20250313001516
+165.232.147.208 2 2 7202 20250308082848
+52.156.166.75 2 2 7202 20250309235903
+52.41.227.48 2 2 7202 20250314173739
+205.169.39.29 2 8 1600210 20250311133201
+34.68.95.26 4 4 14404 20250324085706
+43.166.245.250 2 2 7258 20250313030602
+64.15.129.102 2 2 7258 20250305032235
+13.70.66.153 2 2 7202 20250311003025
+38.60.255.128 2 2 7258 20250326055659
+164.92.100.250 4 4 14418 20250307071957
+192.36.109.75 2 2 7202 20250314233729
+195.135.193.237 2 2 7384 20250318002850
+43.166.247.82 2 2 7202 20250313181622
+170.106.160.90 2 2 7258 20250314063220
+185.13.96.91 2 2 7202 20250310135303
+44.212.6.132 2 2 7202 20250301171928
+157.245.102.86 4 4 14418 20250329095528
+192.175.111.245 2 2 7258 20250305032239
+98.82.24.240 2 2 7202 20250326123440
+161.123.192.93 2 2 7440 20250314001532
+52.169.216.220 4 4 14404 20250326185417
+34.41.226.230 2 2 7258 20250316013917
+79.110.187.217 2 2 7202 20250317160239
+135.148.195.10 2 2 7202 20250329103035
+69.160.160.58 2 8 1601012 20250303071208
+5.253.240.128 2 2 7272 20250318010135
+149.56.150.211 2 8 1600098 20250310002625
+195.66.223.225 2 2 7384 20250317001439
+199.244.88.219 2 2 7202 20250313004145
+182.1.85.226 4 4 33848 20250322091301
+164.90.135.71 4 4 14418 20250309083149
+95.175.95.100 2 2 7216 20250318003045
+52.191.250.85 4 4 14404 20250317095957
+93.123.109.25 4 4 14460 20250328012027
+204.93.149.141 2 2 7272 20250301050337
+45.81.119.40 2 2 7440 20250316002348
+103.233.118.128 2 2 7216 20250314144559
+45.146.205.3 2 2 7440 20250315002133
+137.184.151.48 4 4 14754 20250304220620
+192.36.109.125 2 2 7202 20250321151330
+213.159.11.57 2 2 7216 20250313192928
+64.23.201.170 4 4 14530 20250314211737
+48.210.241.194 4 4 14404 20250312163436
+54.37.10.247 0 2 1272554 
+181.214.58.100 4 4 14432 20250330072404
+44.204.102.51 4 4 14544 20250310042959
+13.78.125.166 2 2 7202 20250307184044
+165.231.182.147 2 2 7202 20250309122718
+172.177.245.234 2 2 7202 20250321182525
+188.166.41.126 4 4 14418 20250305073559
+161.123.213.247 2 2 7440 20250318003115
+47.88.94.28 2 2 7272 20250324132334
+172.177.226.44 2 2 7202 20250326214815
+103.179.86.102 4 4 14404 20250320181607
+195.66.223.126 2 2 7384 20250313001421
+159.89.121.64 4 4 14418 20250315082829
+34.223.110.84 2 8 1600056 20250324110110
+5.133.192.171 2 2 7216 20250317054632
+45.197.14.33 2 2 7202 20250303053904
+5.133.192.99 2 2 7216 20250303013843
+103.228.132.197 2 2 7440 20250317001800
+43.166.244.251 2 2 7202 20250309205505
+31.56.240.151 2 8 1600098 20250326055638
+2a06:4883:d000::fc 2 2 7258 20250328085026
+135.148.195.8 0 2 1272554 
+47.88.78.6 2 2 7216 20250324132333
+47.82.10.188 2 2 7202 20250310020538
+44.242.139.92 2 2 7216 20250307071633
+206.189.39.255 2 2 7202 20250313165322
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 31
+20250301 18 24 1659034 7
+20250302 12 12 43254 5
+20250303 40 48 2083358 10
+20250304 64 64 845782 7
+20250305 16 22 1650708 7
+20250306 6 8 1294160 3
+20250307 28 34 1693850 11
+20250308 8 8 28822 4
+20250309 20 20 72104 9
+20250310 34 42 1900320 10
+20250311 122 152 9036050 15
+20250312 40 42 1628220 9
+20250313 36 36 195752 14
+20250314 524 590 22889804 30
+20250315 124 130 3069548 16
+20250316 28 28 142094 11
+20250317 42 44 1549990 15
+20250318 32 38 1756704 11
+20250319 12 12 64746 4
+20250320 32 32 173570 12
+20250321 38 50 3387190 9
+20250322 66 84 2624074 11
+20250323 10 10 36108 4
+20250324 20 26 1686520 8
+20250325 52 52 649854 5
+20250326 42 48 1935434 10
+20250327 28 28 144058 8
+20250328 290 312 8095526 13
+20250329 42 44 1927084 5
+20250330 6 6 21858 2
+20250331 6 6 21788 2
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 7
+1h+ 4
+0s-30s 237
+5mn-15mn 4
+30s-2mn 13
+30mn-1h 17
+2mn-5mn 6
+15mn-30mn 6
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 25 first Pages must be first (order not required for others)
+BEGIN_SIDER 33
+/ 704 2548144 258 215
+/kasir 170 2573942 3 24
+/pasiens 164 2747926 1 13
+/dashboard 148 2572090 1 12
+/tindakan 128 2183210 0 3
+/autocomplete-pasien 88 1814 1 1
+/dokters 50 1090666 1 3
+/login 46 166296 20 4
+/pasiens/create 38 556862 1 3
+/laporan-keuangan 36 674630 0 2
+/tindakan/create 36 619030 0 1
+/obats 36 509058 0 2
+/kasir/1/print 30 157170 0 2
+/dokters/create 20 366052 0 0
+/tindakan/3 18 261012 0 0
+/tindakan/4/edit 18 367488 0 0
+/kasir/2 14 154322 0 0
+/tindakan/4 14 219810 0 0
+/profile 12 222092 0 0
+/pasiens/2/edit 10 143948 0 0
+/tindakan/1/edit 10 199290 0 0
+/tindakan/2 8 109790 1 1
+/kasir/1/edit 8 116220 0 0
+/kasir/3/edit 6 80886 0 0
+/kasir/2/edit 6 80888 0 0
+/forgot-password 4 10848 0 1
+/pasiens/3/edit 2 29258 0 0
+/kasir/1 2 21996 0 0
+/tindakan/1 2 31734 0 0
+/pasiens/1/edit 2 33418 0 0
+/kasir/4 2 22054 0 0
+/tindakan/3/edit 2 40690 0 0
+/kasir/2/print 4 21290 0 0
+END_SIDER
+
+# Payload Range - Payload Frequency
+BEGIN_FILESIZE 6
+500-1K 2
+100-500 676
+2K-5K 906
+5K+ 3022
+44-100 28
+0-44 846
+END_FILESIZE
