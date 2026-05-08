@@ -16,7 +16,10 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 
 // Rute untuk halaman utama
+
+require __DIR__.'/auth.php';
 Route::redirect('/', '/login');
+// Auth::routes();
 // Route::get('/', [AuthenticatedSessionController::class, 'create'])
 //         ->name('login');
 // Route::get('/', function () {
@@ -151,4 +154,4 @@ Route::middleware(['auth'])->name('laporan-keuangan')->group(function () {
 
 
 // Rute autentikasi
-require __DIR__.'/auth.php';
+
