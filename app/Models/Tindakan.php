@@ -36,7 +36,7 @@ class Tindakan extends Model
     {
         return $this->belongsTo(Pasien::class, 'pasien_id', 'id_pasien');
     }
-        public function getBirthDateFormattedAttribute()
+        public function getTanggalVisitFormattedAttribute()
     {
         return $this->tanggal_visit ? Carbon::parse($this->tanggal_visit)->format('d/m/Y') : '-';
     }

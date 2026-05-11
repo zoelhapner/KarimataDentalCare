@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 
 class Kasir extends Model
 {
@@ -17,5 +18,9 @@ class Kasir extends Model
     public function tindakan()
     {
         return $this->belongsTo(Tindakan::class);
+    }
+        public function getTanggalVisitFormattedAttribute()
+    {
+        return $this->tanggal_visit ? Carbon::parse($this->tanggal_visit)->format('d/m/Y') : '-';
     }
 }

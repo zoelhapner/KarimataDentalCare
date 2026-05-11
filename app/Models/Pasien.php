@@ -12,10 +12,6 @@ class Pasien extends Model
     protected $table = 'pasiens';
     protected $primaryKey = 'id_pasien';
 
-    public $incrementing = false;
-
-    protected $keyType = 'string';
-
     protected $fillable = [
         'nama_pasien',
         'jenis_kelamin',

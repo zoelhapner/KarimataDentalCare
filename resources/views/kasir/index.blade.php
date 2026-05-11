@@ -12,9 +12,10 @@
                     {{-- Tabel Transaksi --}}
                     <div class="overflow-x-auto">
                         
-                        <table class="w-full text-sm text-left text-gray-700">
+                        <table id="tableKasir" class="w-full text-sm text-left text-gray-700">
                             <thead class="text-xs font-semibold tracking-wider text-gray-600 uppercase bg-gray-50 border-b border-gray-200">
                                 <tr>
+                                    <th scope="col" class="px-4 py-3">No.</th>
                                     <th scope="col" class="px-4 py-3">Tanggal</th>
                                     <th scope="col" class="px-4 py-3">Dokter</th>
                                     <th scope="col" class="px-4 py-3">Pasien</th>
@@ -26,7 +27,7 @@
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-gray-100 bg-white">
-                                @foreach ($transaksi as $kasir)
+                                {{-- @foreach ($transaksi as $kasir)
                                 <tr class="bg-white border-b">
                                     <td class="px-4 py-3">{{ $kasir->tindakan->tanggal_visit }}</td>
                                     <td class="px-4 py-3">{{ $kasir->tindakan->dokter->nama_dokter ?? 'N/A' }}</td> <!-- Menggunakan relasi dokter -->
@@ -37,17 +38,17 @@
                                     <td class="px-4 py-3">{{ $kasir->metode_pembayaran }}</td>
                                     <td class="px-4 py-3">
                                         <div class="flex space-x-2">
-                                            {{-- Tombol Detail --}}
+                                            
                                             <a href="{{ route('kasir.show', $kasir->id) }}"
                                                 class="px-4 py-2 text-sm font-medium text-white bg-blue-700 hover:bg-blue-800 rounded-lg focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                                 Detail
                                             </a>
-                                            {{-- Tombol Bayar --}}
+                                            
                                             <a href="{{ route('kasir.edit', $kasir->id) }}"
                                                 class="px-4 py-2 text-sm font-medium text-white bg-green-700 hover:bg-green-800 rounded-lg focus:ring-4 focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
                                                 Bayar
                                             </a>
-                                            {{-- Tombol Print Nota --}}
+                                            
                                             <a href="{{ route('kasir.print', $kasir->id) }}" target="_blank" 
                                                 class="px-4 py-2 text-sm font-medium text-white bg-yellow-500 hover:bg-yellow-600 rounded-lg focus:ring-4 focus:ring-yellow-300 dark:bg-yellow-400 dark:hover:bg-yellow-500 dark:focus:ring-yellow-600">
                                                 Print Nota
@@ -55,7 +56,7 @@
                                         </div>
                                     </td>
                                 </tr>
-                                @endforeach
+                                @endforeach --}}
                             </tbody>
                         </table>
                     </div>
@@ -64,3 +65,51 @@
         </section>
     </div>
 </x-app-layout>
+<script>
+
+$(function () {
+
+    $('#tableKasir').DataTable({
+
+        processing: true,
+        serverSide: true,
+        responsive: true,
+        autoWidth: false,
+
+        ajax: "{{ route('kasir.index') }}",
+
+        columns: [
+            { data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false},
+            { data: 'tanggal', name: 'tanggal' },
+            { data: 'dokter', name: 'dokter' },
+            { data: 'pasien', name: 'pasien' },
+            { data: 'total_biaya', name: 'total_biaya' },
+            { data: 'dibayar', name: 'dibayar' },
+            { data: 'kembalian', name: 'kembalian' },
+            { data: 'metode_pembayaran', name: 'metode_pembayaran' },
+
+            {
+                data: 'aksi',
+                name: 'aksi',
+                orderable: false,
+                searchable: false
+            }
+        ],
+
+        language: {
+            search: "Cari:",
+            lengthMenu: "Tampilkan _MENU_ data",
+            zeroRecords: "Data tidak ditemukan",
+            info: "Menampilkan _START_ - _END_ dari _TOTAL_ data",
+            infoEmpty: "Tidak ada data",
+            paginate: {
+                next: "›",
+                previous: "‹"
+            }
+        }
+
+    });
+
+});
+
+</script>
