@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 
 class Tindakan extends Model
 {
@@ -34,5 +35,9 @@ class Tindakan extends Model
     public function pasien()
     {
         return $this->belongsTo(Pasien::class, 'pasien_id', 'id_pasien');
+    }
+        public function getBirthDateFormattedAttribute()
+    {
+        return $this->tanggal_visit ? Carbon::parse($this->tanggal_visit)->format('d/m/Y') : '-';
     }
 }

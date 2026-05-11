@@ -5,13 +5,13 @@ namespace App\Models;
 use App\Models\Tindakan;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Carbon;
 
 class Dokter extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'id_dokter',
         'user_id',
         'nama_dokter',
         'role',
@@ -23,6 +23,8 @@ class Dokter extends Model
         'jadwalpraktik',
         'penghasilan', // Menambahkan kolom penghasilan  
     ];
+
+    protected $primaryKey = 'id_dokter';
 
     public function user()
     {
@@ -47,6 +49,10 @@ class Dokter extends Model
     public function dokter()
     {
         return $this->belongsTo(Dokter::class, 'dokter_id', 'id_dokter'); // Sesuaikan dengan nama kolom
+    }
+        public function getBirthDateFormattedAttribute()
+    {
+        return $this->tanggal_lahir ? Carbon::parse($this->tanggal_lahir)->format('d/m/Y') : '-';
     }
 
     public static function boot()

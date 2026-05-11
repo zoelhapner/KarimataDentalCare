@@ -36,7 +36,7 @@
                             {{-- Form Filter Pasien --}}
                             <form method="GET" action="{{ route('tindakan.index') }}" class="flex items-center space-x-2">
                                 <input type="text" name="pasien_query" placeholder="Cari Pasien" class="p-2 border border-gray-300 rounded-lg" value="{{ request('pasien_query') }}">
-                                <button type="submit" class="px-4 py-2 text-sm font-medium text-white bg-primary-700 hover:bg-blue-800 rounded-lg focus:ring-4 focus:ring-blue-300">
+                                <button id="btnCari" type="button" class="px-4 py-2 text-sm font-medium text-white bg-primary-700 hover:bg-blue-800 rounded-lg focus:ring-4 focus:ring-blue-300">
                                     Cari
                                 </button>
                             </form>
@@ -115,11 +115,16 @@
             const table = $('#tableTindakans').DataTable({
                 serverSide: true,
                 processing: true,
-                ajax: '{{ route("tindakan.index") }}',
+                    ajax: {
+                        url: "{{ route('tindakan.index') }}",
+                        data: function (d) {
+                            d.pasien_query = $('input[name=pasien_query]').val();
+                        }
+                    },
                 columns: [
                     { data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false },
-                    { data: 'nama_dokter', name: 'nama_dokter' },
-                    { data: 'nama_pasien', name: 'nama_pasien' },
+                    { data: 'nama_dokter', name: 'dokter.nama_dokter' },
+                    { data: 'nama_pasien', name: 'pasien.nama_pasien' },
                     { data: 'tindakan', name: 'tindakan' },
                     { data: 'tanggal_visit', name: 'tanggal_visit' },
                     { data: 'jam', name: 'jam' },
@@ -142,13 +147,15 @@
                 },
 
                 initComplete: function () {
-                    const input = $('.dt-search input');
+                    const input = $('.dataTables_filter input');
                     input.removeClass('form-control-sm')
                         .addClass('form-control');
                 }
             });
 
-            // Delete user functionally
+            $('#btnCari').on('click', function () {
+                table.ajax.reload();
+            });
             $('table').on('click', '.delete-pasiens', function () {
             const projectId = $(this).data('id');
 

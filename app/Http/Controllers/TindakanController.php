@@ -9,6 +9,7 @@ use App\Models\Kasus;
 use App\Models\Kasir;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Carbon;
 use Yajra\DataTables\Facades\DataTables;
 
 class TindakanController extends Controller
@@ -41,7 +42,16 @@ public function index(Request $request)
             'pasien',
             'kasus',
             'kasir'
-        ]);
+        ])->orderBy('created_at', 'desc');
+
+        if ($request->filled('pasien_query')) {
+
+            $search = $request->pasien_query;
+
+            $data->whereHas('pasien', function ($q) use ($search) {
+                $q->where('nama_pasien', 'ilike', "%{$search}%");
+            });
+        }
 
         return DataTables::of($data)
             ->addIndexColumn()
@@ -52,9 +62,7 @@ public function index(Request $request)
             ->addColumn('nama_dokter', function ($row) {
                 return $row->dokter->nama_dokter ?? '-';
             })
-            ->addColumn('tanggal_visit', function ($row) {
-                return $row->tanggal_visit ?? '-';
-            })
+            ->addColumn('tanggal_visit', fn($row) => $row->tanggal_visit ? Carbon::parse($row->tanggal_visit)->format('d/m/Y') : '-')
             ->addColumn('jam', function ($row) {
                 return $row->jam ?? '-';
             })
@@ -79,18 +87,6 @@ public function index(Request $request)
 
                     </div>
                 ';
-            })
-
-            ->filter(function ($query) use ($request) {
-
-                if ($request->has('search') && $request->search['value']) {
-
-                    $search = $request->search['value'];
-
-                    $query->whereHas('pasien', function ($q) use ($search) {
-                        $q->where('nama_pasien', 'ilike', "%{$search}%");
-                    });
-                }
             })
 
             ->rawColumns(['aksi'])
@@ -181,13 +177,14 @@ public function index(Request $request)
     public function edit($id)
     {
         // Cek apakah pengguna adalah Manager
-        if (session('user_role') !== 'manager') {
-            return redirect()->route('tindakan.index')->with('error', 'Anda tidak memiliki izin untuk mengedit tindakan.');
+        if (!in_array(session('user_role'), ['manager', 'dokter'])) {
+            return redirect()->route('tindakan.index')
+                ->with('error', 'Anda tidak memiliki izin untuk mengedit tindakan.');
         }
 
         $tindakan = Tindakan::with('kasus')->findOrFail($id);
-        $dokters = Dokter::all(); // Ambil semua dokter
-        $pasiens = Pasien::all(); // Ambil semua pasien
+        $dokters = Dokter::all(); 
+        $pasiens = Pasien::all();
 
         return view('tindakan.edit', compact('tindakan', 'dokters', 'pasiens'));
     }
@@ -195,9 +192,9 @@ public function index(Request $request)
     // Mengupdate data tindakan, kasus, dan kasir
     public function update(Request $request, $id)
     {
-        // Cek apakah pengguna adalah Manager
-        if (session('user_role') !== 'manager') {
-            return redirect()->route('tindakan.index')->with('error', 'Anda tidak memiliki izin untuk memperbarui tindakan.');
+        if (!in_array(session('user_role'), ['manager', 'dokter'])) {
+            return redirect()->route('tindakan.index')
+                ->with('error', 'Anda tidak memiliki izin untuk mengedit tindakan.');
         }
 
         $validated = $request->validate([
@@ -269,7 +266,7 @@ public function index(Request $request)
 
         if ($request->filled('q')) {
             $data = Pasien::select("nama_pasien", "id_pasien")
-                ->where('nama_pasien', 'LIKE', '%' . $request->get('q') . '%')
+                ->where('nama_pasien', 'ILIKE', '%' . $request->get('q') . '%')
                 ->take(10)
                 ->get();
         }
@@ -287,7 +284,7 @@ public function index(Request $request)
         $tindakans = Tindakan::with(['dokter', 'pasien', 'kasus', 'kasir'])
             ->when($query, function ($queryBuilder) use ($query) {
                 return $queryBuilder->whereHas('pasien', function ($pasienQuery) use ($query) {
-                    $pasienQuery->where('nama_pasien', 'like', '%' . $query . '%');
+                    $pasienQuery->where('nama_pasien', 'ilike', '%' . $query . '%');
                 });
             })
             ->get();

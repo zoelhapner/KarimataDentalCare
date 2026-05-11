@@ -113,7 +113,7 @@
                                     <th class="px-6 py-4">No HP</th>
                                     <th class="px-6 py-4">Jadwal Praktik</th>
                                     <th class="px-6 py-4">Pendapatan</th>
-
+                                    <th class="px-6 py-4">Aksi</th>
                                 </tr>
 
                             </thead>
@@ -198,12 +198,12 @@
                     { data: 'jadwalpraktik', name: 'jadwalpraktik' },
                     { data: 'penghasilan', name: 'penghasilan' },
 
-                    // {
-                    //     data: 'aksi',
-                    //     name: 'aksi',
-                    //     orderable: false,
-                    //     searchable: false
-                    // }
+                    {
+                        data: 'aksi',
+                        name: 'aksi',
+                        orderable: false,
+                        searchable: false
+                    }
                 ],
                 language: {
                     search: "",

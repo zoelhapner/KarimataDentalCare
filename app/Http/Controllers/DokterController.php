@@ -6,8 +6,10 @@ use App\Models\Dokter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\User;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 use Illuminate\Support\Str;
 use App\Models\Kasir;
 use Yajra\DataTables\Facades\DataTables;
@@ -65,22 +67,23 @@ public function index()
                 $name = Str::title($dokter->nama_dokter ?? '-');
                 return '<a href="'.$url.'">'.e($name).'</a>';
             })
+            ->addColumn('tanggal_lahir', fn($row) => $row->tanggal_lahir ? Carbon::parse($row->tanggal_lahir)->format('d/m/Y') : '-')
 
-            // ->addColumn('aksi', function ($dokter) {
+            ->addColumn('aksi', function ($dokter) {
 
-            //     return '
-            //         <div class="flex gap-2">
+                return '
+                    <div class="flex gap-2">
 
-            //             <a href="'.route('dokters.edit', $dokter->id_dokter).'"
-            //                 class="px-3 py-2 text-xs text-white bg-yellow-500 rounded-lg">
-            //                 Edit
-            //             </a>
+                        <a href="'.route('dokters.edit', $dokter->id_dokter).'"
+                            class="px-3 py-2 text-xs text-white bg-yellow-500 rounded-lg">
+                            Edit
+                        </a>
 
-            //         </div>
-            //     ';
-            // })
+                    </div>
+                ';
+            })
 
-            ->rawColumns(['checkbox', 'nama_dokter'])
+            ->rawColumns(['checkbox', 'nama_dokter', 'aksi'])
             ->make(true);
     }
 
@@ -88,17 +91,12 @@ public function index()
 }
 
 
-    /**
-     * Menampilkan form untuk menambahkan dokter baru.
-     */
     public function create()
     {
         return view('dokters.create');
     }
 
-    /**
-     * Menyimpan dokter baru ke database.
-     */
+
     public function store(Request $request)
     {
         // Validasi input
@@ -146,9 +144,6 @@ public function index()
             ->with('success', 'Dokter berhasil ditambahkan.');
     }
 
-    /**
-     * Menampilkan detail dokter.
-     */
     public function show(Request $request, Dokter $dokter)
     {
 
@@ -184,13 +179,14 @@ public function index()
             ->with('biaya', $penghasilanDokter);
     }
 
-    /**
-     * Memperbarui data dokter di database.
-     */
+    public function edit(Dokter $dokter)
+    {
+        return view('dokters.edit', compact('dokter'));
+    }
     public function update(Request $request, Dokter $dokter)
     {
         // Validasi input
-        $validator = $this->validateDokter($request, $dokter->id);
+        $validator = $this->validateDokter($request, $dokter->id_dokter);
 
         if ($validator->fails()) {
             return redirect()->route('dokters.edit', $dokter)
@@ -228,16 +224,32 @@ public function index()
     /**
      * Validasi data dokter untuk store dan update.
      */
+
     protected function validateDokter(Request $request, $dokterId = null)
     {
         return Validator::make($request->all(), [
             'email' => 'required|string|max:255',
             'password' => 'required',
             'nama_dokter' => 'required|string|max:255',
-            'nip' => 'required|string|max:255|unique:dokters,nip,' . $dokterId,
+
+            'nip' => [
+                'required',
+                'string',
+                'max:255',
+                Rule::unique('dokters', 'nip')
+                    ->ignore($dokterId, 'id_dokter'),
+            ],
+
             'alamat' => 'required|string|max:255',
             'tanggal_lahir' => 'required|date',
-            'nik' => 'required|digits:16|unique:dokters,nik,' . $dokterId,
+
+            'nik' => [
+                'required',
+                'digits:16',
+                Rule::unique('dokters', 'nik')
+                    ->ignore($dokterId, 'id_dokter'),
+            ],
+
             'nohp' => 'required|digits_between:10,15',
             'jadwalpraktik' => 'required|string|max:255',
         ]);

@@ -78,7 +78,6 @@ class PasienController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'id_pasien' => 'required|unique:pasiens,id_pasien',
             'nama_pasien' => 'required|string|max:255',
             'jenis_kelamin' => 'required|in:L,P',
             'alamat_pasien' => 'required|string|max:500',

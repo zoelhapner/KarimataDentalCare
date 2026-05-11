@@ -14,9 +14,9 @@
         </div>
         @endif
 
-        <section class="bg-gray-50 dark:bg-gray-900 py-3 sm:py-5">
+        <section class="bg-gray-50 py-5">
             <div class="px-4 mx-auto max-w-screen-2xl lg:px-12">
-                <div class="relative overflow-hidden bg-white shadow-md dark:bg-gray-800 sm:rounded-lg">
+                <div class="relative overflow-hidden bg-white shadow-md">
                     <div class="flex flex-col px-4 py-3 space-y-3 lg:flex-row lg:items-center lg:justify-between lg:space-y-0 lg:space-x-4">
                         <div>
                             <h3 class="text-xl font-semibold">{{ $tindakan->tindakan }}</h3>
@@ -34,8 +34,8 @@
                         @if($tindakan->kasus->isEmpty())
                         <p class="text-sm text-gray-500">Belum ada kasus yang ditambahkan.</p>
                         @else
-                        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 mt-4">
-                            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <table class="w-full text-sm text-left text-gray-500">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                                 <tr>
                                     <th scope="col" class="px-4 py-3">Kasus</th>
                                     <th scope="col" class="px-4 py-3">Diagnosa</th>
@@ -45,7 +45,7 @@
                             </thead>
                             <tbody>
                                 @foreach ($tindakan->kasus as $kasus)
-                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                <tr class="bg-white border-b hover:bg-gray-50">
                                     <td class="px-4 py-3">{{ $kasus->kasus }}</td>
                                     <td class="px-4 py-3">{{ $kasus->diagnosa }}</td>
                                     <td class="px-4 py-3">{{ $kasus->tindakan_khusus }}</td>
