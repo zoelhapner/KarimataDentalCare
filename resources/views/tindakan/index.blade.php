@@ -32,14 +32,21 @@
                             </a>
                         </div>
 
-                        <div class="flex flex-col px-4 py-3 space-y-3 lg:flex-row lg:items-center lg:justify-between lg:space-y-0 lg:space-x-4">
-                            {{-- Form Filter Pasien --}}
+                        {{-- <div class="flex flex-col px-4 py-3 space-y-3 lg:flex-row lg:items-center lg:justify-between lg:space-y-0 lg:space-x-4">
+                            
                             <form method="GET" action="{{ route('tindakan.index') }}" class="flex items-center space-x-2">
                                 <input type="text" name="pasien_query" placeholder="Cari Pasien" class="p-2 border border-gray-300 rounded-lg" value="{{ request('pasien_query') }}">
-                                <button id="btnCari" type="button" class="px-4 py-2 text-sm font-medium text-white bg-primary-700 hover:bg-blue-800 rounded-lg focus:ring-4 focus:ring-blue-300">
+                                <button id="searchTindakan" type="button" class="px-4 py-2 text-sm font-medium text-white bg-primary-700 hover:bg-blue-800 rounded-lg focus:ring-4 focus:ring-blue-300">
                                     Cari
                                 </button>
                             </form>
+                        </div> --}}
+                        <div class="w-full md:w-80">
+                            <input
+                                type="text"
+                                id="searchTindakan"
+                                placeholder="Cari pasien / tindakan / dokter..."
+                                class="w-full p-2.5 text-sm border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
                         </div>
 
                     </div>
@@ -117,9 +124,6 @@
                 processing: true,
                     ajax: {
                         url: "{{ route('tindakan.index') }}",
-                        data: function (d) {
-                            d.pasien_query = $('input[name=pasien_query]').val();
-                        }
                     },
                 columns: [
                     { data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false },
@@ -130,6 +134,7 @@
                     { data: 'jam', name: 'jam' },
                     { data: 'aksi', name: 'aksi', orderable: false, searchable: false },
                 ],
+                dom: 'lrtip',
                 language: {
                     search: "",
                     searchPlaceholder: "Cari tindakan...",
@@ -153,58 +158,39 @@
                 }
             });
 
-            $('#btnCari').on('click', function () {
-                table.ajax.reload();
+            $('#searchTindakan').on('keyup', function () {
+                table.search(this.value).draw();
             });
-            $('table').on('click', '.delete-pasiens', function () {
-            const projectId = $(this).data('id');
 
-            Swal.fire({
-            title: 'Yakin ingin menghapus?',
-            text: "Data akan hilang secara permanen.",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#d33',
-            cancelButtonColor: '#6c757d',
-            confirmButtonText: 'Ya, hapus!',
-            cancelButtonText: 'Batal'
+            $('table').on('click', '.delete-tindakans', function () {
 
-            }).then((result) => {
+                const tindakanId = $(this).data('id');
 
-                if (result.isConfirmed) {
+                if (confirm('Yakin ingin menghapus data ini?')) {
+
                     $.ajax({
 
-                        url: `/projects/${projectId}`,
+                        url: `/tindakan/${tindakanId}`,
                         method: 'DELETE',
+
                         data: {
                             _token: '{{ csrf_token() }}',
                         },
 
                         success: function (response) {
-                            if (response.status === 'success') {
-                                Swal.fire({
-                                    icon: 'success',
-                                    title: 'Berhasil!',
-                                    text: 'Data Proyek telah dihapus.',
-                                    timer: 2000,
-                                    showConfirmButton: false
-                            });
 
-                        table.ajax.reload(null, false); // refresh datatable
-                        } else {
+                            alert('Data berhasil dihapus');
 
-                            Swal.fire('Gagal', response.message || 'Tidak bisa menghapus data.', 'error');
-                        }
+                            table.ajax.reload(null, false);
                         },
 
-                    error: function () {
+                        error: function () {
 
-                    Swal.fire('Error', 'Terjadi kesalahan saat menghapus.', 'error');
-                    }
+                            alert('Terjadi kesalahan saat menghapus data');
+                        }
 
                     });
                 }
-            });
             });
 
 

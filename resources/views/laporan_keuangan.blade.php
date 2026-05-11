@@ -16,9 +16,9 @@
                     {{-- HEADER --}}
                     <div class="px-6 py-5 border-b border-gray-200">
 
-                        <h1 class="text-2xl font-bold text-gray-800">
+                        {{-- <h1 class="text-2xl font-bold text-gray-800">
                             Laporan Keuangan
-                        </h1>
+                        </h1> --}}
 
                         <p class="mt-1 text-sm text-gray-500">
                             Ringkasan pemasukan dan pembagian pendapatan klinik

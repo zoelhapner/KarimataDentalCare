@@ -13,7 +13,7 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
     <link rel="icon" type="image/png" href="{{ asset('img/logo.png') }}">
-    <link rel="apple-touch-icon" href="{{ asset('img/logo.png') }}">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     {{-- Vite --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
@@ -46,7 +46,7 @@
 
     {{-- DataTables --}}
     <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     {{-- Stack Scripts --}}
     @stack('scripts')
 

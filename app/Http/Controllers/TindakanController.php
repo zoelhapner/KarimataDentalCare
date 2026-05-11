@@ -14,87 +14,84 @@ use Yajra\DataTables\Facades\DataTables;
 
 class TindakanController extends Controller
 {
-    // Menampilkan daftar tindakan
-    // public function index(Request $request)
-    // {
-    //     // Ambil query pencarian pasien
-    //     $query = $request->get('pasien_query');
 
-    //     // Query untuk mencari berdasarkan nama pasien
-    //     $tindakans = Tindakan::with(['dokter', 'pasien', 'kasus', 'kasir'])
-    //         ->when($query, function ($queryBuilder) use ($query) {
-    //             return $queryBuilder->whereHas('pasien', function ($pasienQuery) use ($query) {
-    //                 $pasienQuery->where('nama_pasien', 'like', '%' . $query . '%');
-    //             });
-    //         })
-    //         ->get();
+    public function index(Request $request)
+    {
+        if ($request->ajax()) {
 
-    //     // Kirim data ke view
-    //     return view('tindakan.index', compact('tindakans'));
-    // }
+            $data = Tindakan::with([
+                'dokter',
+                'pasien',
+                'kasus',
+                'kasir'
+            ])->orderBy('created_at', 'desc');
 
-public function index(Request $request)
-{
-    if ($request->ajax()) {
+            return DataTables::of($data)
+                ->filter(function ($query) use ($request) {
 
-        $data = Tindakan::with([
-            'dokter',
-            'pasien',
-            'kasus',
-            'kasir'
-        ])->orderBy('created_at', 'desc');
+                    if ($search = $request->get('search')['value']) {
 
-        if ($request->filled('pasien_query')) {
+                        $query->where(function ($q) use ($search) {
 
-            $search = $request->pasien_query;
+                            $q->where('tindakan', 'ilike', "%{$search}%")
 
-            $data->whereHas('pasien', function ($q) use ($search) {
-                $q->where('nama_pasien', 'ilike', "%{$search}%");
-            });
+                                ->orWhereHas('pasien', function ($pasien) use ($search) {
+                                    $pasien->where('nama_pasien', 'ilike', "%{$search}%");
+                                })
+
+                                ->orWhereHas('dokter', function ($dokter) use ($search) {
+                                    $dokter->where('nama_dokter', 'ilike', "%{$search}%");
+                                });
+
+                        });
+                    }
+                })
+                ->addIndexColumn()
+                ->addColumn('nama_pasien', function ($row) {
+                    return $row->pasien->nama_pasien ?? '-';
+                })
+
+                ->addColumn('nama_dokter', function ($row) {
+                    return $row->dokter->nama_dokter ?? '-';
+                })
+                ->addColumn('tanggal_visit', fn($row) => $row->tanggal_visit ? Carbon::parse($row->tanggal_visit)->format('d/m/Y') : '-')
+                ->addColumn('jam', function ($row) {
+                    return $row->jam ?? '-';
+                })
+                ->addColumn('tindakan', function ($row) {
+                    return $row->tindakan ?? '-';
+                })
+
+                ->addColumn('aksi', function ($row) {
+
+                    return '
+                        <div class="flex items-center gap-2">
+
+                            <a href="'.route('tindakan.edit', $row->id).'"
+                                class="px-3 py-2 text-xs font-medium text-white bg-yellow-500 rounded-lg hover:bg-yellow-600">
+                                Edit
+                            </a>
+
+                            <a href="'.route('tindakan.show', $row->id).'"
+                                class="px-3 py-2 text-xs font-medium text-white bg-blue-500 rounded-lg hover:bg-blue-600">
+                                Lihat
+                            </a>
+                            <button 
+                                class="delete-tindakans px-3 py-2 text-xs font-medium text-white bg-red-500 rounded-lg hover:bg-red-600"
+                                data-id="'.$row->id.'">
+                                Hapus
+                            </button>
+
+                        </div>
+                    ';
+                })
+
+                ->rawColumns(['aksi'])
+                ->make(true);
         }
 
-        return DataTables::of($data)
-            ->addIndexColumn()
-            ->addColumn('nama_pasien', function ($row) {
-                return $row->pasien->nama_pasien ?? '-';
-            })
-
-            ->addColumn('nama_dokter', function ($row) {
-                return $row->dokter->nama_dokter ?? '-';
-            })
-            ->addColumn('tanggal_visit', fn($row) => $row->tanggal_visit ? Carbon::parse($row->tanggal_visit)->format('d/m/Y') : '-')
-            ->addColumn('jam', function ($row) {
-                return $row->jam ?? '-';
-            })
-             ->addColumn('tindakan', function ($row) {
-                return $row->tindakan ?? '-';
-            })
-
-            ->addColumn('aksi', function ($row) {
-
-                return '
-                    <div class="flex items-center gap-2">
-
-                        <a href="'.route('tindakan.edit', $row->id).'"
-                            class="px-3 py-2 text-xs font-medium text-white bg-yellow-500 rounded-lg hover:bg-yellow-600">
-                            Edit
-                        </a>
-
-                        <a href="'.route('tindakan.show', $row->id).'"
-                            class="px-3 py-2 text-xs font-medium text-white bg-blue-500 rounded-lg hover:bg-blue-600">
-                            Lihat
-                        </a>
-
-                    </div>
-                ';
-            })
-
-            ->rawColumns(['aksi'])
-            ->make(true);
+        return view('tindakan.index');
     }
-
-    return view('tindakan.index');
-}
 
     // Menampilkan form untuk menambah tindakan
     public function create()
@@ -249,29 +246,28 @@ public function index(Request $request)
         return redirect()->route('tindakan.index')->with('success', 'Tindakan, kasus, dan transaksi kasir berhasil diperbarui!');
     }
 
-    // Menghapus tindakan, kasus, dan transaksi kasir
-    public function destroy($id)
+        public function destroy($id)
     {
         $tindakan = Tindakan::findOrFail($id);
-        $tindakan->kasus()->delete(); // Hapus semua kasus terkait
-        $tindakan->kasir()->delete(); // Hapus transaksi kasir
-        $tindakan->delete(); // Hapus tindakan
+        $tindakan->kasus()->delete();
+        $tindakan->kasir()->delete();
+        $tindakan->delete();
 
-        return redirect()->route('tindakan.index')->with('success', 'Tindakan, kasus, dan transaksi kasir berhasil dihapus!');
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Data berhasil dihapus'
+        ]);
     }
 
-    public function autocomplete(Request $request): JsonResponse
+    public function autocomplete(Request $request)
     {
-        $data = [];
+        $search = $request->q;
 
-        if ($request->filled('q')) {
-            $data = Pasien::select("nama_pasien", "id_pasien")
-                ->where('nama_pasien', 'ILIKE', '%' . $request->get('q') . '%')
-                ->take(10)
-                ->get();
-        }
+        $pasiens = Pasien::where('nama_pasien', 'ilike', "%{$search}%")
+            ->limit(20)
+            ->get();
 
-        return response()->json($data);
+        return response()->json($pasiens);
     }
 
     // Tambahkan metode filterPasien di dalam TindakanController

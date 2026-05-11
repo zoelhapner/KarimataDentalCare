@@ -17,48 +17,31 @@
             @csrf
             <div class="mb-4">
                 <label for="dokter_id" class="block text-gray-700">Dokter:</label>
-                <select name="dokter_id" id="dokter_id" class="w-full border border-gray-300 rounded-lg p-2" required>
+                <select name="dokter_id" id="dokter_id" class="w-full" required>
+
+                    <option value="">Pilih Dokter</option>
+
                     @foreach ($dokters as $dokter)
-                        <option value="{{ $dokter->id_dokter }}">{{ $dokter->nama_dokter }}</option>
+                        <option value="{{ $dokter->id_dokter }}">
+                            {{ $dokter->nama_dokter }}
+                        </option>
                     @endforeach
+
                 </select>
             </div>
 
             <div class="mb-4">
                 <label for="pasien_id" class="block text-gray-700">Pasien:</label>
-                <select name="pasien_id" id="pasien_id" class="w-full border border-gray-300 rounded-lg p-2" required>
+                    <select name="pasien_id" id="pasien_id" class="w-full" required>
+                        <option value="">Pilih Pasien</option>
+                    </select>
+            </div>
+                {{-- <select name="pasien_id" id="pasien_id" class="w-full border border-gray-300 rounded-lg p-2" required>
                     <option value="">Pilih Pasien</option>
                     @foreach ($pasiens as $pasien)
                         <option value="{{ $pasien->id_pasien }}">{{ $pasien->nama_pasien }}</option>
                     @endforeach
-                </select>
-            </div>
-
-            <script>
-                $(document).ready(function() {
-                            var path = "{{ route('autocomplete-pasien') }}";
-
-                            $('#pasien_id').select2({
-                                placeholder: 'Cari Pasien',
-                                ajax: {
-                                    url: path,
-                                    dataType: 'json',
-                                    delay: 250,
-                                    processResults: function(data) {
-                                        return {
-                                            results: $.map(data, function(item) {
-                                                return {
-                                                    text: item.nama_pasien,
-                                                    id: item.id_pasien
-                                                }
-                                            })
-                                        };
-                                    },
-                                    cache: true
-                                }
-                            });
-                });
-            </script>
+                </select> --}}
 
             <div class="mb-4">
                 <label for="tanggal_visit" class="block text-gray-700">Tanggal Visit:</label>
@@ -99,7 +82,14 @@
                 <button type="button" id="add-kasus" class="btn btn-secondary">Tambah Kasus</button>
             </div>
 
-            <button type="submit" class="btn btn-primary">Simpan</button>
+                <div class="flex items-center justify-between">
+                    <button type="submit" class="bg-primary-700 hover:bg-primary-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                        Simpan
+                    </button>
+                    <a href="{{ route('tindakan.index') }}" class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
+                        Batal
+                    </a>
+                </div>
         </form>
     </div>
 
@@ -125,3 +115,72 @@
         });
     </script>
 </x-app-layout>
+            <script>
+            $(document).ready(function () {
+                $('#dokter_id').select2({
+                    placeholder: 'Pilih Dokter',
+                    width: '100%'
+                });
+                $('#pasien_id').select2({
+
+                    placeholder: 'Pilih Pasien',
+                    allowClear: true,
+                    width: '100%',
+
+                    ajax: {
+
+                        url: "{{ route('autocomplete-pasien') }}",
+                        dataType: 'json',
+                        delay: 250,
+
+                        data: function (params) {
+                            return {
+                                q: params.term
+                            };
+                        },
+
+                        processResults: function (data) {
+
+                            return {
+                                results: $.map(data, function (item) {
+
+                                    return {
+                                        id: item.id_pasien,
+                                        text: item.nama_pasien
+                                    }
+
+                                })
+                            };
+                        },
+
+                        cache: true
+                    }
+                });
+
+            });
+            </script>
+            {{-- <script>
+                $(document).ready(function() {
+                            var path = "{{ route('autocomplete-pasien') }}";
+
+                            $('#pasien_id').select2({
+                                placeholder: 'Cari Pasien',
+                                ajax: {
+                                    url: path,
+                                    dataType: 'json',
+                                    delay: 250,
+                                    processResults: function(data) {
+                                        return {
+                                            results: $.map(data, function(item) {
+                                                return {
+                                                    text: item.nama_pasien,
+                                                    id: item.id_pasien
+                                                }
+                                            })
+                                        };
+                                    },
+                                    cache: true
+                                }
+                            });
+                });
+            </script> --}}
