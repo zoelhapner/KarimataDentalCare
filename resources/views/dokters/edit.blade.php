@@ -1,86 +1,114 @@
 {{-- resources/views/dokters/edit.blade.php --}}  
-<x-app-layout>  
-    <x-slot name="header">  
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">  
-            {{ __('Edit Dokter') }}  
-        </h2>  
-    </x-slot>  
-  
-    <div class="py-12">  
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">  
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">  
-                <div class="p-6 bg-white border-b border-gray-200">  
-                    <form action="{{ route('dokters.update', $dokter) }}" method="POST">  
-                        @csrf  
-                        @method('PUT')  
-                        <div class="form-group">  
-                            <label for="user_id">User ID</label>  
-                            <input type="text" name="user_id" id="user_id" class="form-control @error('user_id') is-invalid @enderror" value="{{ old('user_id', $dokter->user_id) }}">  
-                            @error('user_id')  
-                                <div class="invalid-feedback">{{ $message }}</div>  
-                            @enderror  
-                        </div>  
-                        <div class="form-group">  
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Edit Dokter') }}
+        </h2>
+    </x-slot>
+
+    <div class="py-12">
+        <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 bg-white border-b border-gray-200">
+                    <form action="{{ route('dokters.update', $dokter) }}" method="POST" class="space-y-6">
+                        @csrf
+                        @method('PUT')
+
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                            <input type="email" name="email" id="email" 
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm @error('email') border-red-500 @enderror"
+                                value="{{ old('email', $dokter->email) }}">
+                            @error('email')
+                                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div>
+                            <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                            <input type="password" name="password" id="password" 
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm @error('password') border-red-500 @enderror"
+                                value="{{ old('password', $dokter->password) }}">
+                            @error('password')
+                                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div>
+                            <label for="nik" class="block text-sm font-medium text-gray-700">NIK</label>
+                            <input type="text" name="nik" id="nik" 
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm @error('nik') border-red-500 @enderror"
+                                value="{{ old('nik', $dokter->nik) }}">
+                            @error('nik')
+                                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                        </div>
+
+                        <div>  
                             <label for="nama_dokter">Nama Dokter</label>  
                             <input type="text" name="nama_dokter" id="nama_dokter" class="form-control @error('nama_dokter') is-invalid @enderror" value="{{ old('nama_dokter', $dokter->nama_dokter) }}">  
                             @error('nama_dokter')  
                                 <div class="invalid-feedback">{{ $message }}</div>  
                             @enderror  
-                        </div>  
-                        <div class="form-group">  
-                            <label for="role">Role</label>  
-                            <input type="text" name="role" id="role" class="form-control @error('role') is-invalid @enderror" value="{{ old('role', $dokter->role) }}">  
-                            @error('role')  
-                                <div class="invalid-feedback">{{ $message }}</div>  
-                            @enderror  
-                        </div>  
-                        <div class="form-group">  
+                        </div>
+
+                        <div>  
                             <label for="nip">NIP</label>  
                             <input type="text" name="nip" id="nip" class="form-control @error('nip') is-invalid @enderror" value="{{ old('nip', $dokter->nip) }}">  
                             @error('nip')  
                                 <div class="invalid-feedback">{{ $message }}</div>  
                             @enderror  
-                        </div>  
-                        <div class="form-group">  
-                            <label for="alamat">Alamat</label>  
-                            <input type="text" name="alamat" id="alamat" class="form-control @error('alamat') is-invalid @enderror" value="{{ old('alamat', $dokter->alamat) }}">  
-                            @error('alamat')  
-                                <div class="invalid-feedback">{{ $message }}</div>  
-                            @enderror  
-                        </div>  
-                        <div class="form-group">  
-                            <label for="tanggal_lahir">Tanggal Lahir</label>  
-                            <input type="date" name="tanggal_lahir" id="tanggal_lahir" class="form-control @error('tanggal_lahir') is-invalid @enderror" value="{{ old('tanggal_lahir', $dokter->tanggal_lahir) }}">  
-                            @error('tanggal_lahir')  
-                                <div class="invalid-feedback">{{ $message }}</div>  
-                            @enderror  
-                        </div>  
-                        <div class="form-group">  
-                            <label for="nik">NIK</label>  
-                            <input type="text" name="nik" id="nik" class="form-control @error('nik') is-invalid @enderror" value="{{ old('nik', $dokter->nik) }}">  
-                            @error('nik')  
-                                <div class="invalid-feedback">{{ $message }}</div>  
-                            @enderror  
-                        </div>  
-                        <div class="form-group">  
-                            <label for="nohp">No HP</label>  
-                            <input type="text" name="nohp" id="nohp" class="form-control @error('nohp') is-invalid @enderror" value="{{ old('nohp', $dokter->nohp) }}">  
-                            @error('nohp')  
-                                <div class="invalid-feedback">{{ $message }}</div>  
-                            @enderror  
-                        </div>  
-                        <div class="form-group">  
-                            <label for="penghasilan">Penghasilan</label>  
-                            <input type="number" name="penghasilan" id="penghasilan" class="form-control @error('penghasilan') is-invalid @enderror" value="{{ old('penghasilan', $dokter->penghasilan) }}">  
-                            @error('penghasilan')  
-                                <div class="invalid-feedback">{{ $message }}</div>  
-                            @enderror  
-                        </div>  
-                        <button type="submit" class="btn btn-primary">Simpan</button>  
-                        <a href="{{ route('dokters.index') }}" class="btn btn-secondary">Kembali</a>  
-                    </form>  
-                </div>  
-            </div>  
-        </div>  
-    </div>  
-</x-app-layout>  
+                        </div> 
+
+                        <div>
+                            <label for="alamat" class="block text-sm font-medium text-gray-700">Alamat</label>
+                            <input type="text" name="alamat" id="alamat" 
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm @error('alamat') border-red-500 @enderror"
+                                value="{{ old('alamat', $dokter->alamat) }}">
+                            @error('alamat')
+                                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                        </div>
+
+                        <div>
+                            <label for="tanggal_lahir" class="block text-sm font-medium text-gray-700">Tanggal Lahir</label>
+                            <input type="date" name="tanggal_lahir" id="tanggal_lahir" 
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm @error('tanggal_lahir') border-red-500 @enderror"
+                                value="{{ old('tanggal_lahir', $dokter->tanggal_lahir) }}">
+                            @error('tanggal_lahir')
+                                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                        </div>
+
+                       
+                        <div>
+                            <label for="nohp" class="block text-sm font-medium text-gray-700">No HP</label>
+                            <input type="text" name="nohp" id="nohp" 
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm @error('nohp') border-red-500 @enderror"
+                                value="{{ old('nohp', $dokter->nohp) }}">
+                            @error('nohp')
+                                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                        </div>
+
+                        <div>
+                            <label for="jadwalpraktik" class="block text-sm font-medium text-gray-700">Jadwal Praktik</label>
+                            <input type="text" name="jadwalpraktik" id="jadwalpraktik" 
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm @error('nohp') border-red-500 @enderror"
+                                value="{{ old('jadwalpraktik', $dokter->jadwalpraktik) }}">
+                            @error('jadwalpraktik')
+                                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                        </div>
+
+                     
+                        <div class="flex justify-end">
+                            <button type="submit" 
+                                class="px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500">
+                                Simpan
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</x-app-layout>

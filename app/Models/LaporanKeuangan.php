@@ -25,4 +25,8 @@ class LaporanKeuangan extends Model
     {  
         return $this->belongsTo(Dokter::class);  
     }  
+            public function getTanggalVisitFormattedAttribute()
+    {
+        return $this->tanggal_visit ? Carbon::parse($this->tanggal_visit)->format('d/m/Y') : '-';
+    }
 }  

@@ -149,6 +149,9 @@
                                         <th class="px-6 py-4">
                                             Tanggal
                                         </th>
+                                        <th class="px-6 py-4">
+                                            Jam
+                                        </th>
 
                                     </tr>
 
@@ -168,8 +171,14 @@
                                             Rp{{ number_format($item->total_biaya, 0, ',', '.') }}
                                         </td>
 
-                                        <td class="px-6 py-4 text-gray-500">
+                                        {{-- <td class="px-6 py-4 text-gray-500">
                                             {{ $item->created_at }}
+                                        </td> --}}
+                                        <td class="px-6 py-4 text-gray-500">
+                                            {{ $item->tindakan->tanggal_visit_formatted }}
+                                        </td>
+                                        <td class="px-6 py-4 text-gray-500">
+                                            {{ $item->tindakan->jam }}
                                         </td>
 
                                     </tr>
