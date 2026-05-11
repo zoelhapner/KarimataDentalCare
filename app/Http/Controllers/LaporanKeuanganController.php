@@ -15,7 +15,16 @@ class LaporanKeuanganController extends Controller
         $endDate = $request->end_date ?: now()->toDateString();
 
         // Filter transaksi berdasarkan tanggal
-        $transaksi = Kasir::whereBetween('created_at', [$startDate, $endDate])->get();
+        // $transaksi = Kasir::whereBetween('created_at', [$startDate, $endDate])->get();
+        $transaksi = Kasir::with([
+            'tindakan.dokter'
+        ])
+        ->whereHas('tindakan', function ($q) use ($startDate, $endDate) {
+
+            $q->whereBetween('tanggal_visit', [$startDate, $endDate]);
+        })
+        ->latest()
+        ->get();
 
         // Total pemasukan
         $totalPemasukan = $transaksi->sum('total_biaya');

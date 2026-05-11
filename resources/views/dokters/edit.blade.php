@@ -14,11 +14,11 @@
                         @csrf
                         @method('PUT')
 
-                        <div>
+                        {{-- <div>
                             <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
                             <input type="email" name="email" id="email" 
                                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm @error('email') border-red-500 @enderror"
-                                value="{{ old('email', $dokter->email) }}">
+                                value="{{ old('email', $dokter->user->email) }}">
                             @error('email')
                                 <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                             @enderror
@@ -27,11 +27,11 @@
                             <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
                             <input type="password" name="password" id="password" 
                                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm @error('password') border-red-500 @enderror"
-                                value="{{ old('password', $dokter->password) }}">
+                                value="{{ old('password', $dokter->user->password) }}">
                             @error('password')
                                 <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                             @enderror
-                        </div>
+                        </div> --}}
                         <div>
                             <label for="nik" class="block text-sm font-medium text-gray-700">NIK</label>
                             <input type="text" name="nik" id="nik" 
@@ -43,16 +43,20 @@
                         </div>
 
                         <div>  
-                            <label for="nama_dokter">Nama Dokter</label>  
-                            <input type="text" name="nama_dokter" id="nama_dokter" class="form-control @error('nama_dokter') is-invalid @enderror" value="{{ old('nama_dokter', $dokter->nama_dokter) }}">  
+                            <label for="nama_dokter" class="block text-sm font-medium text-gray-700">Nama Dokter</label>  
+                            <input type="text" name="nama_dokter" id="nama_dokter" 
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm @error('nama_dokter') is-invalid @enderror" 
+                                value="{{ old('nama_dokter', $dokter->nama_dokter) }}">  
                             @error('nama_dokter')  
                                 <div class="invalid-feedback">{{ $message }}</div>  
                             @enderror  
                         </div>
 
                         <div>  
-                            <label for="nip">NIP</label>  
-                            <input type="text" name="nip" id="nip" class="form-control @error('nip') is-invalid @enderror" value="{{ old('nip', $dokter->nip) }}">  
+                            <label for="nip" class="block text-sm font-medium text-gray-700">NIP</label>  
+                            <input type="text" name="nip" id="nip" 
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm @error('nip') is-invalid @enderror" 
+                                value="{{ old('nip', $dokter->nip) }}">  
                             @error('nip')  
                                 <div class="invalid-feedback">{{ $message }}</div>  
                             @enderror  

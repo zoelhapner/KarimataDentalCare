@@ -196,16 +196,16 @@ public function index()
 
         // Memperbarui data dokter
         $dokter->update($request->only([
-            'user_id',
+            // 'user_id',
             'nama_dokter',
-            'role',
+            // 'role',
             'nip',
             'alamat',
             'tanggal_lahir',
             'nik',
             'nohp',
             'jadwalpraktik',
-            'penghasilan'
+            // 'penghasilan'
         ]));
 
         return redirect()->route('dokters.index')
