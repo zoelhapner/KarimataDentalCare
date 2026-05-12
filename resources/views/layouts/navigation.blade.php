@@ -31,6 +31,9 @@
                         <x-nav-link :href="route('dokters.index')" :active="request()->routeIs('dokters.*')">
                             {{ __('Dokter') }}
                         </x-nav-link>
+                        <x-nav-link :href="route('roles.index')" :active="request()->routeIs('roles.*')">
+                            {{ __('Role') }}
+                        </x-nav-link>
                         <x-nav-link :href="route('tindakan.index')" :active="request()->routeIs('tindakan.*')">
                             {{ __('Tindakan') }}
                         </x-nav-link>

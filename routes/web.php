@@ -9,6 +9,7 @@ use App\Http\Controllers\ObatController;
 use App\Http\Controllers\KasusController;
 use App\Http\Controllers\TindakanController;
 use App\Http\Controllers\KasirController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\LaporanKeuanganController;
 use App\Http\Controllers\DashboardController;
 
@@ -149,4 +150,8 @@ Route::middleware(['auth'])->group(function () {
 // Laporan Keuangan routes
 Route::middleware(['auth'])->name('laporan-keuangan')->group(function () {
     Route::get('/laporan-keuangan', [LaporanKeuanganController::class, 'laporanKeuangan']);
+});
+Route::middleware(['auth'])->group(function () {
+    Route::resource('/roles', RoleController::class);
+    // Route::post('/roles/{role}/update-permissions', [RoleController::class, 'updatePermissions'])->name('roles.updatePermissions');
 });
