@@ -31,64 +31,64 @@ class DokterController extends Controller
     //     return view('dokters.index', compact('dokters'));
     // }
 
-public function index()
-{
-    if (request()->ajax()) {
+    public function index()
+    {
+        if (request()->ajax()) {
 
-        $data = Dokter::with('tindakans.kasus');
+            $data = Dokter::with('tindakans.kasus');
 
-        return DataTables::of($data)
+            return DataTables::of($data)
 
-            ->addIndexColumn()
+                ->addIndexColumn()
 
-            ->addColumn('checkbox', function ($dokter) {
+                ->addColumn('checkbox', function ($dokter) {
 
-                return '
-                    <div class="flex items-center">
-                        <input type="checkbox"
-                            value="'.$dokter->id_dokter.'"
-                            class="row-checkbox w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded">
-                    </div>
-                ';
-            })
+                    return '
+                        <div class="flex items-center">
+                            <input type="checkbox"
+                                value="'.$dokter->id_dokter.'"
+                                class="row-checkbox w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded">
+                        </div>
+                    ';
+                })
 
-            ->addColumn('penghasilan', function ($dokter) {
+                ->addColumn('penghasilan', function ($dokter) {
 
-                $total = 0;
+                    $total = 0;
 
-                foreach ($dokter->tindakans as $tindakan) {
-                    $total += $tindakan->kasus->sum('biaya');
-                }
+                    foreach ($dokter->tindakans as $tindakan) {
+                        $total += $tindakan->kasus->sum('biaya');
+                    }
 
-                return 'Rp ' . number_format($total, 0, ',', '.');
-            })
-            ->editColumn('nama_dokter', function ($dokter) {
-                $url = route('dokters.show', $dokter->id_dokter);
-                $name = Str::title($dokter->nama_dokter ?? '-');
-                return '<a href="'.$url.'">'.e($name).'</a>';
-            })
-            ->addColumn('tanggal_lahir', fn($row) => $row->tanggal_lahir ? Carbon::parse($row->tanggal_lahir)->format('d/m/Y') : '-')
+                    return 'Rp ' . number_format($total, 0, ',', '.');
+                })
+                ->editColumn('nama_dokter', function ($dokter) {
+                    $url = route('dokters.show', $dokter->id_dokter);
+                    $name = Str::title($dokter->nama_dokter ?? '-');
+                    return '<a href="'.$url.'">'.e($name).'</a>';
+                })
+                ->addColumn('tanggal_lahir', fn($row) => $row->tanggal_lahir ? Carbon::parse($row->tanggal_lahir)->format('d/m/Y') : '-')
 
-            ->addColumn('aksi', function ($dokter) {
+                ->addColumn('aksi', function ($dokter) {
 
-                return '
-                    <div class="flex gap-2">
+                    return '
+                        <div class="flex gap-2">
 
-                        <a href="'.route('dokters.edit', $dokter->id_dokter).'"
-                            class="px-3 py-2 text-xs text-white bg-yellow-500 rounded-lg">
-                            Edit
-                        </a>
+                            <a href="'.route('dokters.edit', $dokter->id_dokter).'"
+                                class="px-3 py-2 text-xs text-white bg-yellow-500 rounded-lg">
+                                Edit
+                            </a>
 
-                    </div>
-                ';
-            })
+                        </div>
+                    ';
+                })
 
-            ->rawColumns(['checkbox', 'nama_dokter', 'aksi'])
-            ->make(true);
+                ->rawColumns(['checkbox', 'nama_dokter', 'aksi'])
+                ->make(true);
+        }
+
+        return view('dokters.index');
     }
-
-    return view('dokters.index');
-}
 
 
     public function create()
@@ -209,7 +209,7 @@ public function index()
         ]));
 
         return redirect()->route('dokters.index')
-            ->with('success', 'Dokter berhasil diperbarui.');
+            ->with('success', 'Data Dokter berhasil diperbarui.');
     }
 
     /**
@@ -221,15 +221,10 @@ public function index()
         return redirect()->route('dokters.index')->with('success', 'Dokter berhasil dihapus.');
     }
 
-    /**
-     * Validasi data dokter untuk store dan update.
-     */
-
     protected function validateDokter(Request $request, $dokterId = null)
     {
-        return Validator::make($request->all(), [
-            'email' => 'required|string|max:255',
-            'password' => 'required',
+        $rules = [
+
             'nama_dokter' => 'required|string|max:255',
 
             'nip' => [
@@ -241,6 +236,7 @@ public function index()
             ],
 
             'alamat' => 'required|string|max:255',
+
             'tanggal_lahir' => 'required|date',
 
             'nik' => [
@@ -251,8 +247,18 @@ public function index()
             ],
 
             'nohp' => 'required|digits_between:10,15',
+
             'jadwalpraktik' => 'required|string|max:255',
-        ]);
+        ];
+
+        // CREATE ONLY
+        if (!$dokterId) {
+
+            $rules['email'] = 'required|string|max:255|unique:users,email';
+            $rules['password'] = 'required|min:6';
+        }
+
+        return Validator::make($request->all(), $rules);
     }
 
     /**

@@ -121,46 +121,31 @@
 
                     {{-- DETAIL TRANSAKSI --}}
                     <div class="p-6 border-t border-gray-200">
-
                         <div class="flex items-center justify-between mb-5">
-
                             <h4 class="text-lg font-semibold text-gray-800">
                                 Detail Transaksi
                             </h4>
-
                         </div>
-
                         <div class="overflow-x-auto border border-gray-200 rounded-2xl">
-
                             <table class="w-full text-sm text-left text-gray-700">
-
                                 <thead class="text-xs font-semibold tracking-wider text-gray-600 uppercase bg-gray-50">
-
                                     <tr>
-
                                         <th class="px-6 py-4">
                                             Nama Dokter
                                         </th>
-
                                         <th class="px-6 py-4">
                                             Total Transaksi
                                         </th>
-
                                         <th class="px-6 py-4">
                                             Tanggal
                                         </th>
                                         <th class="px-6 py-4">
                                             Jam
-                                        </th>
-
+                                         </th>
                                     </tr>
-
                                 </thead>
-
                                 <tbody class="divide-y divide-gray-100 bg-white">
-
                                     @foreach ($transaksi as $item)
-
                                     <tr class="transition hover:bg-gray-50">
 
                                         <td class="px-6 py-4 font-medium text-gray-800">
@@ -182,18 +167,11 @@
                                         </td>
 
                                     </tr>
-
                                     @endforeach
-
                                 </tbody>
-
                             </table>
-
                         </div>
-
                     </div>
-
-                    {{-- PENDAPATAN DOKTER --}}
                     <div class="p-6 border-t border-gray-200">
 
                         <h4 class="mb-5 text-lg font-semibold text-gray-800">
@@ -245,12 +223,11 @@
                         </div>
 
                     </div>
-
                 </div>
-
             </div>
-
         </section>
-
+        <div class="mt-4">
+            {{ $transaksi->links() }}
+        </div>
     </div>
 </x-app-layout>

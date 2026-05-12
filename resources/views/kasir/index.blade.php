@@ -9,7 +9,31 @@
         <section class="bg-gray-50 py-5">
             <div class="px-4 mx-auto max-w-screen-2xl lg:px-12">
                 <div class="overflow-hidden bg-white border border-gray-200 shadow-sm rounded-2xl">
-                    {{-- Tabel Transaksi --}}
+                    <div class="flex flex-col gap-3 mb-4 md:flex-row md:items-end">
+
+                        <div>
+                            <label class="block mb-1 text-sm text-gray-700">
+                                Mulai Tanggal
+                            </label>
+                            <input type="date" id="start_date" class="border border-gray-300 rounded-lg p-2">
+                        </div>
+
+                        <div>
+                            <label class="block mb-1 text-sm text-gray-700">
+                                Sampai Tanggal
+                            </label>
+                            <input type="date" id="end_date"class="border border-gray-300 rounded-lg p-2">
+                        </div>
+
+                        <button id="filterTanggal" class="px-4 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700">
+                            Filter
+                        </button>
+
+                        <button id="resetFilter" class="px-4 py-2 text-white bg-gray-500 rounded-lg hover:bg-gray-600">
+                            Reset
+                        </button>
+
+                    </div>
                     <div class="overflow-x-auto">
                         
                         <table id="tableKasir" class="w-full text-sm text-left text-gray-700">
@@ -69,14 +93,23 @@
 
 $(function () {
 
-    $('#tableKasir').DataTable({
+    const table = $('#tableKasir').DataTable({
 
         processing: true,
         serverSide: true,
         responsive: true,
         autoWidth: false,
 
-        ajax: "{{ route('kasir.index') }}",
+            ajax: {
+                url: "{{ route('kasir.index') }}",
+
+                data: function (d) {
+
+                    d.start_date = $('#start_date').val();
+                    d.end_date = $('#end_date').val();
+                }
+            },
+
 
         columns: [
             { data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false},
@@ -107,6 +140,20 @@ $(function () {
                 previous: "‹"
             }
         }
+
+    });
+    $('#filterTanggal').on('click', function () {
+
+        table.ajax.reload();
+
+    });
+
+    $('#resetFilter').on('click', function () {
+
+        $('#start_date').val('');
+        $('#end_date').val('');
+
+        table.ajax.reload();
 
     });
 

@@ -12,7 +12,15 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <form action="{{ route('dokters.store') }}" method="POST" class="space-y-6">
                         @csrf
-
+                                @if ($errors->any())
+                                <div class="bg-red-500 text-white p-4 rounded mb-4">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                                @endif
                         <div>
                             <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
                             <input type="email" name="email" id="email" 

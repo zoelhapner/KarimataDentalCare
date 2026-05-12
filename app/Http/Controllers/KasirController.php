@@ -24,7 +24,17 @@ class KasirController extends Controller
             $data = Kasir::with([ 
                 'tindakan.dokter',
                 'tindakan.pasien'
-            ])->orderBy('created_at', 'desc');
+            ])
+            ->when(request('start_date') && request('end_date'), function ($query) {
+                $query->whereHas('tindakan', function ($q) {
+                    $q->whereBetween('tanggal_visit', [
+                        request('start_date'),
+                        request('end_date')
+                    ]);
+                });
+
+            })
+            ->orderBy('created_at', 'desc');
 
             return DataTables::of($data)
             ->addIndexColumn()

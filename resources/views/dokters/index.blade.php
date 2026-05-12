@@ -24,9 +24,9 @@
                     <div class="flex flex-col gap-4 px-6 py-5 border-b border-gray-200 lg:flex-row lg:items-center lg:justify-between">
 
                         <div>
-                            <h1 class="text-2xl font-bold text-gray-800">
+                            {{-- <h1 class="text-2xl font-bold text-gray-800">
                                 Data Dokter
-                            </h1>
+                            </h1> --}}
 
                             <p class="mt-1 text-sm text-gray-500">
                                 Daftar seluruh dokter Karimata Dental Care
@@ -90,8 +90,7 @@
                                 id="dokter_id">
                         </form>
 
-                        <table id="tableDokters"
-                            class="w-full text-sm text-left text-gray-700">
+                        <table id="tableDokters" class="w-full text-sm text-left text-gray-700">
 
                             <thead class="text-xs font-semibold tracking-wider text-gray-600 uppercase bg-gray-50 border-b border-gray-200">
 

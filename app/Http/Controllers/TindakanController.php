@@ -19,12 +19,25 @@ class TindakanController extends Controller
     {
         if ($request->ajax()) {
 
-            $data = Tindakan::with([
-                'dokter',
-                'pasien',
-                'kasus',
-                'kasir'
-            ])->orderBy('created_at', 'desc');
+        $user = auth()->user();
+
+        $data = Tindakan::with([
+            'dokter',
+            'pasien',
+            'kasus',
+            'kasir'
+        ]);
+
+        if ($user->role !== 'manager') {
+
+            $dokter = Dokter::where('user_id', $user->id)->first();
+
+            if ($dokter) {
+                $data->where('dokter_id', $dokter->id_dokter);
+            }
+        }
+
+        $data->orderBy('created_at', 'desc');
 
             return DataTables::of($data)
                 ->filter(function ($query) use ($request) {
@@ -120,7 +133,7 @@ class TindakanController extends Controller
             'tindakan_khusus' => 'required|array',
             'tindakan_khusus.*' => 'required|string',
             'biaya' => 'required|array',
-            'biaya.*' => 'required|numeric|min:0',
+            'biaya.*' => 'required|string',
         ]);
 
         // Debugging
@@ -140,15 +153,19 @@ class TindakanController extends Controller
         // Menyimpan Kasus
         $total_biaya = 0;
         foreach ($validated['kasus'] as $index => $kasus) {
+            $biaya = str_replace('.', '', $validated['biaya'][$index]);
+
+            $biaya = (int) $biaya;
+
             Kasus::create([
                 'tindakan_id' => $tindakan->id,
                 'kasus' => $kasus,
                 'diagnosa' => $validated['diagnosa'][$index],
                 'tindakan_khusus' => $validated['tindakan_khusus'][$index],
-                'biaya' => $validated['biaya'][$index],
+                'biaya' => $biaya,
             ]);
 
-            $total_biaya += $validated['biaya'][$index]; // Hitung total biaya
+            $total_biaya += $biaya;
         }
 
         // Menyimpan data ke Kasir

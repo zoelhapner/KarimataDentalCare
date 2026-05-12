@@ -1,67 +1,157 @@
-{{-- resources/views/tindakan/show.blade.php --}}
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Detail Tindakan') }}
-        </h2>
+        <div class="flex items-center justify-between">
+            <h2 class="font-bold text-2xl text-gray-800">
+                Detail Tindakan
+            </h2>
+
+            <a href="{{ route('tindakan.index') }}"
+               class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow transition">
+                ← Kembali
+            </a>
+        </div>
     </x-slot>
 
-    <div class="container mx-auto mt-4">
-        {{-- Menampilkan pesan sukses jika ada --}}
-        @if(session('success'))
-        <div class="bg-green-500 text-white p-4 rounded mb-4">
-            {{ session('success') }}
-        </div>
-        @endif
+    <div class="py-6">
+        <div class="max-w-6xl mx-auto px-4">
 
-        <section class="bg-gray-50 py-5">
-            <div class="px-4 mx-auto max-w-screen-2xl lg:px-12">
-                <div class="relative overflow-hidden bg-white shadow-md">
-                    <div class="flex flex-col px-4 py-3 space-y-3 lg:flex-row lg:items-center lg:justify-between lg:space-y-0 lg:space-x-4">
-                        <div>
-                            <h3 class="text-xl font-semibold">{{ $tindakan->tindakan }}</h3>
-                            <p class="text-sm text-gray-500">Dokter: {{ $tindakan->dokter->nama_dokter ?? 'N/A' }}</p> <!-- Menggunakan relasi dokter -->
-                            <p class="text-sm text-gray-500">Pasien: {{ $tindakan->pasien->nama_pasien ?? 'N/A' }}</p> <!-- Menggunakan relasi pasien -->
-                            <p class="text-sm text-gray-500">Tanggal Visit: {{ \Carbon\Carbon::parse($tindakan->tanggal_visit)->format('d-m-Y') }}</p>
-                            <p class="text-sm text-gray-500">Jam: {{ $tindakan->jam }}</p>
-                            <p class="text-sm text-gray-500">Pemakaian Obat: {{ $tindakan->pemakaian_obat }}</p>
-                            <p class="text-sm text-gray-500">Tindak Lanjut: {{ $tindakan->tindak_lanjut }}</p>
+            {{-- Alert --}}
+            @if(session('success'))
+                <div class="mb-5 rounded-lg bg-green-100 border border-green-300 text-green-800 px-4 py-3">
+                    {{ session('success') }}
+                </div>
+            @endif
+
+            {{-- Card Detail --}}
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+
+                {{-- Header --}}
+                <div class="bg-gradient-to-r from-blue-600 to-blue-500 px-6 py-5 text-white">
+                    <h3 class="text-2xl font-bold">
+                        {{ $tindakan->tindakan }}
+                    </h3>
+
+                    <p class="text-blue-100 mt-1">
+                        Detail tindakan pasien
+                    </p>
+                </div>
+
+                {{-- Content --}}
+                <div class="p-6">
+
+                    {{-- Informasi --}}
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+                        <div class="bg-gray-50 rounded-xl p-4 border">
+                            <p class="text-sm text-gray-500">Dokter</p>
+                            <p class="font-semibold text-gray-800">
+                                {{ $tindakan->dokter->nama_dokter ?? 'N/A' }}
+                            </p>
                         </div>
+
+                        <div class="bg-gray-50 rounded-xl p-4 border">
+                            <p class="text-sm text-gray-500">Pasien</p>
+                            <p class="font-semibold text-gray-800">
+                                {{ $tindakan->pasien->nama_pasien ?? 'N/A' }}
+                            </p>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-xl p-4 border">
+                            <p class="text-sm text-gray-500">Tanggal Visit</p>
+                            <p class="font-semibold text-gray-800">
+                                {{ \Carbon\Carbon::parse($tindakan->tanggal_visit)->format('d M Y') }}
+                            </p>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-xl p-4 border">
+                            <p class="text-sm text-gray-500">Jam</p>
+                            <p class="font-semibold text-gray-800">
+                                {{ $tindakan->jam }}
+                            </p>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-xl p-4 border">
+                            <p class="text-sm text-gray-500">Pemakaian Obat</p>
+                            <p class="font-semibold text-gray-800">
+                                {{ $tindakan->pemakaian_obat }}
+                            </p>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-xl p-4 border">
+                            <p class="text-sm text-gray-500">Tindak Lanjut</p>
+                            <p class="font-semibold text-gray-800">
+                                {{ $tindakan->tindak_lanjut }}
+                            </p>
+                        </div>
+
                     </div>
 
-                    <div class="overflow-x-auto mt-6">
-                        <h4 class="text-lg font-semibold">Kasus Tindakan:</h4>
+                    {{-- Table --}}
+                    <div class="mt-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <h4 class="text-lg font-bold text-gray-800">
+                                Kasus Tindakan
+                            </h4>
+                        </div>
+
                         @if($tindakan->kasus->isEmpty())
-                        <p class="text-sm text-gray-500">Belum ada kasus yang ditambahkan.</p>
+                            <div class="bg-yellow-50 border border-yellow-200 text-yellow-700 rounded-xl p-4">
+                                Belum ada kasus yang ditambahkan.
+                            </div>
                         @else
-                        <table class="w-full text-sm text-left text-gray-500">
-                            <thead class="text-xs text-gray-700 uppercase bg-gray-50">
-                                <tr>
-                                    <th scope="col" class="px-4 py-3">Kasus</th>
-                                    <th scope="col" class="px-4 py-3">Diagnosa</th>
-                                    <th scope="col" class="px-4 py-3">Tindakan</th>
-                                    <th scope="col" class="px-4 py-3">Biaya</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($tindakan->kasus as $kasus)
-                                <tr class="bg-white border-b hover:bg-gray-50">
-                                    <td class="px-4 py-3">{{ $kasus->kasus }}</td>
-                                    <td class="px-4 py-3">{{ $kasus->diagnosa }}</td>
-                                    <td class="px-4 py-3">{{ $kasus->tindakan_khusus }}</td>
-                                    <td class="px-4 py-3">{{ number_format($kasus->biaya, 2, ',', '.') }}</td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+
+                            <div class="overflow-x-auto border rounded-xl">
+                                <table class="min-w-full divide-y divide-gray-200">
+                                    <thead class="bg-gray-100">
+                                        <tr>
+                                            <th class="px-6 py-3 text-left text-xs font-bold text-gray-600 uppercase">
+                                                Kasus
+                                            </th>
+
+                                            <th class="px-6 py-3 text-left text-xs font-bold text-gray-600 uppercase">
+                                                Diagnosa
+                                            </th>
+
+                                            <th class="px-6 py-3 text-left text-xs font-bold text-gray-600 uppercase">
+                                                Tindakan
+                                            </th>
+
+                                            <th class="px-6 py-3 text-right text-xs font-bold text-gray-600 uppercase">
+                                                Biaya
+                                            </th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody class="bg-white divide-y divide-gray-100">
+                                        @foreach ($tindakan->kasus as $kasus)
+                                            <tr class="hover:bg-gray-50 transition">
+                                                <td class="px-6 py-4 font-medium text-gray-800">
+                                                    {{ $kasus->kasus }}
+                                                </td>
+
+                                                <td class="px-6 py-4 text-gray-600">
+                                                    {{ $kasus->diagnosa }}
+                                                </td>
+
+                                                <td class="px-6 py-4 text-gray-600">
+                                                    {{ $kasus->tindakan_khusus }}
+                                                </td>
+
+                                                <td class="px-6 py-4 text-right font-semibold text-blue-700">
+                                                    Rp {{ number_format($kasus->biaya, 0, ',', '.') }}
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+
                         @endif
                     </div>
 
-                    <div class="mt-6">
-                        <a href="{{ route('tindakan.index') }}" class="btn btn-primary">Kembali ke Daftar Tindakan</a>
-                    </div>
                 </div>
             </div>
-        </section>
+
+        </div>
     </div>
 </x-app-layout>
