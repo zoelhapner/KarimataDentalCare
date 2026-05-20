@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-2xl text-gray-800 leading-tight">
+        <h2 class="text-2xl text-gray-800 leading-tight">
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
@@ -19,7 +19,7 @@
                         </svg>
                     </div>
                     <div>
-                        <h2 class="text-2xl font-semibold text-gray-900">Selamat Datang, <span
+                        <h2 class="text-2xl text-gray-900">Selamat Datang, <span
                                 class="text-blue-600">{{ $dokter->nama_dokter }}</span></h2>
                         <p class="text-gray-500">NIP: {{ $dokter->nip }}</p>
                     </div>
@@ -51,11 +51,11 @@
                 <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="p-6 bg-gray-100 rounded-lg shadow-md">
                         <p class="text-gray-700 font-medium">Alamat</p>
-                        <p class="text-gray-900 font-semibold">{{ $dokter->alamat }}</p>
+                        <p class="text-gray-900">{{ $dokter->alamat }}</p>
                     </div>
                     <div class="p-6 bg-gray-100 rounded-lg shadow-md">
                         <p class="text-gray-700 font-medium">Jadwal Praktik</p>
-                        <p class="text-gray-900 font-semibold">{{ $dokter->jadwalpraktik }}</p>
+                        <p class="text-gray-900">{{ $dokter->jadwalpraktik }}</p>
                     </div>
                     <div class="p-6 bg-blue-100 rounded-lg shadow-md">
                         <p class="text-blue-700 font-medium">Estimasi Pendapatan</p>
@@ -72,9 +72,9 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white shadow-lg rounded-lg overflow-hidden p-6">
-                <h2 class="text-xl font-semibold text-gray-900">Selamat Datang, <span
+                <h2 class="text-xl font-medium text-gray-700">Selamat Datang, <span
                         class="text-blue-600">{{ auth()->user()->name }}</span></h2>
-                <p class="text-gray-500">You're logged in as an {{ session('user_role') }}.</p>
+                <p class="font-medium text-gray-700">You're logged in as an {{ session('user_role') }}.</p>
 
                 <!-- Filter Periode -->
                 <form method="GET" action="{{ route('dashboard') }}" class="mt-6">
@@ -94,16 +94,16 @@
                         </div>
                     </div>
                     <div class="mt-4 text-right">
-                        <button type="submit" class="bg-gradient-to-r from-blue-500 to-blue-700 text-black px-6 py-2 rounded-lg hover:from-green-500 hover:to-green-700 transition-all focus:outline-none shadow-lg transform hover:scale-105">Terapkan Filter</button>
+                        <button type="submit" class="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-6 py-2 rounded-lg hover:from-green-500 hover:to-green-700 transition-all focus:outline-none shadow-lg transform hover:scale-105">Terapkan Filter</button>
                     </div>
                 </form>
 
                 <!-- Estimasi Pendapatan Per Dokter Table -->
                 <div class="mt-8">
-                    <h3 class="text-xl font-semibold text-gray-900">Estimasi Pendapatan Per Dokter</h3>
+                    <h3 class="text-xl font-medium text-gray-700">Estimasi Pendapatan Per Dokter</h3>
                     @if(isset($dokters) && $dokters->isNotEmpty())
                     <table class="min-w-full table-auto bg-white border rounded-lg shadow-md mt-4">
-                        <thead class="bg-blue-600 text-black">
+                        <thead class="bg-blue-400 text-black">
                             <tr>
                                 <th class="px-4 py-3 text-left">Nama Dokter</th>
                                 <th class="px-4 py-3 text-left">Estimasi Pendapatan</th>
@@ -119,13 +119,13 @@
                         </tbody>
                     </table>
                     @else
-                    <p class="text-gray-500 mt-4">Tidak ada data dokter yang tersedia.</p>
+                    <p class="font-medium text-gray-700 mt-4">Tidak ada data dokter yang tersedia.</p>
                     @endif
                 </div>
 
                 <!-- Grafik Pendapatan Klinik -->
                 <div class="mt-8">
-                    <h3 class="text-xl font-semibold text-gray-900">Grafik Pendapatan Klinik</h3>
+                    <h3 class="text-xl font-medium text-gray-700">Grafik Pendapatan Klinik</h3>
                     <canvas id="financialChart" width="400" height="200"></canvas>
                 </div>
 

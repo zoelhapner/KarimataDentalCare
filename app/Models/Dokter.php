@@ -21,7 +21,12 @@ class Dokter extends Model
         'nik',
         'nohp',
         'jadwalpraktik',
-        'penghasilan', // Menambahkan kolom penghasilan  
+        'penghasilan',
+        'province_id',
+        'city_id',
+        'district_id',
+        'sub_district_id',
+        'postal_code_id', 
     ];
 
     protected $primaryKey = 'id_dokter';
@@ -53,6 +58,26 @@ class Dokter extends Model
         public function getBirthDateFormattedAttribute()
     {
         return $this->tanggal_lahir ? Carbon::parse($this->tanggal_lahir)->format('d/m/Y') : '-';
+    }
+
+    public function province() {
+        return $this->belongsTo(Province::class);
+    }
+
+    public function city() {
+        return $this->belongsTo(City::class);
+    }
+
+    public function district() {
+        return $this->belongsTo(District::class);
+    }
+
+    public function subDistrict() {
+        return $this->belongsTo(SubDistrict::class);
+    }
+
+    public function postalCode() {
+        return $this->belongsTo(PostalCode::class);
     }
 
     public static function boot()

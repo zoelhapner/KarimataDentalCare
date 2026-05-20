@@ -155,3 +155,18 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/roles', RoleController::class);
     // Route::post('/roles/{role}/update-permissions', [RoleController::class, 'updatePermissions'])->name('roles.updatePermissions');
 });
+Route::get('/api/cities/{province_id}', function ($province_id) {
+    return \App\Models\City::where('province_id', $province_id)->select('id', 'name')->get();
+});
+
+Route::get('/api/districts/{city_id}', function ($city_id) {
+    return \App\Models\District::where('city_id', $city_id)->select('id', 'name')->get();
+});
+
+Route::get('/api/sub_districts/{district_id}', function ($district_id) {
+    return \App\Models\SubDistrict::where('district_id', $district_id)->select('id', 'name')->get();
+});
+
+Route::get('/api/postal_codes/{sub_district_id}', function ($sub_district_id) {
+    return \App\Models\PostalCode::where('sub_district_id', $sub_district_id)->select('id', 'postal_code')->get();
+});

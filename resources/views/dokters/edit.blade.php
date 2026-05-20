@@ -1,126 +1,631 @@
 {{-- resources/views/dokters/edit.blade.php --}}  
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="text-xl text-gray-800 leading-tight">
             {{ __('Edit Dokter') }}
         </h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
+    {{-- <div class="container mx-auto mt-4">
+        <form action="{{ route('dokters.update', $dokter) }}" method="POST" class="space-y-6">
+            @csrf
+            @method('PUT')
+                    @if ($errors->any())
+                    <div class="bg-red-500 text-white p-4 rounded mb-4">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                <input type="email" name="email" id="email" 
+                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm @error('email') border-red-500 @enderror"
+                    value="{{ old('email', $dokter->user->email) }}">
+                @error('email')
+                    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                @enderror
+            </div>
+            <div>
+                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                <input type="password" name="password" id="password" 
+                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm @error('password') border-red-500 @enderror"
+                    value="{{ old('password', $dokter->user->password) }}">
+                @error('password')
+                    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                @enderror
+            </div>
+            <div class="bg-white shadow-sm rounded-2xl border border-gray-200 p-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+                        <div>
+                            <label class="block mb-2 text-sm text-black-400">
+                                NIK
+                            </label>
+
+                            <input type="text"
+                                name="nik"
+                                value="{{ old('nik', $dokter->nik) }}"
+                                class="w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                        </div>
+
+                        <div>
+                            <label class="block mb-2 text-sm text-black-400">
+                                Nama Dokter
+                            </label>
+
+                            <input type="text"
+                                name="nama_dokter"
+                                value="{{ old('nama_dokter', $dokter->nama_dokter) }}"
+                                class="w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                        </div>
+
+                        <div>
+                            <label class="block mb-2 text-sm text-black-400">
+                                NIP
+                            </label>
+
+                            <input type="text"
+                                name="nip"
+                                value="{{ old('nip', $dokter->nip) }}"
+                                class="w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                        </div>
+
+                        <div>
+                            <label class="block mb-2 text-sm text-black-400">
+                                Tanggal Lahir
+                            </label>
+
+                            <input type="date"
+                                name="tanggal_lahir"
+                                value="{{ old('tanggal_lahir', $dokter->tanggal_lahir) }}"
+                                class="w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                        </div>
+
+                        <div>
+                            <label class="block mb-2 text-sm text-black-400">
+                                No HP
+                            </label>
+
+                            <input type="text"
+                                name="nohp"
+                                value="{{ old('nohp', $dokter->nohp) }}"
+                                class="w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                        </div>
+
+                        <div>
+                            <label class="block mb-2 text-sm text-black-400">
+                                Jadwal Praktik
+                            </label>
+
+                            <input type="text"
+                                name="jadwalpraktik"
+                                value="{{ old('jadwalpraktik', $dokter->jadwalpraktik) }}"
+                                placeholder="Senin - Jumat, 08:00 - 14:00"
+                                class="w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                        </div>
+
+                    </div>
+
+                    <div class="mt-5">
+                        <label class="block mb-2 text-sm text-black-400">
+                            Alamat
+                        </label>
+
+                        <textarea name="alamat"
+                                rows="3"
+                                class="w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500">{{ old('alamat', $dokter->alamat) }}</textarea>
+                    </div>
+
+            </div>
+            
+            <div class="flex items-center justify-end gap-3">
+
+                <a href="{{ route('dokters.index') }}"
+                class="px-5 py-2.5 rounded-xl border border-gray-300 text-black-700 hover:bg-gray-100 transition">
+                    Batal
+                </a>
+
+                <button type="submit"
+                        class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-xl shadow-sm transition">
+                    Simpan
+                </button>
+
+            </div>
+        </form>
+    </div> --}}
+    <div class="min-h-screen bg-gray-100 py-10">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="bg-white shadow-xl rounded-2xl overflow-hidden">
+
+                <div class="bg-gradient-to-r from-blue-600 to-cyan-500 px-8 py-6">
+                    <h2 class="text-2xl text-white">
+                        Ubah Data Dokter
+                    </h2>
+                    <p class="text-blue-100 mt-1 text-sm">
+                        Lengkapi informasi dokter dengan benar
+                    </p>
+                </div>
+                <div class="p-8">
+                    @if ($errors->any())
+                        <div class="mb-6 rounded-lg bg-red-100 border border-red-300 text-red-700 p-4">
+                            <ul class="list-disc list-inside space-y-1">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
                     <form action="{{ route('dokters.update', $dokter) }}" method="POST" class="space-y-6">
                         @csrf
                         @method('PUT')
-                                @if ($errors->any())
-                                <div class="bg-red-500 text-white p-4 rounded mb-4">
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                            {{-- <div>
+                                <label class="block text-sm text-black-400 mb-2">
+                                    Email
+                                </label>
+
+                                <input type="email"
+                                    name="email"
+                                    value="{{ old('email') }}"
+                                    class="w-full rounded-xl border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 transition @error('email') border-red-500 @enderror">
+
+                                @error('email')
+                                    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                                @enderror
+                            </div>
+
+                            <div>
+                                <label class="block text-sm text-black-400 mb-2">
+                                    Password
+                                </label>
+
+                                <input type="password"
+                                    name="password"
+                                    class="w-full rounded-xl border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 transition @error('password') border-red-500 @enderror">
+
+                                @error('password')
+                                    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                                @enderror
+                            </div> --}}
+
+                            <div>
+                                <label class="block text-sm text-black-400 mb-2">
+                                    NIK
+                                </label>
+
+                                <input type="text"
+                                    name="nik"
+                                    value="{{ old('nik', $dokter->nik) }}"
+                                    class="w-full rounded-xl border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 transition">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm text-black-400 mb-2">
+                                    Nama Dokter
+                                </label>
+
+                                <input type="text"
+                                    name="nama_dokter"
+                                    value="{{ old('nama_dokter', $dokter->nama_dokter) }}"
+                                    class="w-full rounded-xl border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 transition">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm text-black-400 mb-2">
+                                    NIP
+                                </label>
+
+                                <input type="text"
+                                    name="nip"
+                                    value="{{ old('nip', $dokter->nip) }}"
+                                    class="w-full rounded-xl border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 transition">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm text-black-400 mb-2">
+                                    Tanggal Lahir
+                                </label>
+
+                                <input type="date"
+                                    name="tanggal_lahir"
+                                    value="{{ old('tanggal_lahir', $dokter->tanggal_lahir) }}"
+                                    class="w-full rounded-xl border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 transition">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm text-black-400 mb-2">
+                                    No HP
+                                </label>
+
+                                <input type="text"
+                                    name="nohp"
+                                    value="{{ old('nohp', $dokter->nohp) }}"
+                                    class="w-full rounded-xl border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 transition">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm text-black-400 mb-2">
+                                    Jadwal Praktik
+                                </label>
+
+                                <input type="text"
+                                    name="jadwalpraktik"
+                                    value="{{ old('jadwalpraktik', $dokter->jadwalpraktik) }}"
+                                    placeholder="Senin - Jumat, 08:00 - 14:00"
+                                    class="w-full rounded-xl border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 transition">
+                            </div>
+
+                        </div>
+
+                        <div class="mt-6">
+                            <label class="block text-sm text-black-400 mb-2">
+                                Alamat
+                            </label>
+
+                            <textarea name="alamat"
+                                    rows="3"
+                                    class="w-full rounded-xl border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 transition">{{ old('alamat', $dokter->alamat) }}</textarea>
+                        </div>
+                        <div class="mt-5">
+
+                            <h3 class="text-lg text-black-400 mb-4">
+                                Informasi Lokasi
+                            </h3>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+                                <div>
+                                    <label class="block mb-2 text-sm text-black-400">
+                                        Provinsi
+                                    </label>
+
+                                    <select name="province_id"
+                                            id="province"
+                                            class="select2 w-full rounded-xl border-gray-300 @error('province_id') border-red-500 @enderror">
+                                        <option value="">Pilih Provinsi</option>
+                                        @foreach($provinces as $province)
+                                            <option value="{{ $province->id }}"
+                                                {{ $dokter->province_id == $province->id ? 'selected' : '' }}>
+                                                {{ $province->name }}
+                                            </option>
                                         @endforeach
-                                    </ul>
+                                    </select>
+                                    @error('province_id')
+                                        <p class="mt-2 text-sm text-red-600">
+                                            {{ $message }}
+                                        </p>
+                                    @enderror
                                 </div>
-                                @endif
-                        {{-- <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                            <input type="email" name="email" id="email" 
-                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm @error('email') border-red-500 @enderror"
-                                value="{{ old('email', $dokter->user->email) }}">
-                            @error('email')
-                                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-                            @enderror
-                        </div>
-                        <div>
-                            <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-                            <input type="password" name="password" id="password" 
-                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm @error('password') border-red-500 @enderror"
-                                value="{{ old('password', $dokter->user->password) }}">
-                            @error('password')
-                                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-                            @enderror
-                        </div> --}}
-                        <div>
-                            <label for="nik" class="block text-sm font-medium text-gray-700">NIK</label>
-                            <input type="text" name="nik" id="nik" 
-                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm @error('nik') border-red-500 @enderror"
-                                value="{{ old('nik', $dokter->nik) }}">
-                            @error('nik')
-                                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-                            @enderror
+
+                                <div>
+                                    <label class="block mb-2 text-sm text-black-400">
+                                        Kota / Kabupaten
+                                    </label>
+
+                                    <select name="city_id"
+                                            id="city"
+                                            class="select2 w-full rounded-xl border-gray-300 @error('city_id') border-red-500 @enderror">
+
+                                        <option value="">Pilih Kota</option>
+                                        @foreach($cities as $city)
+                                            <option value="{{ $city->id }}"
+                                                {{ $dokter->city_id == $city->id ? 'selected' : '' }}>
+                                                {{ $city->name }}
+                                            </option>
+                                        @endforeach
+
+                                    </select>
+
+                                    @error('city_id')
+                                        <p class="mt-2 text-sm text-red-600">
+                                            {{ $message }}
+                                        </p>
+                                    @enderror
+                                </div>
+
+                                <div>
+                                    <label class="block mb-2 text-sm text-black-400">
+                                        Kecamatan
+                                    </label>
+
+                                    <select name="district_id"
+                                            id="district"
+                                            class="select2 w-full rounded-xl border-gray-300 @error('district_id') border-red-500 @enderror">
+
+                                        <option value="">Pilih Kecamatan</option>
+                                        @foreach($districts as $district)
+                                            <option value="{{ $district->id }}"
+                                                {{ $dokter->district_id == $district->id ? 'selected' : '' }}>
+                                                {{ $district->name }}
+                                            </option>
+                                        @endforeach
+
+                                    </select>
+
+                                    @error('district_id')
+                                        <p class="mt-2 text-sm text-red-600">
+                                            {{ $message }}
+                                        </p>
+                                    @enderror
+                                </div>
+
+                                <div>
+                                    <label class="block mb-2 text-sm text-black-400">
+                                        Kelurahan
+                                    </label>
+
+                                    <select name="sub_district_id"
+                                            id="sub_district"
+                                            class="select2 w-full rounded-xl border-gray-300 @error('village_id') border-red-500 @enderror">
+                                        <option value="">Pilih Kelurahan</option>
+                                        @foreach($subDistricts as $sub_district)
+                                            <option value="{{ $sub_district->id }}"
+                                                {{ $dokter->sub_district_id == $sub_district->id ? 'selected' : '' }}>
+                                                {{ $sub_district->name }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+
+                                    @error('sub_district_id')
+                                        <p class="mt-2 text-sm text-red-600">
+                                            {{ $message }}
+                                        </p>
+                                    @enderror
+                                </div>
+
+                                <div>
+                                    <label class="block mb-2 text-sm text-black-400">
+                                        Kode Pos
+                                    </label>
+                                    <select name="postal_code_id"
+                                            id="postal_code"
+                                            class="select2 w-full rounded-xl border-gray-300 @error('village_id') border-red-500 @enderror">
+                                        <option value="">Pilih Kode Pos</option>
+                                        @foreach($postalCodes as $postal_code)
+                                            <option value="{{ $postal_code->id }}"
+                                                {{ $dokter->postal_code_id == $postal_code->id ? 'selected' : '' }}>
+                                                {{ $postal_code->postal_code }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+
+                                    @error('postal_code')
+                                        <p class="mt-2 text-sm text-red-600">
+                                            {{ $message }}
+                                        </p>
+                                    @enderror
+                                </div>
+
+                            </div>
+
                         </div>
 
-                        <div>  
-                            <label for="nama_dokter" class="block text-sm font-medium text-gray-700">Nama Dokter</label>  
-                            <input type="text" name="nama_dokter" id="nama_dokter" 
-                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm @error('nama_dokter') is-invalid @enderror" 
-                                value="{{ old('nama_dokter', $dokter->nama_dokter) }}">  
-                            @error('nama_dokter')  
-                                <div class="invalid-feedback">{{ $message }}</div>  
-                            @enderror  
-                        </div>
+                        <div class="mt-8 flex justify-end gap-3">
 
-                        <div>  
-                            <label for="nip" class="block text-sm font-medium text-gray-700">NIP</label>  
-                            <input type="text" name="nip" id="nip" 
-                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm @error('nip') is-invalid @enderror" 
-                                value="{{ old('nip', $dokter->nip) }}">  
-                            @error('nip')  
-                                <div class="invalid-feedback">{{ $message }}</div>  
-                            @enderror  
-                        </div> 
+                            <a href="{{ route('dokters.index') }}"
+                            class="px-5 py-3 rounded-xl border border-gray-300 text-black-400 hover:bg-gray-100 transition">
+                                Batal
+                            </a>
 
-                        <div>
-                            <label for="alamat" class="block text-sm font-medium text-gray-700">Alamat</label>
-                            <input type="text" name="alamat" id="alamat" 
-                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm @error('alamat') border-red-500 @enderror"
-                                value="{{ old('alamat', $dokter->alamat) }}">
-                            @error('alamat')
-                                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-                            @enderror
-                        </div>
-
-                        <div>
-                            <label for="tanggal_lahir" class="block text-sm font-medium text-gray-700">Tanggal Lahir</label>
-                            <input type="date" name="tanggal_lahir" id="tanggal_lahir" 
-                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm @error('tanggal_lahir') border-red-500 @enderror"
-                                value="{{ old('tanggal_lahir', $dokter->tanggal_lahir) }}">
-                            @error('tanggal_lahir')
-                                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-                            @enderror
-                        </div>
-
-                       
-                        <div>
-                            <label for="nohp" class="block text-sm font-medium text-gray-700">No HP</label>
-                            <input type="text" name="nohp" id="nohp" 
-                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm @error('nohp') border-red-500 @enderror"
-                                value="{{ old('nohp', $dokter->nohp) }}">
-                            @error('nohp')
-                                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-                            @enderror
-                        </div>
-
-                        <div>
-                            <label for="jadwalpraktik" class="block text-sm font-medium text-gray-700">Jadwal Praktik</label>
-                            <input type="text" name="jadwalpraktik" id="jadwalpraktik" 
-                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm @error('nohp') border-red-500 @enderror"
-                                value="{{ old('jadwalpraktik', $dokter->jadwalpraktik) }}">
-                            @error('jadwalpraktik')
-                                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-                            @enderror
-                        </div>
-
-                     
-                        <div class="flex justify-end">
-                            <button type="submit" 
-                                class="px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500">
-                                Simpan
+                            <button type="submit"
+                                    class="px-6 py-3 rounded-xl bg-blue-600 text-white shadow-md hover:bg-blue-700 transition">
+                                Simpan Data
                             </button>
+
                         </div>
+
                     </form>
+
                 </div>
             </div>
         </div>
     </div>
 </x-app-layout>
+<script>
+$(document).ready(function () {
+
+    $('.select2').select2({
+        width: '100%'
+    });
+
+    let oldProvince     = "{{ old('province_id') }}";
+    let oldCity         = "{{ old('city_id') }}";
+    let oldDistrict     = "{{ old('district_id') }}";
+    let oldSubDistrict  = "{{ old('sub_district_id') }}";
+    let oldPostalCode   = "{{ old('postal_code_id') }}";
+
+    function loadCities(provinceId, selected = null) {
+
+        if (!provinceId) return;
+
+        $('#city').html('<option>Loading...</option>');
+
+        $.get('/api/cities/' + provinceId, function (data) {
+
+            $('#city').empty()
+                .append('<option value="">-- Pilih kota --</option>');
+
+            $.each(data, function (i, city) {
+
+                $('#city').append(`
+                    <option value="${city.id}"
+                        ${selected == city.id ? 'selected' : ''}>
+                        ${city.name}
+                    </option>
+                `);
+
+            });
+
+            $('#city').trigger('change.select2');
+
+        });
+
+    }
+
+    function loadDistricts(cityId, selected = null) {
+
+        if (!cityId) return;
+
+        $('#district').html('<option>Loading...</option>');
+
+        $.get('/api/districts/' + cityId, function (data) {
+
+            $('#district').empty()
+                .append('<option value="">-- Pilih kecamatan --</option>');
+
+            $.each(data, function (i, district) {
+
+                $('#district').append(`
+                    <option value="${district.id}"
+                        ${selected == district.id ? 'selected' : ''}>
+                        ${district.name}
+                    </option>
+                `);
+
+            });
+
+            $('#district').trigger('change.select2');
+
+        });
+
+    }
+
+    function loadSubDistricts(districtId, selected = null) {
+
+        if (!districtId) return;
+
+        $('#sub_district').html('<option>Loading...</option>');
+
+        $.get('/api/sub_districts/' + districtId, function (data) {
+
+            $('#sub_district').empty()
+                .append('<option value="">-- Pilih kelurahan --</option>');
+
+            $.each(data, function (i, subDistrict) {
+
+                $('#sub_district').append(`
+                    <option value="${subDistrict.id}"
+                        ${selected == subDistrict.id ? 'selected' : ''}>
+                        ${subDistrict.name}
+                    </option>
+                `);
+
+            });
+
+            $('#sub_district').trigger('change.select2');
+
+        });
+
+    }
+
+    function loadPostalCodes(subDistrictId, selected = null) {
+
+        if (!subDistrictId) return;
+
+        $('#postal_code').html('<option>Loading...</option>');
+
+        $.get('/api/postal_codes/' + subDistrictId, function (data) {
+
+            $('#postal_code').empty()
+                .append('<option value="">-- Pilih kode pos --</option>');
+
+            $.each(data, function (i, postalCode) {
+
+                $('#postal_code').append(`
+                    <option value="${postalCode.id}"
+                        ${selected == postalCode.id ? 'selected' : ''}>
+                        ${postalCode.postal_code}
+                    </option>
+                `);
+
+            });
+
+            $('#postal_code').trigger('change.select2');
+
+        });
+
+    }
+
+    $('#province').change(function () {
+
+        let provinceId = $(this).val();
+
+        loadCities(provinceId);
+
+        $('#district').html('<option value="">-- Pilih kecamatan --</option>');
+        $('#sub_district').html('<option value="">-- Pilih kelurahan --</option>');
+        $('#postal_code').html('<option value="">-- Pilih kode pos --</option>');
+
+    });
+
+    $('#city').change(function () {
+
+        let cityId = $(this).val();
+
+        loadDistricts(cityId);
+
+        $('#sub_district').html('<option value="">-- Pilih kelurahan --</option>');
+        $('#postal_code').html('<option value="">-- Pilih kode pos --</option>');
+
+    });
+
+    $('#district').change(function () {
+
+        let districtId = $(this).val();
+
+        loadSubDistricts(districtId);
+
+        $('#postal_code').html('<option value="">-- Pilih kode pos --</option>');
+
+    });
+
+    $('#sub_district').change(function () {
+
+        let subDistrictId = $(this).val();
+
+        loadPostalCodes(subDistrictId);
+
+    });
+
+    if (oldProvince) {
+
+        loadCities(oldProvince, oldCity);
+
+        setTimeout(function () {
+
+            if (oldCity) {
+
+                loadDistricts(oldCity, oldDistrict);
+
+            }
+
+        }, 500);
+
+        setTimeout(function () {
+
+            if (oldDistrict) {
+
+                loadSubDistricts(oldDistrict, oldSubDistrict);
+
+            }
+
+        }, 1000);
+
+        setTimeout(function () {
+
+            if (oldSubDistrict) {
+
+                loadPostalCodes(oldSubDistrict, oldPostalCode);
+
+            }
+        }, 1500);
+    }
+});
+</script>

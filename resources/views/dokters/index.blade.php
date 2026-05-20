@@ -1,7 +1,7 @@
 {{-- resources/views/dokters/index.blade.php --}}
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="text-xl text-black-400 leading-tight">
             {{ __('Daftar Dokter') }}
         </h2>
     </x-slot>
@@ -24,11 +24,11 @@
                     <div class="flex flex-col gap-4 px-6 py-5 border-b border-gray-200 lg:flex-row lg:items-center lg:justify-between">
 
                         <div>
-                            {{-- <h1 class="text-2xl font-bold text-gray-800">
+                            {{-- <h1 class="text-2xl font-bold text-black-800">
                                 Data Dokter
                             </h1> --}}
 
-                            <p class="mt-1 text-sm text-gray-500">
+                            <p class="mt-1 text-sm text-black-400">
                                 Daftar seluruh dokter Karimata Dental Care
                             </p>
                         </div>
@@ -37,17 +37,12 @@
 
                             {{-- Tambah --}}
                             <a href="{{ route('dokters.create') }}"
-                                class="inline-flex items-center px-4 py-2.5 text-sm font-medium text-white transition bg-blue-600 rounded-xl hover:bg-blue-700">
+                                class="flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-primary-700 hover:bg-blue-800 rounded-lg focus:ring-4 focus:ring-blue-300">
 
-                                <svg class="w-4 h-4 mr-2"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24">
-
-                                    <path stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M12 4v16m8-8H4" />
+                                <svg class="h-3.5 w-3.5 mr-2" fill="currentColor" viewbox="0 0 20 20"
+                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                    <path clip-rule="evenodd" fill-rule="evenodd"
+                                        d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" />
                                 </svg>
 
                                 Tambah Dokter
@@ -90,9 +85,9 @@
                                 id="dokter_id">
                         </form>
 
-                        <table id="tableDokters" class="w-full text-sm text-left text-gray-700">
+                        <table id="tableDokters" class="w-full text-sm text-left text-black-400">
 
-                            <thead class="text-xs font-semibold tracking-wider text-gray-600 uppercase bg-gray-50 border-b border-gray-200">
+                            <thead class="text-xs tracking-wider text-black-400 uppercase bg-gray-50 border-b border-gray-200">
 
                                 <tr>
 

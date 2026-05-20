@@ -6,6 +6,11 @@ use App\Models\Dokter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\User;
+use App\Models\Province;
+use App\Models\City;
+use App\Models\District;
+use App\Models\SubDistrict;
+use App\Models\PostalCode;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -93,7 +98,8 @@ class DokterController extends Controller
 
     public function create()
     {
-        return view('dokters.create');
+        $provinces = Province::all();
+        return view('dokters.create', compact('provinces'));
     }
 
 
@@ -138,6 +144,11 @@ class DokterController extends Controller
             'nik' => $request->nik,
             'nohp' => $request->nohp,
             'jadwalpraktik' => $request->jadwalpraktik,
+            'province_id'   => $request->province_id,
+            'city_id'       => $request->city_id,
+            'district_id'   => $request->district_id,
+            'sub_district_id' => $request->sub_district_id,
+            'postal_code_id'  => $request->postal_code_id, 
         ]);
 
         return redirect()->route('dokters.index')
@@ -181,7 +192,12 @@ class DokterController extends Controller
 
     public function edit(Dokter $dokter)
     {
-        return view('dokters.edit', compact('dokter'));
+        $provinces = Province::all();
+        $cities = City::where('province_id', $dokter->province_id)->get();
+        $districts = District::where('city_id', $dokter->city_id)->get();
+        $subDistricts = SubDistrict::where('district_id', $dokter->district_id)->get();
+        $postalCodes = PostalCode::where('sub_district_id', $dokter->sub_district_id)->get();
+        return view('dokters.edit', compact('dokter', 'provinces', 'cities', 'districts', 'subDistricts', 'postalCodes'));
     }
     public function update(Request $request, Dokter $dokter)
     {
@@ -205,6 +221,11 @@ class DokterController extends Controller
             'nik',
             'nohp',
             'jadwalpraktik',
+            'province_id',
+            'city_id',
+            'district_id',
+            'sub_district_id',
+            'postal_code_id', 
             // 'penghasilan'
         ]));
 
@@ -249,6 +270,11 @@ class DokterController extends Controller
             'nohp' => 'required|digits_between:10,15',
 
             'jadwalpraktik' => 'required|string|max:255',
+            'province_id' => 'nullable|exists:provinces,id',
+            'city_id' => 'nullable|exists:cities,id',
+            'district_id' => 'nullable|exists:districts,id',
+            'sub_district_id' => 'nullable|exists:sub_districts,id',
+            'postal_code_id' => 'nullable|exists:postal_codes,id',
         ];
 
         // CREATE ONLY

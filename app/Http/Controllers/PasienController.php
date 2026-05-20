@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pasien;
+use App\Models\Province;
+use App\Models\City;
+use App\Models\District;
+use App\Models\SubDistrict;
+use App\Models\PostalCode;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -69,7 +74,8 @@ class PasienController extends Controller
      */
     public function create()
     {
-        return view('pasiens.create'); // Menampilkan form tambah pasien
+        $provinces = Province::all();
+        return view('pasiens.create', compact('provinces')); // Menampilkan form tambah pasien
     }
 
     /**
@@ -85,6 +91,11 @@ class PasienController extends Controller
             'nik' => 'required|numeric|digits:16|unique:pasiens,nik',
             'nohp' => 'required|numeric|digits_between:10,15',
             'alergi' => 'nullable|string|max:500',
+            'province_id' => 'nullable|exists:provinces,id',
+            'city_id' => 'nullable|exists:cities,id',
+            'district_id' => 'nullable|exists:districts,id',
+            'sub_district_id' => 'nullable|exists:sub_districts,id',
+            'postal_code_id' => 'nullable|exists:postal_codes,id',
         ]);
 
         Pasien::create($validatedData); // Menyimpan data pasien baru
@@ -122,6 +133,11 @@ class PasienController extends Controller
             'nik' => 'required|numeric|digits:16|unique:pasiens,nik,' . $pasien->id_pasien . ',id_pasien', // Memperbolehkan NIK yang sama
             'nohp' => 'required|numeric|digits_between:10,15',
             'alergi' => 'nullable|string|max:500',
+            'province_id' => 'nullable|exists:provinces,id',
+            'city_id' => 'nullable|exists:cities,id',
+            'district_id' => 'nullable|exists:districts,id',
+            'sub_district_id' => 'nullable|exists:sub_districts,id',
+            'postal_code_id' => 'nullable|exists:postal_codes,id',
         ]);
 
         $pasien->update($validatedData); // Memperbarui data pasien

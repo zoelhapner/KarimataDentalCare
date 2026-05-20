@@ -1,4 +1,4 @@
-@extends('tablar::page')
+<x-app-layout>
 
 @section('content')
 <div class="container my-4">
@@ -100,7 +100,7 @@
         </div>
     </div>
 </div>
-@endsection
+</x-app-layout>
 
 @push('js')
 <script>
