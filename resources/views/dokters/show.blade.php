@@ -40,23 +40,116 @@
                         </div>
                     </div>
                     <div class="mt-4 text-right">
-                        <button type="submit" class="bg-gradient-to-r from-blue-500 to-blue-700 text-black px-6 py-2 rounded-lg hover:from-green-500 hover:to-green-700 transition-all focus:outline-none shadow-lg transform hover:scale-105">Terapkan Filter</button>
+                        <button type="submit" class="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-6 py-2 rounded-lg hover:from-green-500 hover:to-green-700 transition-all focus:outline-none shadow-lg transform hover:scale-105">Terapkan Filter</button>
                     </div>
                 </form>
 
                 <!-- Informasi Dokter -->
-                <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="p-6 bg-gray-100 rounded-lg shadow-md">
-                        <p class="text-gray-700 font-medium">Alamat</p>
-                        <p class="text-gray-900 font-semibold">{{ $dokter->alamat }}</p>
+                <div class="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+                    {{-- LEFT CONTENT --}}
+                    <div class="lg:col-span-2 space-y-6">
+
+                        {{-- ALAMAT --}}
+                        <div class="p-6 bg-gray-50 rounded-2xl border border-gray-200 shadow-sm">
+
+                            <h3 class="text-lg font-semibold text-gray-800 mb-2">
+                                Alamat
+                            </h3>
+
+                            <p class="text-gray-700 leading-relaxed">
+                                {{ $dokter->alamat }}
+                            </p>
+
+                        </div>
+
+                        {{-- STATUS --}}
+                        @php
+                            $today = strtolower(now()->locale('id')->dayName);
+                            $todaySchedule = $dokter->jadwalpraktikbaru[$today] ?? null;
+                            $isOpenNow = false;
+                            if ($todaySchedule && ($todaySchedule['aktif'] ?? false)) {
+                                $now = now()->format('H:i');
+                                $isOpenNow =
+                                    $now >= $todaySchedule['buka'] &&
+                                    $now <= $todaySchedule['tutup'];
+                            }
+                        @endphp
+
+                        <div class="flex items-center">
+                            @if($isOpenNow)
+                                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-100 text-green-700 text-sm font-semibold">
+                                    <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                                    Buka Sekarang
+                                </div>
+                            @else
+                                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-100 text-red-700 text-sm font-semibold">
+                                    <span class="w-2 h-2 rounded-full bg-red-500"></span>
+                                    Tutup
+                                </div>
+                            @endif
+                        </div>
+
+                        <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+                            <div class="px-5 py-4 border-b border-gray-100 bg-gray-50">
+                                <h3 class="font-semibold text-gray-800">
+                                    Jadwal Praktik
+                                </h3>
+                                <p class="text-sm text-gray-500 mt-1">
+                                    Jam operasional dokter
+                                </p>
+                            </div>
+                            @php
+                                $days = [
+                                    'senin' => 'Senin',
+                                    'selasa' => 'Selasa',
+                                    'rabu' => 'Rabu',
+                                    'kamis' => 'Kamis',
+                                    'jumat' => 'Jumat',
+                                    'sabtu' => 'Sabtu',
+                                    'minggu' => 'Minggu',
+                                ];
+                            @endphp
+                            @foreach($days as $key => $label)
+                                @php
+                                    $jadwal = $dokter->jadwalpraktikbaru[$key] ?? null;
+                                @endphp
+                                <div class="flex items-center justify-between px-5 py-4 border-b border-gray-100 last:border-b-0 hover:bg-gray-50 transition">
+                                    <div class="font-medium text-gray-700">
+                                        {{ $label }}
+                                    </div>
+                                    @if($jadwal && ($jadwal['aktif'] ?? false))
+                                        <div class="flex items-center gap-3">
+                                            <span class="text-gray-800 font-medium">
+                                                {{ $jadwal['buka'] }} - {{ $jadwal['tutup'] }}
+                                            </span>
+                                            <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                                        </div>
+                                    @else
+                                        <div class="flex items-center gap-3">
+                                            <span class="text-red-500 font-medium">
+                                                Tutup
+                                            </span>
+                                            <span class="w-2 h-2 rounded-full bg-red-500"></span>
+                                        </div>
+                                    @endif
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
-                    <div class="p-6 bg-gray-100 rounded-lg shadow-md">
-                        <p class="text-gray-700 font-medium">Jadwal Praktik</p>
-                        <p class="text-gray-900 font-semibold">{{ $dokter->jadwalpraktik }}</p>
-                    </div>
-                    <div class="p-6 bg-blue-100 rounded-lg shadow-md">
-                        <p class="text-blue-700 font-medium">Estimasi Pendapatan</p>
-                        <p class="text-blue-900 font-bold text-xl">Rp{{ number_format($biaya) }}</p>
+
+                    <div>
+                        <div class="p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl border border-blue-200 shadow-sm sticky top-6">
+                            <p class="text-blue-700 font-semibold mb-2">
+                                Estimasi Pendapatan
+                            </p>
+                            <h2 class="text-3xl font-bold text-blue-900">
+                                Rp{{ number_format($penghasilanDokter, 0, ',', '.') }}
+                            </h2>
+                            <p class="mt-3 text-sm text-blue-700">
+                                Berdasarkan total tindakan pada periode yang dipilih.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -119,16 +119,112 @@
                                     class="w-full rounded-xl border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 transition">
                             </div>
 
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">
+                            <div class="md:col-span-2">
+
+                                <label class="block text-sm font-semibold text-gray-800 mb-4">
                                     Jadwal Praktik
                                 </label>
 
-                                <input type="text"
-                                    name="jadwalpraktik"
-                                    value="{{ old('jadwalpraktik') }}"
-                                    placeholder="Senin - Jumat, 08:00 - 14:00"
-                                    class="w-full rounded-xl border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 transition">
+                                @php
+                                    $days = [
+                                        'senin' => 'Senin',
+                                        'selasa' => 'Selasa',
+                                        'rabu' => 'Rabu',
+                                        'kamis' => 'Kamis',
+                                        'jumat' => 'Jumat',
+                                        'sabtu' => 'Sabtu',
+                                        'minggu' => 'Minggu',
+                                    ];
+                                @endphp
+
+                                <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+
+                                    @foreach($days as $key => $label)
+
+                                        <div class="schedule-row border-b border-gray-100 last:border-b-0 px-5 py-4">
+
+                                            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+
+                                                {{-- LEFT --}}
+                                                <div class="flex items-center gap-4">
+
+                                                    <label class="relative inline-flex items-center cursor-pointer">
+
+                                                        <input type="checkbox"
+                                                            class="sr-only peer toggle-day"
+                                                            data-target="{{ $key }}"
+                                                            name="jadwal[{{ $key }}][aktif]"
+                                                            value="1"
+                                                            {{ old("jadwal.$key.aktif") ? 'checked' : '' }}>
+
+                                                        <div class="w-11 h-6 bg-gray-300 rounded-full peer
+                                                            peer-checked:bg-green-500
+                                                            after:content-['']
+                                                            after:absolute
+                                                            after:top-[2px]
+                                                            after:left-[2px]
+                                                            after:bg-white
+                                                            after:border-gray-300
+                                                            after:border
+                                                            after:rounded-full
+                                                            after:h-5
+                                                            after:w-5
+                                                            after:transition-all
+                                                            peer-checked:after:translate-x-full">
+                                                        </div>
+
+                                                    </label>
+
+                                                    <div>
+                                                        <h4 class="text-sm font-semibold text-gray-800">
+                                                            {{ $label }}
+                                                        </h4>
+
+                                                        <p class="text-xs text-gray-500">
+                                                            Atur jam praktik dokter
+                                                        </p>
+                                                    </div>
+
+                                                </div>
+
+                                                {{-- RIGHT --}}
+                                                <div class="schedule-time flex items-center gap-3"
+                                                    id="schedule-{{ $key }}">
+
+                                                    <input type="time"
+                                                        name="jadwal[{{ $key }}][buka]"
+                                                        value="{{ old("jadwal.$key.buka") }}"
+                                                        class="rounded-xl border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200">
+
+                                                    <span class="text-gray-400 font-medium">
+                                                        —
+                                                    </span>
+
+                                                    <input type="time"
+                                                        name="jadwal[{{ $key }}][tutup]"
+                                                        value="{{ old("jadwal.$key.tutup") }}"
+                                                        class="rounded-xl border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200">
+
+                                                    <span class="status-text text-sm font-medium text-green-600">
+                                                        Buka
+                                                    </span>
+
+                                                </div>
+
+                                                {{-- CLOSED --}}
+                                                <div class="closed-text hidden text-sm font-medium text-red-500"
+                                                    id="closed-{{ $key }}">
+                                                    Tutup
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    @endforeach
+
+                                </div>
+
                             </div>
 
                         </div>
@@ -474,4 +570,36 @@ $(document).ready(function () {
         }, 1500);
     }
 });
+</script>
+<script>
+
+    document.querySelectorAll('.toggle-day').forEach(toggle => {
+
+        function updateState() {
+
+            const target = toggle.dataset.target;
+
+            const schedule = document.getElementById(`schedule-${target}`);
+            const closed = document.getElementById(`closed-${target}`);
+
+            if(toggle.checked) {
+
+                schedule.classList.remove('hidden');
+                closed.classList.add('hidden');
+
+            } else {
+
+                schedule.classList.add('hidden');
+                closed.classList.remove('hidden');
+
+            }
+
+        }
+
+        updateState();
+
+        toggle.addEventListener('change', updateState);
+
+    });
+
 </script>

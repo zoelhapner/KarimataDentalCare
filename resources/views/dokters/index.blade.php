@@ -28,7 +28,7 @@
                                 Data Dokter
                             </h1> --}}
 
-                            <p class="mt-1 text-sm text-black-400">
+                            <p class="mt-1 text-lg text-black-400">
                                 Daftar seluruh dokter Karimata Dental Care
                             </p>
                         </div>
@@ -86,17 +86,13 @@
                         </form>
 
                         <table id="tableDokters" class="w-full text-sm text-left text-black-400">
-
                             <thead class="text-xs tracking-wider text-black-400 uppercase bg-gray-50 border-b border-gray-200">
-
                                 <tr>
-
                                     <th class="p-4">
                                         <input id="checkbox-all"
                                             type="checkbox"
                                             class="w-4 h-4 text-blue-600 border-gray-300 rounded">
                                     </th>
-
                                     <th class="px-6 py-4">No</th>
                                     <th class="px-6 py-4">Nama</th>
                                     <th class="px-6 py-4">Role</th>
@@ -109,20 +105,13 @@
                                     <th class="px-6 py-4">Pendapatan</th>
                                     <th class="px-6 py-4">Aksi</th>
                                 </tr>
-
                             </thead>
-
                             <tbody class="divide-y divide-gray-100 bg-white">
                             </tbody>
-
                         </table>
-
                     </div>
-
                 </div>
-
             </div>
-
         </section>
     </div>
 
@@ -189,7 +178,7 @@
                     { data: 'tanggal_lahir', name: 'tanggal_lahir' },
                     { data: 'nik', name: 'nik' },
                     { data: 'nohp', name: 'nohp' },
-                    { data: 'jadwalpraktik', name: 'jadwalpraktik' },
+                    { data: 'jadwal_praktik', name: 'jadwal_praktik', orderable: false, searchable: false, width: '170px', className: 'whitespace-nowrap align-top' },
                     { data: 'penghasilan', name: 'penghasilan' },
 
                     {
@@ -221,61 +210,6 @@
                         .addClass('form-control');
                 }
             });
-
-            // Delete user functionally
-            $('table').on('click', '.delete-pasiens', function () {
-            const projectId = $(this).data('id');
-
-            Swal.fire({
-            title: 'Yakin ingin menghapus?',
-            text: "Data akan hilang secara permanen.",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#d33',
-            cancelButtonColor: '#6c757d',
-            confirmButtonText: 'Ya, hapus!',
-            cancelButtonText: 'Batal'
-
-            }).then((result) => {
-
-                if (result.isConfirmed) {
-                    $.ajax({
-
-                        url: `/projects/${projectId}`,
-                        method: 'DELETE',
-                        data: {
-                            _token: '{{ csrf_token() }}',
-                        },
-
-                        success: function (response) {
-                            if (response.status === 'success') {
-                                Swal.fire({
-                                    icon: 'success',
-                                    title: 'Berhasil!',
-                                    text: 'Data Proyek telah dihapus.',
-                                    timer: 2000,
-                                    showConfirmButton: false
-                            });
-
-                        table.ajax.reload(null, false); // refresh datatable
-                        } else {
-
-                            Swal.fire('Gagal', response.message || 'Tidak bisa menghapus data.', 'error');
-                        }
-                        },
-
-                    error: function () {
-
-                    Swal.fire('Error', 'Terjadi kesalahan saat menghapus.', 'error');
-                    }
-
-                    });
-                }
-            });
-            });
-
-
-           
         });
     </script>
     <script>

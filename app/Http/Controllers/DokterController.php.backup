@@ -16,6 +16,66 @@ class DokterController extends Controller
         // Menggunakan pagination agar lebih efisien untuk banyak data
         $dokters = Dokter::paginate(10);
         return view('dokters.index', compact('dokters'));
+                        ->addColumn('jadwalpraktikbaru', function ($dokter) {
+
+                    if (!$dokter->jadwalpraktikbaru) {
+                        return '-';
+                    }
+
+                    $days = [
+                        'senin' => 'Sen',
+                        'selasa' => 'Sel',
+                        'rabu' => 'Rab',
+                        'kamis' => 'Kam',
+                        'jumat' => 'Jum',
+                        'sabtu' => 'Sab',
+                        'minggu' => 'Min',
+                    ];
+
+                    $html = '<div class="space-y-1 min-w-[180px]">';
+
+                    foreach ($days as $key => $label) {
+
+                        $jadwal = $dokter->jadwalpraktikbaru[$key] ?? null;
+
+                        if ($jadwal && ($jadwal['aktif'] ?? false)) {
+
+                            $html .= '
+                                <div class="flex items-center justify-between text-xs">
+
+                                    <span class="font-medium text-gray-700">
+                                        '.$label.'
+                                    </span>
+
+                                    <span class="text-green-600 font-semibold">
+                                        '.$jadwal['buka'].' - '.$jadwal['tutup'].'
+                                    </span>
+
+                                </div>
+                            ';
+
+                        } else {
+
+                            $html .= '
+                                <div class="flex items-center justify-between text-xs">
+
+                                    <span class="font-medium text-gray-700">
+                                        '.$label.'
+                                    </span>
+
+                                    <span class="text-red-500 font-semibold">
+                                        Tutup
+                                    </span>
+
+                                </div>
+                            ';
+                        }
+                    }
+
+                    $html .= '</div>';
+
+                    return $html;
+                })
     }
 
     /**
@@ -53,9 +113,39 @@ class DokterController extends Controller
     /**
      * Menampilkan detail dokter.
      */
-    public function show(Dokter $dokter)
+    public function show(Request $request, Dokter $dokter)
     {
-        return view('dokters.show', compact('dokter'));
+
+        if (!$dokter) {
+            return redirect()->route('dokters.index')->withErrors('Dokter tidak ditemukan.');
+        }
+
+        $startDate = $request->input('start_date', now()->firstOfMonth()->toDateString());
+        $endDate = $request->input('end_date', now()->toDateString());
+
+        $tindakans = $dokter->tindakans()
+            ->whereBetween('created_at', [$startDate, $endDate])
+            ->with("kasir")
+            ->get();
+
+        // Filter transaksi berdasarkan dokter dan rentang tanggal
+        $transaksi = Kasir::whereBetween('created_at', [$startDate, $endDate])
+            ->whereHas("tindakan", function ($query) use ($dokter) {
+                $query->where("dokter_id", $dokter->id_dokter);
+            })
+            ->with("tindakan")
+            ->get();
+
+        // dd($transaksi);
+
+        // Hitung biaya bagian dokter (40%)
+        $biaya = $transaksi->sum('total_biaya');
+        $biaya = $biaya * 0.4; // Bagian dokter (40%)
+
+        $penghasilanDokter = $biaya;
+
+        return view('dokters.show', compact('dokter', 'tindakans', 'penghasilanDokter', 'startDate', 'endDate'))
+            ->with('biaya', $penghasilanDokter);
     }
 
     /**

@@ -73,22 +73,73 @@ class DokterController extends Controller
                     return '<a href="'.$url.'">'.e($name).'</a>';
                 })
                 ->addColumn('tanggal_lahir', fn($row) => $row->tanggal_lahir ? Carbon::parse($row->tanggal_lahir)->format('d/m/Y') : '-')
+                ->addColumn('jadwal_praktik', function ($dokter) {
 
+                    if (!$dokter->jadwalpraktikbaru) {
+                        return '-';
+                    }
+
+                    $days = [
+                        'senin' => 'Sen',
+                        'selasa' => 'Sel',
+                        'rabu' => 'Rab',
+                        'kamis' => 'Kam',
+                        'jumat' => 'Jum',
+                        'sabtu' => 'Sab',
+                        'minggu' => 'Min',
+                    ];
+
+                    $html = '<div class="space-y-1 min-w-[170px]">';
+
+                    foreach ($days as $key => $label) {
+
+                        $jadwal = $dokter->jadwalpraktikbaru[$key] ?? null;
+
+                        // hanya tampilkan yang aktif
+                        if (!$jadwal || !($jadwal['aktif'] ?? false)) {
+                            continue;
+                        }
+
+                        $html .= '
+                            <div class="flex items-center justify-between text-xs">
+
+                                <span class="font-medium text-gray-700">
+                                    '.$label.'
+                                </span>
+
+                                <span class="text-green-600 font-semibold">
+                                    '.$jadwal['buka'].' - '.$jadwal['tutup'].'
+                                </span>
+
+                            </div>
+                        ';
+                    }
+
+                    $html .= '</div>';
+
+                    return $html;
+                })
                 ->addColumn('aksi', function ($dokter) {
+                    $buttons = '';
 
-                    return '
-                        <div class="flex gap-2">
+                    $buttons .= '
+                        <a href="' . route('dokters.edit', $dokter->id_dokter) . '"  
+                            class="inline-flex items-center justify-center
+                                w-10 h-10
+                                rounded-xl
+                                bg-amber-500 hover:bg-amber-600
+                                text-white
+                                transition-all duration-200 shadow-sm"
+                            title="Edit">
 
-                            <a href="'.route('dokters.edit', $dokter->id_dokter).'"
-                                class="px-3 py-2 text-xs text-white bg-yellow-500 rounded-lg">
-                                Edit
-                            </a>
+                            <i class="ti ti-pencil text-[20px] leading-none"></i>
 
-                        </div>
+                        </a>
                     ';
+                    return $buttons;
                 })
 
-                ->rawColumns(['checkbox', 'nama_dokter', 'aksi'])
+                ->rawColumns(['checkbox', 'nama_dokter', 'aksi', 'jadwal_praktik'])
                 ->make(true);
         }
 
@@ -143,7 +194,22 @@ class DokterController extends Controller
             'tanggal_lahir' => $request->tanggal_lahir,
             'nik' => $request->nik,
             'nohp' => $request->nohp,
-            'jadwalpraktik' => $request->jadwalpraktik,
+            'jadwalpraktikbaru' => collect($request->jadwal)
+                ->map(function ($item) {
+
+                    if (!isset($item['aktif'])) {
+                        return [
+                            'aktif' => false
+                        ];
+                    }
+
+                    return [
+                        'aktif' => true,
+                        'buka'  => $item['buka'] ?? null,
+                        'tutup' => $item['tutup'] ?? null,
+                    ];
+                })
+                ->toArray(),
             'province_id'   => $request->province_id,
             'city_id'       => $request->city_id,
             'district_id'   => $request->district_id,
@@ -157,37 +223,40 @@ class DokterController extends Controller
 
     public function show(Request $request, Dokter $dokter)
     {
+        $startDate = $request->start_date
+            ? Carbon\Carbon::parse($request->start_date)->startOfDay()
+            : now()->startOfMonth();
 
-        if (!$dokter) {
-            return redirect()->route('dokters.index')->withErrors('Dokter tidak ditemukan.');
-        }
+        $endDate = $request->end_date
+            ? Carbon\Carbon::parse($request->end_date)->endOfDay()
+            : now()->endOfDay();
 
-        $startDate = $request->input('start_date', now()->firstOfMonth()->toDateString());
-        $endDate = $request->input('end_date', now()->toDateString());
-
+        // Tindakan dokter
         $tindakans = $dokter->tindakans()
+            ->with('kasir')
             ->whereBetween('created_at', [$startDate, $endDate])
-            ->with("kasir")
+            ->latest()
             ->get();
 
-        // Filter transaksi berdasarkan dokter dan rentang tanggal
-        $transaksi = Kasir::whereBetween('created_at', [$startDate, $endDate])
-            ->whereHas("tindakan", function ($query) use ($dokter) {
-                $query->where("dokter_id", $dokter->id_dokter);
+        // Total transaksi dokter
+        $totalBiaya = Kasir::whereHas('tindakan', function ($query) use ($dokter) {
+
+                $query->where('dokter_id', $dokter->id_dokter);
+
             })
-            ->with("tindakan")
-            ->get();
+            ->whereBetween('created_at', [$startDate, $endDate])
+            ->sum('total_biaya');
 
-        // dd($transaksi);
+        // Penghasilan dokter 40%
+        $penghasilanDokter = $totalBiaya * 0.4;
 
-        // Hitung biaya bagian dokter (40%)
-        $biaya = $transaksi->sum('total_biaya');
-        $biaya = $biaya * 0.4; // Bagian dokter (40%)
-
-        $penghasilanDokter = $biaya;
-
-        return view('dokters.show', compact('dokter', 'tindakans', 'penghasilanDokter', 'startDate', 'endDate'))
-            ->with('biaya', $penghasilanDokter);
+        return view('dokters.show', [
+            'dokter' => $dokter,
+            'tindakans' => $tindakans,
+            'penghasilanDokter' => $penghasilanDokter,
+            'startDate' => $startDate->toDateString(),
+            'endDate' => $endDate->toDateString(),
+        ]);
     }
 
     public function edit(Dokter $dokter)
@@ -210,24 +279,40 @@ class DokterController extends Controller
                 ->withInput();
         }
 
-        // Memperbarui data dokter
-        $dokter->update($request->only([
-            // 'user_id',
-            'nama_dokter',
-            // 'role',
-            'nip',
-            'alamat',
-            'tanggal_lahir',
-            'nik',
-            'nohp',
-            'jadwalpraktik',
-            'province_id',
-            'city_id',
-            'district_id',
-            'sub_district_id',
-            'postal_code_id', 
-            // 'penghasilan'
-        ]));
+        $jadwalPraktik = collect($request->jadwal)
+            ->map(function ($item) {
+
+                if (!isset($item['aktif'])) {
+
+                    return [
+                        'aktif' => false
+                    ];
+                }
+
+                return [
+                    'aktif' => true,
+                    'buka'  => $item['buka'] ?? null,
+                    'tutup' => $item['tutup'] ?? null,
+                ];
+            })
+            ->toArray();
+        $dokter->update([
+
+            'nama_dokter' => $request->nama_dokter,
+            'nip' => $request->nip,
+            'alamat' => $request->alamat,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'nik' => $request->nik,
+            'nohp' => $request->nohp,
+
+            'jadwalpraktikbaru' => $jadwalPraktik,
+
+            'province_id' => $request->province_id,
+            'city_id' => $request->city_id,
+            'district_id' => $request->district_id,
+            'sub_district_id' => $request->sub_district_id,
+            'postal_code_id' => $request->postal_code_id,
+        ]);
 
         return redirect()->route('dokters.index')
             ->with('success', 'Data Dokter berhasil diperbarui.');
@@ -269,7 +354,10 @@ class DokterController extends Controller
 
             'nohp' => 'required|digits_between:10,15',
 
-            'jadwalpraktik' => 'required|string|max:255',
+            'jadwalpraktik' => 'nullable|string|max:255',
+            'jadwal' => 'required|array',
+            'jadwal.*.buka' => 'nullable|date_format:H:i',
+            'jadwal.*.tutup' => 'nullable|date_format:H:i',
             'province_id' => 'nullable|exists:provinces,id',
             'city_id' => 'nullable|exists:cities,id',
             'district_id' => 'nullable|exists:districts,id',

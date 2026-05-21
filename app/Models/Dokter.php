@@ -10,7 +10,9 @@ use Illuminate\Support\Carbon;
 class Dokter extends Model
 {
     use HasFactory;
-
+    protected $casts = [
+        'jadwalpraktikbaru' => 'array',
+    ];
     protected $fillable = [
         'user_id',
         'nama_dokter',
@@ -20,7 +22,7 @@ class Dokter extends Model
         'tanggal_lahir',
         'nik',
         'nohp',
-        'jadwalpraktik',
+        'jadwalpraktikbaru',
         'penghasilan',
         'province_id',
         'city_id',
