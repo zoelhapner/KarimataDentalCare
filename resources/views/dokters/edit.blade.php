@@ -2,7 +2,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="text-xl text-gray-800 leading-tight">
-            {{ __('Edit Dokter') }}
+            {{ __('Edit Data Dokter') }}
         </h2>
     </x-slot>
 

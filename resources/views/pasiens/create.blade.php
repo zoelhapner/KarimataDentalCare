@@ -136,7 +136,7 @@
                                 Alamat Pasien
                             </label>
 
-                            <textarea name="alamat"
+                            <textarea name="alamat_pasien"
                                     rows="3"
                                     class="w-full rounded-xl border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 transition">{{ old('alamat') }}</textarea>
                         </div>
