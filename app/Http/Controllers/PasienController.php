@@ -30,17 +30,23 @@ class PasienController extends Controller
         return DataTables::of($data)
             ->addIndexColumn()
             ->addColumn('action', function ($pasien) {
+                $buttons = '';
 
-                return '
-                    <div class="flex justify-center gap-2">
+                    $buttons .= '
+                        <a href="' . route('pasiens.edit', $pasien->id_pasien) . '"  
+                            class="inline-flex items-center justify-center
+                                w-10 h-10
+                                rounded-xl
+                                bg-amber-500 hover:bg-amber-600
+                                text-white
+                                transition-all duration-200 shadow-sm"
+                            title="Edit">
 
-                        <a href="'.route('pasiens.edit', $pasien->id_pasien).'"
-                            class="px-3 py-2 text-xs font-medium text-white bg-yellow-500 rounded-lg hover:bg-yellow-600">
-                            Edit
+                            <i class="ti ti-pencil text-[20px] leading-none"></i>
+
                         </a>
-
-                    </div>
-                ';
+                    ';
+                    return $buttons;
             })
 
             ->rawColumns(['action'])

@@ -159,7 +159,7 @@
                                         <option value="">Pilih Provinsi</option>
                                         @foreach($provinces as $province)
                                             <option value="{{ $province->id }}"
-                                                {{ $dokter->province_id == $province->id ? 'selected' : '' }}>
+                                                {{ $pasien->province_id == $province->id ? 'selected' : '' }}>
                                                 {{ $province->name }}
                                             </option>
                                         @endforeach
@@ -183,7 +183,7 @@
                                         <option value="">Pilih Kota</option>
                                         @foreach($cities as $city)
                                             <option value="{{ $city->id }}"
-                                                {{ $dokter->city_id == $city->id ? 'selected' : '' }}>
+                                                {{ $pasien->city_id == $city->id ? 'selected' : '' }}>
                                                 {{ $city->name }}
                                             </option>
                                         @endforeach
@@ -209,7 +209,7 @@
                                         <option value="">Pilih Kecamatan</option>
                                         @foreach($districts as $district)
                                             <option value="{{ $district->id }}"
-                                                {{ $dokter->district_id == $district->id ? 'selected' : '' }}>
+                                                {{ $pasien->district_id == $district->id ? 'selected' : '' }}>
                                                 {{ $district->name }}
                                             </option>
                                         @endforeach
@@ -234,7 +234,7 @@
                                         <option value="">Pilih Kelurahan</option>
                                         @foreach($subDistricts as $sub_district)
                                             <option value="{{ $sub_district->id }}"
-                                                {{ $dokter->sub_district_id == $sub_district->id ? 'selected' : '' }}>
+                                                {{ $pasien->sub_district_id == $sub_district->id ? 'selected' : '' }}>
                                                 {{ $sub_district->name }}
                                             </option>
                                         @endforeach
@@ -257,7 +257,7 @@
                                         <option value="">Pilih Kode Pos</option>
                                         @foreach($postalCodes as $postal_code)
                                             <option value="{{ $postal_code->id }}"
-                                                {{ $dokter->postal_code_id == $postal_code->id ? 'selected' : '' }}>
+                                                {{ $pasien->postal_code_id == $postal_code->id ? 'selected' : '' }}>
                                                 {{ $postal_code->postal_code }}
                                             </option>
                                         @endforeach
