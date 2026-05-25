@@ -117,10 +117,10 @@ class PasienController extends Controller
     public function edit(Pasien $pasien)
     {
         $provinces = Province::all();
-        $cities = City::where('province_id', $dokter->province_id)->get();
-        $districts = District::where('city_id', $dokter->city_id)->get();
-        $subDistricts = SubDistrict::where('district_id', $dokter->district_id)->get();
-        $postalCodes = PostalCode::where('sub_district_id', $dokter->sub_district_id)->get();
+        $cities = City::where('province_id', $pasien->province_id)->get();
+        $districts = District::where('city_id', $pasien->city_id)->get();
+        $subDistricts = SubDistrict::where('district_id', $pasien->district_id)->get();
+        $postalCodes = PostalCode::where('sub_district_id', $pasien->sub_district_id)->get();
         return view('pasiens.edit', compact('pasien', 'provinces', 'cities', 'districts', 'subDistricts', 'postalCodes')); // Menampilkan form edit pasien
     }
 
