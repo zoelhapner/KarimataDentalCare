@@ -73,7 +73,7 @@ class RoleController extends Controller
     {
         $request->validate([
             'name' => 'required|string|unique:roles,name',
-            'role_group' => 'required|in:Internal,Eksternal',
+            'role_group' => 'nullable|in:Internal,Eksternal',
             'external_model' => 'nullable|string'
         ]);
         if ($request->role_group === 'Eksternal' && !$request->external_model) {
@@ -104,7 +104,7 @@ class RoleController extends Controller
     {
         $request->validate([
             'name' => 'required|string|unique:roles,name,' . $role->id,
-            'role_group' => 'required|in:Internal,Eksternal',
+            'role_group' => 'nullable|in:Internal,Eksternal',
             'external_model' => 'nullable|string'
         ]);
 

@@ -11,27 +11,50 @@
                 <div class="overflow-hidden bg-white border border-gray-200 shadow-sm rounded-2xl">
                     <div class="flex flex-col gap-3 mb-4 md:flex-row md:items-end">
 
-                        <div>
+                        <div class="px-4 py-2">
                             <label class="block mb-1 text-sm text-gray-700">
                                 Mulai Tanggal
                             </label>
-                            <input type="date" id="start_date" class="border border-gray-300 rounded-lg p-2">
+
+                            <input type="date"
+                                id="start_date"
+                                class="border border-gray-300 rounded-lg p-2">
                         </div>
 
-                        <div>
+                        <div class="px-4 py-2">
                             <label class="block mb-1 text-sm text-gray-700">
                                 Sampai Tanggal
                             </label>
-                            <input type="date" id="end_date"class="border border-gray-300 rounded-lg p-2">
+
+                            <input type="date"
+                                id="end_date"
+                                class="border border-gray-300 rounded-lg p-2">
                         </div>
 
-                        <button id="filterTanggal" class="px-4 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700">
-                            Filter
-                        </button>
+                        <div class="flex items-end gap-2 py-2">
+    
+                            <button id="filterTanggal"
+                                    class="px-4 py-2 text-white bg-primary-700 rounded-lg hover:bg-blue-700">
+                                Filter
+                            </button>
 
-                        <button id="resetFilter" class="px-4 py-2 text-white bg-gray-500 rounded-lg hover:bg-gray-600">
-                            Reset
-                        </button>
+                            <button id="resetFilter"
+                                    class="px-4 py-2 text-white bg-gray-500 rounded-lg hover:bg-gray-600">
+                                Reset
+                            </button>
+
+                        </div>
+
+                        {{-- Search --}}
+                        <div class="w-full md:w-80 md:ml-auto px-4 py-2">
+
+                            <input
+                                type="text"
+                                id="searchKasir"
+                                placeholder="Cari pasien / dokter..."
+                                class="w-full p-2.5 text-sm border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+
+                        </div>
 
                     </div>
                     <div class="overflow-x-auto">
@@ -114,8 +137,8 @@ $(function () {
         columns: [
             { data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false, searchable: false},
             { data: 'tanggal', name: 'tanggal' },
-            { data: 'dokter', name: 'dokter' },
-            { data: 'pasien', name: 'pasien' },
+            { data: 'nama_dokter', name: 'nama_dokter' },
+            { data: 'nama_pasien', name: 'nama_pasien' },
             { data: 'total_biaya', name: 'total_biaya' },
             { data: 'dibayar', name: 'dibayar' },
             { data: 'kembalian', name: 'kembalian' },
@@ -128,7 +151,7 @@ $(function () {
                 searchable: false
             }
         ],
-
+        dom: 'lrtip',
         language: {
             search: "Cari:",
             lengthMenu: "Tampilkan _MENU_ data",
@@ -156,6 +179,10 @@ $(function () {
         table.ajax.reload();
 
     });
+    
+            $('#searchKasir').on('keyup', function () {
+                table.search(this.value).draw();
+            });
 
 });
 

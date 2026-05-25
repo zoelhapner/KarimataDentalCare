@@ -1,69 +1,78 @@
 <x-app-layout>
-
+    <x-slot name="header">
+        <h2 class="text-xl text-black-400 leading-tight">
+            {{ __('Daftar Role') }}
+        </h2>
+    </x-slot>
 @section('content')
 
 <div class="py-6">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
 
-        {{-- Header --}}
-        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+            <div class="p-5 border-b border-gray-100">
 
-            <div>
-                <h1 class="text-2xl font-semibold text-gray-800">
-                    Daftar Role
-                </h1>
+                <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
 
-                <p class="text-sm text-gray-500 mt-1">
-                    Kelola role dan permission pengguna
-                </p>
+                    {{-- Button --}}
+                    <div>
+
+                        <a href="{{ route('roles.create') }}"
+                        class="inline-flex items-center px-4 py-2 bg-cyan-700 hover:bg-cyan-800 text-white text-sm font-medium rounded-xl transition">
+
+                            <svg class="w-4 h-4 mr-2"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24">
+
+                                <path stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M12 4v16m8-8H4"/>
+                            </svg>
+
+                            Tambah Role
+
+                        </a>
+
+                    </div>
+
+                    {{-- Search --}}
+                    <div class="w-full lg:w-80">
+
+                        <input type="text"
+                            id="searchRole"
+                            placeholder="Cari role..."
+                            class="w-full rounded-xl border-gray-300 focus:border-cyan-500 focus:ring-cyan-500">
+
+                    </div>
+
+                </div>
+
             </div>
 
-            
-                <a href="{{ route('roles.create') }}"
-                   class="inline-flex items-center justify-center px-4 py-2.5 bg-gray-900 hover:bg-gray-800 text-white rounded-xl shadow-sm transition">
-
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                         class="w-5 h-5 mr-2"
-                         fill="none"
-                         viewBox="0 0 24 24"
-                         stroke="currentColor">
-
-                        <path stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              d="M12 4v16m8-8H4" />
-                    </svg>
-
-                    Tambah Role Baru
-                </a>
-
-        </div>
-
-        {{-- Card --}}
-        <div class="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden">
-
-            {{-- Table --}}
+                {{-- Table --}}
             <div class="overflow-x-auto">
 
-                <table class="min-w-full divide-y divide-gray-200">
+                <table class="min-w-full">
 
-                    <thead class="bg-gray-50">
+                    <thead class="bg-gray-50 border-b border-gray-200">
 
                         <tr>
 
-                            <th class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                            <th class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase">
                                 No
                             </th>
 
-                            <th class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                            <th class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase">
                                 Nama Role
                             </th>
 
-                            <th class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                            <th class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase">
                                 Permission
                             </th>
 
-                            <th class="px-6 py-4 text-center text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                            <th class="px-6 py-4 text-center text-xs font-semibold text-gray-500 uppercase">
                                 Aksi
                             </th>
 
@@ -82,26 +91,20 @@
                                 </td>
 
                                 <td class="px-6 py-4">
+
                                     <div class="font-medium text-gray-800">
                                         {{ $role->name }}
                                     </div>
+
                                 </td>
 
                                 <td class="px-6 py-4">
 
-                                    @if($role->permissions->count() > 0)
+                                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-cyan-100 text-cyan-700">
 
-                                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-700">
-                                            {{ $role->permissions->count() }} Permission
-                                        </span>
+                                        {{ $role->permissions->count() }} Permission
 
-                                    @else
-
-                                        <span class="text-sm text-gray-400">
-                                            Belum ada permission
-                                        </span>
-
-                                    @endif
+                                    </span>
 
                                 </td>
 
@@ -111,24 +114,24 @@
 
                                         {{-- Edit --}}
                                         <a href="{{ route('roles.edit', $role->id) }}"
-                                           class="inline-flex items-center px-3 py-2 bg-amber-500 hover:bg-amber-600 text-white rounded-lg transition">
+                                        class="w-10 h-10 flex items-center justify-center rounded-xl bg-amber-400 hover:bg-amber-500 text-white transition">
 
-                                            <i class="ti ti-edit text-sm"></i>
+                                            <i class="ti ti-edit"></i>
 
                                         </a>
 
                                         {{-- Delete --}}
                                         <form action="{{ route('roles.destroy', $role->id) }}"
-                                              method="POST"
-                                              onsubmit="return confirmDelete(event)">
+                                            method="POST"
+                                            onsubmit="return confirmDelete(event)">
 
                                             @csrf
                                             @method('DELETE')
 
                                             <button type="submit"
-                                                    class="inline-flex items-center px-3 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg transition">
+                                                    class="w-10 h-10 flex items-center justify-center rounded-xl bg-red-500 hover:bg-red-600 text-white transition">
 
-                                                <i class="ti ti-trash text-sm"></i>
+                                                <i class="ti ti-trash"></i>
 
                                             </button>
 
@@ -148,8 +151,8 @@
 
             </div>
 
+            
         </div>
-
     </div>
 </div>
 
@@ -193,6 +196,9 @@
                 <input type="hidden" name="role_id" id="roleId">
 
                 <div class="p-6 max-h-[70vh] overflow-y-auto">
+                    @php
+                        $permissions = \Spatie\Permission\Models\Permission::orderBy('modules')->get()->groupBy('modules');
+                    @endphp
 
                     @foreach ($permissions as $moduleName => $modulePermissions)
 
@@ -214,8 +220,6 @@
                                 </button>
 
                             </div>
-
-                            {{-- Permissions --}}
                             <div class="p-5">
 
                                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

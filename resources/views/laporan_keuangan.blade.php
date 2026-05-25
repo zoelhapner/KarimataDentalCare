@@ -65,7 +65,7 @@
                             </div>
 
                             <button type="submit"
-                                class="px-5 py-3 text-sm font-medium text-white transition bg-blue-600 rounded-xl hover:bg-blue-700">
+                                class="px-5 py-3 text-sm font-medium text-white transition bg-primary-700 rounded-xl hover:bg-blue-700">
 
                                 Tampilkan
 

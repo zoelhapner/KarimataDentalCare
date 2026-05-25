@@ -37,14 +37,39 @@ class KasirController extends Controller
             ->orderBy('created_at', 'desc');
 
             return DataTables::of($data)
+            ->filter(function ($query) {
+
+                if ($search = request('search')['value']) {
+
+                    $query->where(function ($q) use ($search) {
+
+                        $q->where('metode_pembayaran', 'ilike', "%{$search}%")
+
+                            ->orWhereHas('tindakan.pasien', function ($pasien) use ($search) {
+
+                                $pasien->where('nama_pasien', 'ilike', "%{$search}%");
+
+                            })
+
+                            ->orWhereHas('tindakan.dokter', function ($dokter) use ($search) {
+
+                                $dokter->where('nama_dokter', 'ilike', "%{$search}%");
+
+                            });
+
+                    });
+
+                }
+
+            })
             ->addIndexColumn()
             ->addColumn('tanggal', fn($row) => $row->tindakan?->tanggal_visit ? Carbon::parse($row->tindakan?->tanggal_visit)->format('d/m/Y') : '-')
 
-            ->addColumn('dokter', function ($row) {
+            ->addColumn('nama_dokter', function ($row) {
                 return $row->tindakan?->dokter?->nama_dokter ?? 'N/A';
             })
 
-            ->addColumn('pasien', function ($row) {
+            ->addColumn('nama_pasien', function ($row) {
                 return $row->tindakan?->pasien?->nama_pasien ?? 'N/A';
             })
 
@@ -60,29 +85,77 @@ class KasirController extends Controller
                     return number_format($row->kembalian, 0, ',', '.');
                 })
 
+                // ->addColumn('aksi', function ($row) {
+
+                //     return '
+                //         <div class="flex gap-2">
+
+                //             <a href="'.route('kasir.show', $row->id).'"
+                //                 class="px-3 py-2 text-xs font-medium text-white bg-primary-700 rounded-lg hover:bg-blue-600">
+                //                 Detail
+                //             </a>
+                //             $buttons .= '
+                //                 <a href="' . route('tindakan.show', $row->id) . '"  
+                //                     class="inline-flex items-center justify-center w-8 h-8 rounded-md bg-primary-700 hover:bg-blue-700 text-white transition-all duration-200 shadow-sm"
+                //                     title="Lihat">
+
+                //                     <i class="ti ti-eye text-sm leading-none"></i>
+
+                //                 </a>
+                //             ';
+
+                //             <a href="'.route('kasir.edit', $row->id).'"
+                //                 class="px-3 py-2 text-xs font-medium text-white bg-green-500 rounded-lg hover:bg-green-600">
+                //                 Bayar
+                //             </a>
+
+
+                //             <a href="'.route('kasir.print', $row->id).'"
+                //                 target="_blank"
+                //                 class="px-3 py-2 text-xs font-medium text-white bg-yellow-500 rounded-lg hover:bg-yellow-600">
+                //                 Print
+                //             </a>
+
+                //         </div>
+                //     ';
+                // })
                 ->addColumn('aksi', function ($row) {
 
-                    return '
-                        <div class="flex gap-2">
+                    $buttons = '<div class="flex items-center justify-center gap-2">';
 
-                            <a href="'.route('kasir.show', $row->id).'"
-                                class="px-3 py-2 text-xs font-medium text-white bg-blue-500 rounded-lg hover:bg-blue-600">
-                                Detail
-                            </a>
+                    $buttons .= '
+                        <a href="' . route('kasir.edit', $row->id) . '"  
+                            class="inline-flex items-center justify-center w-8 h-8 rounded-md bg-amber-500 hover:bg-amber-600 text-white transition-all duration-200 shadow-sm"
+                            title="Edit">
 
-                            <a href="'.route('kasir.edit', $row->id).'"
-                                class="px-3 py-2 text-xs font-medium text-white bg-green-500 rounded-lg hover:bg-green-600">
-                                Bayar
-                            </a>
+                            <i class="ti ti-pencil text-sm leading-none"></i>
 
-                            <a href="'.route('kasir.print', $row->id).'"
-                                target="_blank"
-                                class="px-3 py-2 text-xs font-medium text-white bg-yellow-500 rounded-lg hover:bg-yellow-600">
-                                Print
-                            </a>
-
-                        </div>
+                        </a>
                     ';
+
+                    $buttons .= '
+                        <a href="' . route('kasir.show', $row->id) . '"  
+                            class="inline-flex items-center justify-center w-8 h-8 rounded-md bg-primary-700 hover:bg-blue-700 text-white transition-all duration-200 shadow-sm"
+                            title="Lihat">
+
+                            <i class="ti ti-eye text-sm leading-none"></i>
+
+                        </a>
+                    ';
+
+                    $buttons .= '
+                        <a href="' . route('kasir.print', $row->id) . '"  
+                            class="inline-flex items-center justify-center w-8 h-8 rounded-md bg-red-700 hover:bg-red-500 text-white transition-all duration-200 shadow-sm"
+                            title="Print Nota">
+
+                            <i class="ti ti-printer text-sm leading-none"></i>
+
+                        </a>
+                    ';
+
+                    $buttons .= '</div>';
+
+                    return $buttons;
                 })
 
                 ->rawColumns(['aksi'])

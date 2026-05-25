@@ -10,7 +10,7 @@
 
             <div class="bg-white shadow-xl rounded-2xl overflow-hidden">
 
-                <div class="bg-gradient-to-r from-blue-600 to-cyan-500 px-8 py-6">
+                <div class="bg-primary-700 px-8 py-6 rounded-t-lg">
                     <h2 class="text-2xl text-white">
                         Tambah Data Pasien
                     </h2>
@@ -259,7 +259,7 @@
                             </a>
 
                             <button type="submit"
-                                    class="px-6 py-3 rounded-xl bg-blue-600 text-white shadow-md hover:bg-blue-700 transition">
+                                    class="px-6 py-3 rounded-xl bg-primary-700 text-white shadow-md hover:bg-blue-700 transition">
                                 Simpan Data
                             </button>
 

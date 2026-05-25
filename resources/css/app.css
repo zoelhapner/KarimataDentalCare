@@ -2,9 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    font-family: 'Poppins', sans-serif !important;
-}
+/* body {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 400 !important;
+} */
 input,
 textarea,
 select {
@@ -34,7 +35,7 @@ label {
 }
 
 .dataTables_filter input:focus {
-    border-color: #2563eb !important;
+    border-color: #0e7490 !important;
     box-shadow: 0 0 0 3px rgba(37,99,235,.15) !important;
 }
 
@@ -72,13 +73,13 @@ label {
 .dataTables_paginate .paginate_button:hover {
     background: #eff6ff !important;
     border-color: #bfdbfe !important;
-    color: #2563eb !important;
+    color: #0e7490 !important;
 }
 
 .dataTables_paginate .paginate_button.current {
-    background: #2563eb !important;
+    background: #0e7490 !important;
     color: white !important;
-    border-color: #2563eb !important;
+    border-color: #0e7490 !important;
 }
 
 /* PROCESSING */

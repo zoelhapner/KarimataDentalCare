@@ -1,101 +1,223 @@
-@extends('tablar::page')
+<x-app-layout>
 
-@section('title', 'Edit Role - ' . $role->name)
+<div class="py-6">
 
-@section('content')
-<div class="container my-4">
-    <div class="card shadow-sm border-0">
-        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
-            <h5 class="mb-0">
-                <i class="ti ti-shield-lock me-2"></i> Edit Role: <strong>{{ $role->name }}</strong>
-            </h5>
-            <a href="{{ route('roles.index') }}" class="btn btn-light btn-sm">
-                <i class="ti ti-arrow-left me-1"></i> Kembali
-            </a>
-        </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div class="card-body">
-            <form action="{{ route('roles.update', $role->id) }}" method="POST">
-                @csrf
-                @method('PUT')
-                <div class="row g-4">
-                    <div class="col-md">
-                        <label for="roleName" class="form-label fw-bold text-secondary">Nama Role</label>
-                        <input type="text" id="roleName" name="name" value="{{ $role->name }}" 
-                            class="form-control form-control-md shadow-sm" placeholder="Masukkan nama role">
-                    </div>
-                    <div class="col-md">
-                        <label class="form-label fw-bold text-secondary">Group Role</label>
+        <div class="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden">
 
-                        <select name="role_group" class="form-select select2" required>
-                            <option value="">-- Pilih Group --</option>
-                            <option value="Internal" {{ old('role_group', $role->role_group) == "Internal" ? 'selected' : '' }}>Internal</option>
-                            <option value="Eksternal" {{ old('role_group', $role->role_group) == "Eksternal" ? 'selected' : '' }}>Eksternal</option>
-                        </select>
+            {{-- Header --}}
+            <div class="bg-primary-700 px-8 py-6 flex items-center justify-between">
 
-                        @error('role_group')
-                            <div class="text-danger mt-1">{{ $message }}</div>
-                        @enderror
-                    </div>
+                <div>
+
+                    <h2 class="text-2xl font-semibold text-white">
+                        Edit Role
+                    </h2>
+
+                    <p class="text-blue-100 mt-1 text-sm">
+                        Ubah role dan permission pengguna
+                    </p>
+
                 </div>
 
-                <hr class="my-4">
+                <a href="{{ route('roles.index') }}"
+                   class="inline-flex items-center px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-xl transition">
 
-                <h5 class="fw-bold text-dark mb-3">
-                    <i class="ti ti-lock me-2"></i> Permissions Berdasarkan Modul
-                </h5>
+                    <i class="ti ti-arrow-left mr-2"></i>
 
-                @php
-                    $groupedPermissions = $permissions->groupBy('modules');
-                @endphp
+                    Kembali
 
-                @foreach ($groupedPermissions as $moduleName => $modulePermissions)
-                    <div class="card mb-3 border-0 shadow-sm">
-                        <div class="card-header bg-light d-flex justify-content-between align-items-center">
-                            <span class="fw-semibold text-dark">
-                                <i class="ti ti-folder me-1 text-primary"></i>
-                                {{ $moduleName ?? 'Tanpa Modul' }}
-                            </span>
-                            <button type="button" 
-                                class="btn btn-sm btn-outline-secondary btn-select-module" 
-                                data-module="{{ \Illuminate\Support\Str::slug($moduleName) }}">
-                                Pilih Semua
-                            </button>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                @foreach ($modulePermissions as $perm)
-                                    <div class="col-md-6 col-lg-4 mb-2">
-                                        <div class="form-check">
-                                            <input class="form-check-input permission-checkbox module-{{ \Illuminate\Support\Str::slug($moduleName) }}" 
-                                                   type="checkbox" 
-                                                   name="permissions[]" 
-                                                   id="perm-{{ $perm->id }}" 
-                                                   value="{{ $perm->name }}"
-                                                   {{ $role->hasPermissionTo($perm->name) ? 'checked' : '' }}>
-                                            <label class="form-check-label" for="perm-{{ $perm->id }}">
-                                                {{ ucfirst($perm->name) }}
-                                            </label>
-                                        </div>
-                                    </div>
-                                @endforeach
+                </a>
+
+            </div>
+
+            {{-- Body --}}
+            <div class="p-8">
+
+                <form action="{{ route('roles.update', $role->id) }}" method="POST">
+
+                    @csrf
+                    @method('PUT')
+
+                    {{-- Error --}}
+                    @if ($errors->any())
+
+                        <div class="mb-6 rounded-xl bg-red-50 border border-red-200 p-4">
+
+                            <div class="text-red-700 font-medium mb-2">
+                                Terjadi Kesalahan:
                             </div>
+
+                            <ul class="list-disc list-inside text-sm text-red-600 space-y-1">
+
+                                @foreach ($errors->all() as $error)
+
+                                    <li>{{ $error }}</li>
+
+                                @endforeach
+
+                            </ul>
+
                         </div>
+
+                    @endif
+
+                    {{-- Form --}}
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                        {{-- Nama Role --}}
+                        <div>
+
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                Nama Role
+                            </label>
+
+                            <input type="text"
+                                   name="name"
+                                   value="{{ old('name', $role->name) }}"
+                                   class="w-full rounded-xl border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                                   placeholder="Masukkan nama role"
+                                   required>
+
+                            @error('name')
+
+                                <p class="text-red-500 text-sm mt-2">
+                                    {{ $message }}
+                                </p>
+
+                            @enderror
+
+                        </div>
+
                     </div>
-                @endforeach
 
-                <div class="text-end mt-4">
-                    <button type="submit" class="btn btn-dark btn-md px-4">
-                        <i class="ti ti-device-floppy me-1"></i> Simpan Perubahan
-                    </button>
-                </div>
-            </form>
+                    {{-- Divider --}}
+                    <div class="border-t border-gray-200 my-8"></div>
+
+                    {{-- Permission Title --}}
+                    <div class="mb-6">
+
+                        <h3 class="text-lg font-semibold text-gray-800 flex items-center">
+
+                            <i class="ti ti-lock mr-2 text-blue-600"></i>
+
+                            Permissions Berdasarkan Modul
+
+                        </h3>
+
+                        <p class="text-sm text-gray-500 mt-1">
+                            Ubah permission sesuai kebutuhan role
+                        </p>
+
+                    </div>
+
+                    @php
+                        $groupedPermissions = $permissions->groupBy('modules');
+                    @endphp
+
+                    {{-- Permissions --}}
+                    <div class="space-y-6">
+
+                        @foreach ($groupedPermissions as $moduleName => $modulePermissions)
+
+                            <div class="border border-gray-200 rounded-2xl overflow-hidden">
+
+                                {{-- Module Header --}}
+                                <div class="bg-gray-50 px-5 py-4 flex items-center justify-between border-b border-gray-200">
+
+                                    <div class="flex items-center">
+
+                                        <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center mr-3">
+
+                                            <i class="ti ti-folder"></i>
+
+                                        </div>
+
+                                        <div>
+
+                                            <h4 class="font-semibold text-gray-800">
+                                                {{ $moduleName ?? 'Tanpa Modul' }}
+                                            </h4>
+
+                                            <p class="text-xs text-gray-500">
+                                                {{ $modulePermissions->count() }} Permission
+                                            </p>
+
+                                        </div>
+
+                                    </div>
+
+                                    <button type="button"
+                                            class="btn-select-module text-sm px-4 py-2 bg-white border border-gray-300 hover:bg-gray-100 rounded-xl transition"
+                                            data-module="{{ \Illuminate\Support\Str::slug($moduleName) }}">
+
+                                        Pilih Semua
+
+                                    </button>
+
+                                </div>
+
+                                {{-- Permission List --}}
+                                <div class="p-5">
+
+                                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+                                        @foreach ($modulePermissions as $perm)
+
+                                            <label class="flex items-center p-4 border border-gray-200 rounded-xl hover:bg-gray-50 cursor-pointer transition">
+
+                                                <input
+                                                    type="checkbox"
+                                                    name="permissions[]"
+                                                    value="{{ $perm->name }}"
+                                                    id="perm-{{ $perm->id }}"
+                                                    class="permission-checkbox module-{{ \Illuminate\Support\Str::slug($moduleName) }} rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                                                    {{ $role->hasPermissionTo($perm->name) ? 'checked' : '' }}>
+
+                                                <span class="ml-3 text-sm text-gray-700">
+                                                    {{ ucfirst($perm->name) }}
+                                                </span>
+
+                                            </label>
+
+                                        @endforeach
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        @endforeach
+
+                    </div>
+
+                    {{-- Footer --}}
+                    <div class="flex justify-end mt-8">
+
+                        <button type="submit"
+                                class="inline-flex items-center px-6 py-3 bg-primary-700 hover:bg-blue-800 text-white font-medium rounded-xl shadow-sm transition">
+
+                            <i class="ti ti-device-floppy mr-2"></i>
+
+                            Simpan Perubahan
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
         </div>
-    </div>
-</div>
-@endsection
 
-@push('js')
+    </div>
+
+</div>
+</x-app-layout>
+
 <script>
 $(document).ready(function() {
     $('.select2').select2({
@@ -117,4 +239,3 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
-@endpush
