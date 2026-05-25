@@ -136,7 +136,6 @@ class PasienController extends Controller
     public function update(Request $request, Pasien $pasien)
     {
         $validatedData = $request->validate([
-            'id_pasien' => 'required|unique:pasiens,id_pasien,' . $pasien->id_pasien . ',id_pasien', // Memperbolehkan ID yang sama
             'nama_pasien' => 'required|string|max:255',
             'jenis_kelamin' => 'required|in:L,P',
             'alamat_pasien' => 'required|string|max:500',
