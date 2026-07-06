@@ -29,17 +29,20 @@ class ObatController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'nama_obat' => 'required|string|max:255',
-            'merk' => 'required|string|max:255',
-            'ukuran' => 'required|string|max:255',
-            'harga_beli' => 'required|numeric',
-            'tanggal_beli' => 'required|date',
-            'supplier' => 'required|string|max:255',
+        $validated = $request->validate([
+            'nama_obat'     => 'required|string|max:255',
+            'merk'          => 'required|string|max:255',
+            'ukuran'        => 'required|string|max:255',
+            'harga_beli'    => 'required|numeric|min:0',
+            'tanggal_beli'  => 'required|date',
+            'supplier'      => 'required|string|max:255',
         ]);
 
-        Obat::create($request->all());
-        return redirect()->route('obats.index')->with('success', 'Obat berhasil ditambahkan.');
+        Obat::create($validated);
+
+        return redirect()
+            ->route('obats.index')
+            ->with('success', 'Obat berhasil ditambahkan.');
     }
 
     /**

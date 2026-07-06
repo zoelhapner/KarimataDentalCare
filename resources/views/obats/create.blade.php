@@ -25,13 +25,13 @@
                             @csrf
                             <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
 
-                                <div>
+                                {{-- <div>
                                     <label for="id_obat" class="block text-sm font-medium text-gray-700 dark:text-gray-300">ID</label>
                                     <input type="text" name="id_obat" id="id_obat" value="{{ old('id_obat') }}" class="mt-1 block w-full p-2.5 text-gray-900 bg-white rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
                                     @error('id_obat') 
                                         <span class="text-red-500 text-sm">{{ $message }}</span>
                                     @enderror
-                                </div>
+                                </div> --}}
                                 {{-- Nama Obat --}}
                                 <div>
                                     <label for="nama_obat" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Nama Obat</label>
