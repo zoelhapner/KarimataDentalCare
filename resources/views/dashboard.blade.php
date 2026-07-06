@@ -136,6 +136,7 @@
                     var chartData = @json($chartData); // Data pendapatan klinik
 
                     var ctx = document.getElementById('financialChart').getContext('2d');
+                    console.log(document.getElementById('financialChart'));
                     var financialChart = new Chart(ctx, {
                         type: 'line',
                         data: {

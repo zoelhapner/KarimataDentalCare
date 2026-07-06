@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Dokter;
 use App\Models\Kasir;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,8 +18,8 @@ class DashboardController extends Controller
         $userId = Auth::id();
 
         // Ambil tanggal mulai dan akhir dari request, defaultnya periode bulan ini
-        $startDate = $request->input('start_date', now()->firstOfMonth()->toDateString());
-        $endDate = $request->input('end_date', now()->toDateString());
+        $startDate = Carbon::parse( $request->input('start_date', now()->firstOfMonth()->toDateString()) )->startOfDay(); 
+        $endDate = Carbon::parse( $request->input('end_date', now()->toDateString()) )->endOfDay();
 
         // Query data untuk role dokter
         if (session('user_role') == 'dokter') {
@@ -67,7 +68,7 @@ class DashboardController extends Controller
 
             // Kelompokkan transaksi berdasarkan bulan
             $monthlyData = $transaksiKlinik->groupBy(function ($date) {
-                return \Carbon\Carbon::parse($date->created_at)->format('F Y'); // Format Bulan Tahun
+                return Carbon::parse($date->created_at)->format('F Y'); // Format Bulan Tahun
             });
 
             // Siapkan data untuk grafik
