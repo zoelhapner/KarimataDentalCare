@@ -56,7 +56,7 @@
                 <td width='70%' align='left' style='padding-right:80px; vertical-align:top'>
                     <span style='font-size:12pt'><b>Karimata Dental Care</b></span><br>
                     Alamat Klinik: Jl. Karimata No.7C, Gumuk Kerang, Sumbersari, Kec. Sumbersari, Kabupaten Jember, Jawa Timur 68121<br>
-                    Telp: +62 821-3520-1915
+                    Telp: +62 823-5931-3027
                 </td>
                 <td style='vertical-align:top' width='30%' align='left'>
                     <b><span style='font-size:12pt'>NOTA KWITANSI</span></b><br>
